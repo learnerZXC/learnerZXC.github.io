@@ -22,6 +22,30 @@ HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户�
 4. 无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。
 5. 无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。
 
+### HTTP工作原理
+一次HTTP操作称为一个事务，其工作整个过程如下：<br/>
+1. 地址解析<br/>
+如用客户端浏览器请求这个页面：http://localhost.com:8080/index.html<br/>
+从中分解出协议名、主机、端口、对象路径等部分，对于上面这个地址，解析得到结果如下：<br/>
+协议名：http<br/>
+主机名：localhost.com<br/>
+端口：8080<br/>
+对象路径：/index.html<br/>
+在这一步，需要域名系统DNS解析域名localhost.com,得主机的IP地址。<br/>
+2. 封装HTTP请求数据包<br/>
+把以上部分结合本机自己的信息，封装成一个HTTP请求数据包。<br/>
+3. 封装成TCP包，建立TCP连接（TCP的三次握手）<br/>
+在HTTP工作开始之前，客户机（Web浏览器）首先要通过网络与服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，即著名的TCP/IP协议族，因此Internet又被称作是TCP/IP网络。HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能，才能进行更层协议的连接，因此，首先要建立TCP连接，一般TCP连接的端口号是80。这里是8080端口。<br/>
+4. 客户机发送请求命令<br/>
+建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可内容。<br/>
+5. 服务器响应<br/>
+服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。<br/>
+实体消息是服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据。<br/>
+6. 服务器关闭TCP连接<br/>
+ 一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码Connection:keep-alive，TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。
+
+
+
 ### HTTP协议之URL
 HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。URL是一种特殊类型的URI，包含了用于查找某个资源的足够的信息<br/>
 
@@ -174,4 +198,99 @@ Date:生成响应的日期和时间；Content-Type:指定了MIME类型的HTML(te
     - Error 501 - 未实现
     - HTTP 502 - 网关错误
 
+### HTTP协议之请求头
+HTTP最常见的请求头如下：
+- Accept:浏览器可接受的MIME类型；
+- Accept-charset：浏览器可接受的字符集；
+- Accept-Encoding: 浏览器能够解码的数据编码方式，比如gzip。Servlet能够向支持gzip的浏览器返回经gzip编码的HTML页面。许多情形下这可以减少5到10倍的下载时间；
+- Accept-Language：浏览器所希望的语言种类，当服务器能够提供一种以上的语言版本时要用到；
+- Authorization：授权信息，通常出现在对服务器发送的WWW-Authenticate头的应答中；
+- Connection：表示是否需要持久连接。如果Servlet看到这里的值为“Keep-Alive”，或者看到请求使用的是HTTP 1.1（HTTP 1.1默认进行持久连接），它就可以利用持久连接的优点，当页面包含多个元素时（例如Applet，图片），显著地减少下载所需要的时间。要实现这一点，Servlet需要在应答中发送一个Content-Length头，最简单的实现方法是：先把内容写入ByteArrayOutputStream，然后在正式写出内容之前计算它的大小；
+- Content-Length：表示请求消息正文的长度；
+- Cookie：这是最重要的请求头信息之一；
+- From：请求发送者的email地址，由一些特殊的Web客户程序使用，浏览器不会用到它；
+- Host：初始URL中的主机和端口；
+- If-Modified-Since：只有当所请求的内容在指定的日期之后又经过修改才返回它，否则返回304“Not Modified”应答；
+- pragma：定“no-cache”值表示服务器必须返回一个刷新后的文档，即使它是代理服务器而且已经有了页面的本地拷贝；
+- Referer：包含一个URL，用户从该URL代表的页面出发访问当前请求的页面。
+- User-Agent：浏览器类型，如果Servlet返回的内容与浏览器类型有关则该值非常有用；
+- UA-Pixel,UA-Color,UA-OS,UA-CPU:由某些版本的IE浏览器所发送的非标准的请求头，表示屏幕大小、颜色深度、操作系统和CPU类型。
+
+### HTTP之响应头
+HTTP最常见的响应头如下所示：<br/>
+- Allow：服务器支持哪些请求方法（如GET、POST等）；
+- Content-Type：表示后面的文档属于什么MIME类型。Servlet默认为text/plain，但通常需要显式地指定为text/html。由于经常要设置Content-Type，因此HttpServletResponse提供了一个专用的方法setContentTyep。 可在web.xml文件中配置扩展名和NAME类型的对应关系；
+- Content-Encoding：文档的编码（Encode）方法。只有在解码之后才可以得到Content-Type头指定的内容类型。利用gzip压缩文档能够显著地减少HTML文档的下载时间。Java的GZIPOutputStream可以很方便地进行gzip压缩，但只有Unix上的Netscape和Windows上的IE 4、IE 5才支持它。因此，Servlet应该通过查看Accept-Encoding头（即request.getHeader("Accept-Encoding")）检查浏览器是否支持gzip，为支持gzip的浏览器返回经gzip压缩的HTML页面，为其他浏览器返回普通页面；
+- Content-Length：表示内容长度。只有当浏览器使用持久HTTP连接时才需要这个数据。如果你想要利用持久连接的优势，可以把输出文档写入ByteArrayOutputStram，完成后查看其大小，然后把该值放入Content-Length头，最后通过byteArrayStream.writeTo(response.getOutputStream()发送内容；
+- Date：当前的GMT时间。你可以用setDateHeader来设置这个头以避免转换时间格式的麻烦；
+- Expires：指明应该在什么时候认为文档已经过期，从而不再缓存它。
+- Last-Modified：文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，该请求将被视为一个条件GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个304（Not Modified）状态。Last-Modified也可用setDateHeader方法来设置；
+- Location：表示客户应当到哪里去提取文档。Location通常不是直接设置的，而是通过HttpServletResponse的sendRedirect方法，该方法同时设置状态代码为302；
+- Refresh：表示浏览器应该在多少时间之后刷新文档，以秒计。除了刷新当前文档之外，你还可以通过setHeader("Refresh", "5; URL=http://host/path")让浏览器读取指定的页面。注意这种功能通常是通过设置HTML页面HEAD区的<META HTTP-EQUIV="Refresh" CONTENT="5;URL=http://host/path">实现，这是因为，自动刷新或重定向对于那些不能使用CGI或Servlet的HTML编写者十分重要。但是，对于Servlet来说，直接设置Refresh头更加方便。注意Refresh的意义是“N秒之后刷新本页面或访问指定页面”，而不是“每隔N秒刷新本页面或访问指定页面”。因此，连续刷新要求每次都发送一个Refresh头，而发送204状态代码则可以阻止浏览器继续刷新，不管是使用Refresh头还是<META HTTP-EQUIV="Refresh" ...>。注意Refresh头不属于HTTP 1.1正式规范的一部分，而是一个扩展，但Netscape和IE都支持它。
+
+###HTTP之实体头
+实体头用坐实体内容的元信息，描述了实体内容的属性，包括实体信息类型，长度，压缩方法，最后一次修改时间，数据有效性等。<br/>
+- Allow：GET,POST；
+- Content-Encoding：文档的编码（Encode）方法，例如gzip,见“HTTP之响应头”；
+- Content-Language：内容的语言类型，例如：zh-cn；
+- Content-Length：表示内容长度，eg:80,可见“HTTP之响应头”；
+- Content-Location：表示客户应当到哪里去提取文档，可见“HTTP之响应头”；
+- Content-MD5：MD5 实体的一种MD5摘要，用作校验和。发送方和接受方都计算MD5摘要，接受方将其计算的值与此头标中传递的值进行比较；
+- Content-Range：随部分实体一同发送；标明被插入字节的低位与高位字节偏移，也标明此实体的总长度；
+- Content-Type：标明发送或者接收的实体的MIME类型；
+-  Expires：为0证明不缓存；
+- Last-Modified：WEB 服务器认为对象的最后修改时间，比如文件的最后修改时间，动态页面的最后产生时间等等。例如：Last-Modified：Tue, 06 May 2008 02:42:43 GMT.
+
+### HTTP之扩展头
+在HTTP消息中，也可以使用一些再HTTP1.1正式规范里没有定义的头字段，这些头字段统称为自定义的HTTP头或者扩展头，他们通常被当作是一种实体头处理。<br/>
+现在流行的浏览器实际上都支持Cookie,Set-Cookie,Refresh和Content-Disposition等几个常用的扩展头字段。
+- Refresh：1;url=http://www.dfdf.org  //过1秒跳转到指定位置；
+- Content-Disposition：头字段,可参考“2.5响应头”；
+- Content-Type：WEB 服务器告诉浏览器自己响应的对象的类型。
+
+###   GET方式和POST方式的区别：
+GET方式：是以实体的方式得到由请求URI所指定资源的信息，如果请求URI只是一个数据产生过程，那么最终要在响应实体中返回的是处理过程的结果所指向的资源，而不是处理过程的描述。<br/>
+POST方式：用来向目的服务器发出请求，要求它接受被附在请求后的实体，并把它当作请求队列中请求URI所指定资源的附加新子项，Post被设计成用统一的方法实现下列功能：<br/>
+ - 对现有资源的解释；<br/>
+ - 向电子公告栏、新闻组、邮件列表或类似讨论组发信息；<br/>
+ - 提交数据块；<br/>
+ - 通过附加操作来扩展数据库 。<br/>
+从上面描述可以看出，Get是向服务器发索取数据的一种请求；而Post是向服务器提交数据的一种请求，要提交的数据位于信息头后面的实体中。<br/>
+GET方式和POST方式有以下区别：
+    1. 在客户端，Get方式在通过URL提交数据，数据在URL中可以看到；POST方式，数据放置在HTML HEADER内提交。
+    2. get和post理论上都没有数据大小限制，但是浏览器本身对url长度有限制，IE为2083B，火狐、chrome等为4098B。post数据时无论多大都不会报错，而是浏览器会崩溃。还有服务器端对数据大小可能会有限制。
+    3. GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值。
+    4. 安全性问题。正如在（1）中提到，使用 Get 的时候，参数会显示在地址栏上，而 Post 不会。所以，如果这些数据是中文数据而且是非敏感数据，那么使用 get；如果用户输入的数据不是中文字符而且包含敏感数据，那么还是使用 post为好。
+    5. 安全的和幂等的。所谓安全的意味着该操作用于获取信息而非修改信息。幂等的意味着对同一 URL 的多个请求应该返回同样的结果。完整的定义并不像看起来那样严格。换句话说，GET 请求一般不应产生副作用。从根本上讲，其目标是当用户打开一个链接时，她可以确信从自身的角度来看没有改变资源。比如，新闻站点的头版不断更新。虽然第二次请求会返回不同的一批新闻，该操作仍然被认为是安全的和幂等的，因为它总是返回当前的新闻。反之亦然。POST 请求就不那么轻松了。POST 表示可能改变服务器上的资源的请求。仍然以新闻站点为例，读者对文章的注解应该通过 POST 请求实现，因为在注解提交之后站点已经不同了（比方说文章下面出现一条注解）。
+
 ### URI和URL的区别
+URI（Uniform Resource Identifier）是统一资源标识符，而URL（Uniform Resource Location）是统一资源定位符。因此，笼统地说，每个URL都是URI，但不一定每个URI都是 URL。这是因为URI还包括一个子类，即统一资源名称(URN)，它命名资源但不指定如何定位资源。区别如下：
+- 在Java类库中，URI类不包含任何访问资源的方法，它唯一的作用就是解析。相反的是，URL类可以打开一个到达资源的流。
+- Web上可用的每种资源如HTML文档、图像、视频片段、程序等都是一个来URI来定位的，URI一般由三部组成:<br/>
+  1. 访问资源的命名机制
+  2. 存放资源的主机名
+  3. 资源自身的名称，由路径表示，着重强调于资源。
+- URL是Internet上用来描述信息资源的字符串，主要用在各种WWW客户程序和服务器程序上，特别是著名的Mosaic。<br/>
+采用URL可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。URL一般由三部组成:<br/>
+  1. 协议(或称为服务方式)
+  2. 存有该资源的主机IP地址(有时也包括端口号)
+  3. 主机资源的具体地址。如目录和文件名等
+
+### Session和Cookie的区别
+Cookie和Session都为了用来保存状态信息，都是保存客户端状态的机制，它们都是为了解决HTTP无状态的问题而所做的努力。<br/>
+
+Session可以用Cookie来实现，也可以用URL回写的机制来实现。用Cookie来实现的Session可以认为是对Cookie更高级的应用。<br/>
+
+Session和Cookie区别：
+- Cookie将状态保存在客户端，Session将状态保存在服务器端；
+- Cookies是服务器在本地机器上存储的小段文本并随每一个请求发送至同一个服务器。Cookie最早在RFC2109中实现，后续RFC2965做了增强。网络服务器用HTTP头向客户端发送cookies，在客户终端，浏览器解析这些cookies并将它们保存为一个本地文件，它会自动将同一服务器的任何请求缚上这些cookies。Session并没有在HTTP的协议中定义；
+- Session是针对每一个用户的，变量的值保存在服务器上，用一个sessionID来区分是哪个用户session变量,这个值是通过用户的浏览器在访问的时候返回给服务器，当客户禁用cookie时，这个值也可能设置为由get来返回给服务器；
+- 就安全性来说：当你访问一个使用session 的站点，同时在自己机子上建立一个cookie，建议在服务器端的SESSION机制更安全些.因为它不会任意读取客户存储的信息。
+
+### HTTP协议是无状态的和Connection:keep-alive的区别
+状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。从另一方面讲，打开一个服务器上的网页和你之前打开这个服务器上的网页之间没有任何联系<br/>
+
+HTTP是一个无状态的面向连接的协议，无状态不代表HTTP不能保持TCP连接，更不能代表HTTP使用的是UDP协议（无连接）<br/>
+
+从HTTP/1.1起，默认都开启了Keep-Alive，保持连接特性，简单地说，当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的TCP连接不会关闭，如果客户端再次访问这个服务器上的网页，会继续使用这一条已经建立的连接<br/>
+ Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件（如Apache）中设定这个时间<br/>
