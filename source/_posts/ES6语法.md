@@ -129,8 +129,16 @@ ES6中，可以用{}把Unicode编码包起来表示一个<br/>
 `}`<br/>
 
 - 模板字符串<br/>
+ES5中要把多个字符串连接起来，可以用+号连接：如果有很多变量需要连接，用+号就比较麻烦。ES6新增了一种模板字符串，会自动替换字符串中的变量。<br/>
+例如：<br/>
+`let name="list";`<br/>
+`let info="hello world";`<br/>
+`let m=`i am ${name},${info}`;`<br/>
+`console.log(m);//结果为i am list,hello world`<br/>
 
-- 新增方法（10种）<br/>
+- 标签模板
+
+- 新增方法<br/>
   - str.codePointAt():能够正确处理4个字节储存的字符，返回指定索引出一个字符的码点。codePointAt方法返回的是码点的十进制值，如果想要十六进制的值，可以使用toString方法转换一下。
   例如：<br/>
   `let s='𠮷';`<br/>
@@ -151,7 +159,33 @@ ES6中，可以用{}把Unicode编码包起来表示一个<br/>
   例如：<br/>
    `console.log(String.fromCharCode("0x20bb7"));//ஷ`<br/>
    `console.log(String.fromCodePoint("0x20bb7"));//𠮷`<br/>
-   - Sring.raw：往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串。<br/>
+  - str.includes():返回一个布尔值，表示某个字符串是否包含给定的字符。
+   例如:<br/>
+   `let str = "string"`<br/>
+   `console.log(str.includes("r"))//结果为true`<br/>
+  - str.startsWith():给定文本出现在字符串开头时返回 true，否则返回 false 。<br/>
+   例如:<br/>
+   `let str = "string"`<br/>
+   `console.log(str.startsWith("str"))//结果为true`<br/>
+  - str.endsWith():给定文本出现在字符串末尾时返回 true，否则返回 false 。<br/>
+   例如:<br/>
+   `let str = "string"`<br/>
+   `console.log(str.endsWith("g"))//结果为true`<br/>
+  - str.repeat():字符串复制<br/>
+   例如:<br/>
+   `let str = "ab"`<br/>
+   `console.log(str.repeat(3))//结果为ababab`<br/>
+  - Sring.raw：往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串。<br/>
    例如：<br/>
-   `console.log(String.raw`Hi\n${1+2}`//Hi\n3);`
-   `console.log(`Hi\n${1+2}`//Hi(换行)3);`
+   `console.log(String.raw`Hi\n${1+2}`//Hi\n3);`<br/>
+   `console.log(`Hi\n${1+2}`//Hi(换行)3);`<br/>
+  - str.padStart():向前补白<br/>
+  例如：<br/>
+   `console.log('1'.padStart(2,'0'));//结果为01`<br/>
+   注：第一个参数2为输出字符串的长度，第二个为补白的字符串<br/>
+  - str.padEnd():向后补白<br/>
+   例如：<br/>
+    `console.log('1'.padEnd(2,'0'));//结果为10`<br/>
+    注：第一个参数2为输出字符串的长度，第二个为补白的字符串
+
+   多行字符串：由于多行字符串用\n写起来比较费事，所以最新的ES6标准新增了一种多行字符串的表示方法，用反引号 \` 多行内容\` 表示：
