@@ -17,13 +17,13 @@ categories: JavaScript
 ES6中新增修饰符：
 - `y`:全局匹配，和g修饰符一样可以被执行多次，lastIndex移动到匹配位置的下一个位置。
 不同的地方在于y修饰符必须在开始的位置匹配，g修饰符只要在剩余的部分有匹配就可以。
-例如：` let s = 'bbbb_bbb_bb_b';`<br/>
-    `var a1 = /b+/g;`<br/>
-    `var a2 = /b+/y;`<br/>
-
-    `console.log(a1.exec(s), a2.exec(s)); // ["bbbb"],["bbbb"]`<br/>
-    `console.log(a1.exec(s), a2.exec(s)); // ["bbb"],null`<br/>
-  `  console.log(a1.sticky, a2.sticky); //false,true表示是否开启了粘连模式`<br/>
+例如：<br/>
+` let s = 'bbbb_bbb_bb_b';`<br/>
+`var a1 = /b+/g;`<br/>
+`var a2 = /b+/y;`<br/>
+`console.log(a1.exec(s), a2.exec(s)); // ["bbbb"],["bbbb"]`<br/>
+`console.log(a1.exec(s), a2.exec(s)); // ["bbb"],null`<br/>
+`  console.log(a1.sticky, a2.sticky); //false,true表示是否开启了粘连模式`<br/>
 ES6新增RegExp.sticky属性来判断是否开启粘连模式（y属性）,如上面所示<br/>
 - `u`:Unicode模式。用来正确处理大于0xFFFF的Unicode字符。<br/>
 例如：<br/>
@@ -51,14 +51,15 @@ ES6新增RegExp.sticky属性来判断是否开启粘连模式（y属性）,如�
 JavaScript通过内置对象RegExp支持正则表达式<br/>
 有两种方式实例化RegExp对象：<br/>
 - 字面量<br/>
-`var reg = /\bis\b/g`<br/> //第一个参数是正则表达式，不接受第二个参数，否则会报错
+`var reg = /\bis\b/g`(\b单词边界)<br/> //第一个参数是正则表达式，不接受第二个参数，否则会报错
 `'He is a body. This is a dog. Where is she?'.replace(reg,'IS')`<br/>
 `结果为"He IS a body. This IS a dog. Where IS she?"`<br/>
 - 构造函数<br/>
 `var reg = new RegExp('\\bis\\b','g')`//第一个参数是字符串，第二个是修饰符<br/>
 `'He is a body. This is a dog. Where is she?'.replace(reg,'IS')`<br/>
 `结果为"He IS a body. This IS a dog. Where IS she?"`<br/>
-ES6中新增了一种写法：`let regexp = new RegExp(/xyz/ig,'i')`//原有正则对象的修饰符是ig，它会被第二个参数i覆盖
+ES6中新增了一种写法：<br/>
+`let regexp = new RegExp(/xyz/ig,'i')`//原有正则对象的修饰符是ig，它会被第二个参数i覆盖
 同时新增：`RegExp.flags`获取正则对象修饰符的属性
 
 #### JavaScript正则表达式元字符
@@ -68,7 +69,7 @@ ES6中新增了一种写法：`let regexp = new RegExp(/xyz/ig,'i')`//原有正�
 - 元字符<br/>
 元字符是在正则表达式中有特殊含义的非字母字符。<br/>
 注：元字符的含义并不是唯一的，在不同的环境下有不同的含义。<br/>
-`* + ? $ ^ . | \ () {} []`<br/>
+`* + ? $ ^ . | \ () {} []`（这些元字符的意义见下面详解）<br/>
 `\t: 水平制表符`<br/>
 `\v: 垂直制表符`<br/>
 `\n: 换行符`<br/>
@@ -87,7 +88,7 @@ ES6中新增了一种写法：`let regexp = new RegExp(/xyz/ig,'i')`//原有正�
 
 ### 范围类
 - 我们可以使用[a-z]来连接两个字符表示从a到z的任意字符
-注：这是闭区间，也就是保护a和z本身
+注：这是闭区间，也就是包括a和z本身
 - 在[]组成的类内部是可以连写的[a-zA-Z]
 - 如果要匹配的字符中包含`-`，直接加在后面即可`[a-z-]`
 

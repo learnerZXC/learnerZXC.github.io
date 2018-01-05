@@ -60,7 +60,7 @@ ECMAScript中的变量是松散类型。换句话说，每个变量仅仅是一�
 
 isNaN(n)：检测n是否为“非数值”，返回值为boolean类型，参数n可以是任意类型。
 
-说明：isNaN对接受的值，先尝试转换为数值，再检测是否为非数值。比如：var&nbsp;age="18",isNaN(age)返回值为false;
+说明：isNaN对接受的值，先尝试转换为数值，再检测是否为非数值。比如：var&nbsp;age="18",Number.isNaN(age)返回值为false;
 
 数值转换:有3个函数可以把非数值转换为数值：
  - Number()

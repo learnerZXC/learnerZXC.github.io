@@ -188,4 +188,79 @@ ES5中要把多个字符串连接起来，可以用+号连接：如果有很多�
     `console.log('1'.padEnd(2,'0'));//结果为10`<br/>
     注：第一个参数2为输出字符串的长度，第二个为补白的字符串
 
-   多行字符串：由于多行字符串用\n写起来比较费事，所以最新的ES6标准新增了一种多行字符串的表示方法，用反引号 \` 多行内容\` 表示：
+   多行字符串：由于多行字符串用\n写起来比较费事，所以最新的ES6标准新增了一种多行字符串的表示方法，用反引号 \` 多行内容\` 表示
+
+#### 数值扩展
+- 新增方法
+  - Number.isFinite():判断一个数是否是有效数字<br/>
+  例如：<br/>
+  `console.log('15',Number.isFinite(15));//15,true`<br/>
+  `console.log('1/0',Number.isFinite('true'/0));
+  //1/0,false`<br/>
+  - Number.isInteger():判断一个数是否为整数。<br/>
+  注：参数必须是一个数，否则为false。参数如果是数，会先看能否转换为整数，再判断<br/>
+  例如：<br/>
+  `console.log('25',Number.isInteger(25));//25，true`<br/>
+  `console.log('25.0',Number.isInteger(25.0));
+  //25.0,true`<br/>
+  `console.log('25.1',Number.isInteger(25.1));
+  //25.1,false`<br/>
+  `console.log('25',Number.isInteger('25'));
+  //25,false`<br/>
+  - Number.isSafeInteger():判断一个数是否在安全区间（-2的53次方到2的53此方，不包含端点）。<br/>
+  例如：<br/>
+   `console.log(Number.MAX_SAFE_INTEGER,Number.MIN_SAFE_INTEGER);//取安全区间的最大值和最小值`<br/>
+  `console.log('10',Number.isSafeInteger(10));
+  //10 true`<br/>
+  `console.log('a',Number.isSafeInteger('a'));
+  //a false`<br/>
+  - Math.trunc():去一个带小数的整数部分<br/>
+  例如：<br/>
+  `console.log(4.1,Math.trunc(4.1));//4.1 4`<br/>
+  `console.log(4.9,Math.trunc(4.9));//4.9 4`<br/>
+  - Math.sign():判断一个数是整数负数还是0<br/>
+  返回值：正数返回1，负数返回-1，0返回0，其余返回NAN。<br/>
+  例如：<br/>
+  `console.log('-5',Math.sign(-5));//-5 -1`<br/>
+  `console.log('0',Math.sign(0));//0 0`<br/>
+  `console.log('5',Math.sign(5));//5 1`<br/>
+  `console.log('50',Math.sign('50'));//50 1`<br/>
+  `console.log('foo',Math.sign('foo'));//foo NaN`<br/>
+  - Math.cbrt():求一个数的立方根<br/>
+  例如：<br/>
+  `console.log('-1',Math.cbrt(-1));`<br/>
+  `console.log('8',Math.cbrt(8));`<br/>
+
+- 方法调整
+  - Number.isNaN():判断一个数是否为非数字。
+  注：与ES5的区别是使用Number对象调用，而不是直接调用
+
+#### 数组扩展
+- Array.of():方法用于将一组值，转换为数组。
+- Array.from()Array.from方法用于将两类对象转为真正的数组<br/>
+常见的类似数组的对象是DOM操作返回的NodeList集合，以及函数内部的arguments对象。Array.from都可以将它们转为真正的数组。<br/>
+- Array.fill():fill方法使用给定值，填充一个数组。 用于空数组的初始化非常方便。<br/>
+  `console.log('fill-7',[1,'a',undefined].fill(7));//[7, 7, 7]`<br/>
+  `console.log('fill,pos',['a','b','c'].fill(7,1,2));//["a", 7, "c"]`（第一个参数要替换的元素，第二个参数替换的开始位置，第二个参数替换的结束位置（不包含该位置））<br/>
+- copyWithin():数组实例的copyWithin方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。<br/>
+例如：<br/>
+`console.log([1,2,3,4,5].copyWithin(0,2,4));// [3, 4, 3, 4, 5]`第一个参数为开始替换的位置，第二个参数为要替换的元素开始的位置，第三个参数要替换的元素截止的位置（不包括改位置元素）
+- Array.keys():返回数组的下标<br/>
+- Array.values():返回数组的值<br/>
+  注意：兼容性问题，有的浏览器不支持<br/>
+- Array.entries():返回数组的下标和对应的值<br/>
+- Array.includes():返回一个布尔值，表示某个数组是否包含给定的值，该方法属于ES7，但Babel转码器已经支持。<br/>
+- Array.find():用于找出第一个符合条件的数组成员。返回符合条件的成员。NaN也能判断<br/>
+`console.log('number',[1,2,NaN].includes(1));//true`
+`console.log('number',[1,2,NaN].includes(NaN));//true`
+例如：<br/>
+ `console.log([1,2,3,4,5,6].find(function(item){return item>3}));//4`
+- Array.findIndex():用于找出第一个符合条件的数组成员。返回符合条件的成员<的下标<br/>
+例如：<br/>
+`console.log([1,2,3,4,5,6].findIndex(function(item){return item>3}));//3`
+
+#### 函数扩展
+- 参数默认值：可以给参数设置一个默认的值，如果没有传入该参数，则为默认值，如果传入了，使用传入的参数值。
+注意：默认值后面不能再出现没有默认值的参数。
+- 箭头函数
+- 尾调用
