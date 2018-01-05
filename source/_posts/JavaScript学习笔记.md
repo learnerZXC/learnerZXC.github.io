@@ -47,7 +47,7 @@ ECMAScript中的变量是松散类型。换句话说，每个变量仅仅是一�
 
 语法： typeof&nbsp;变量或typeof(变量)
 
-返回值类型：string类型，有可能是：string、number、boolean、object、undefined、function
+返回值类型：string类型，有可能是：string、number、boolean、undefined、object、function。//前四个是值类型，后两个是引用类型
 
 ###### Number类型
  - Number: 表示整数和浮点数
