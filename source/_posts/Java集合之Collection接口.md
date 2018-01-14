@@ -1,8 +1,6 @@
 ---
 title: Java集合
 date: {{data}}
-tags: Java集合综述
+tags: Collection
 categories: Java集合
 ---
-
-# Java集合
