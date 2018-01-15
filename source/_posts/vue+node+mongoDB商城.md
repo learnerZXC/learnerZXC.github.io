@@ -46,15 +46,37 @@ Vue和React都使用了Virtual DOM
 ### 2.vue环境搭建及vue-cli使用
 vue多页面应用文件引入：</br>
 - 官网拷贝</br>
-`<script src="https://unpkg.com/vue/dist/vie.js"></script>`
+`<script src="https://unpkg.com/vue/dist/vie.js"></script>`<br/>
 - npm安装</br>
-`npm install vue --save`<br/><
-`<script src="node_modules/vue/dist/vue.min.js"></script>`
-vue-cli构建SPA(single page application)应用
-1. `npm install -g vue-cli`
-2. `vue init webpack-simple demo`或`vue init webpack demo2`
-第二个命令后会出现一些要填写的选项:
-`Project name(Demo)`:项目名称（必须全是小写）
-`Project description(A vue.js project)`:项目描述
-`Author`:作者
-`Use sass?(y/N)`
+`npm install vue --save`<br/>
+`<script src="node_modules/vue/dist/vue.min.js"></script>`<br/>
+vue-cli构建SPA(single page application)应用<br/>
+1. `npm install -g vue-cli`（使用Vue命令之前必须安装，如安装过则不需安装）<br/>
+2. `vue init webpack-simple demo`或`vue init webpack demo2`<br/>
+第二个命令后会出现一些要填写的选项:<br/>
+`Project name(Demo)`:项目名称（不能有大写）<br/>
+`Project description(A vue.js project)`:项目描述<br/>
+`Author`:作者<br/>
+`Vue build?(Use arrow keys)`:选择打包方式，有两种方式（runtime和standalone），使用默认即可<br/>
+`Install vue-router? (Y/n)`:是否安装路由，一般都要安装<br/>
+`Use ESLint to lint your code? (Y/n)`:-是否启用eslint检测规则，这里个人建议选no，因为经常会各种代码报错，新手还是不安装好<br/>
+`Set up unit tests (Y/n)`:是否安装单元测试<br/>
+`Setup e2e tests with Nightwatch? (Y/n)`：是否安装e2e测试<br/>
+
+### 3.Vue配置介绍
+- bulid文件夹：打包的配置文件所在的文件夹<br/>
+webpack.base.conf.js：打包的核心配置<br/>
+- config文件夹: 打包的配置<br/>
+index.js：开发的环境配置<br/>
+- src:项目源码<br/>
+- static:静态资源<br/>
+- .babelrc:ES6编译插件的配置<br/>
+- .gitignore:git忽略的地址<br/>
+- .editorconfig:编辑器的配置<br/>
+- .postcssrc：html添加前缀的配置<br/>
+- index.html:单页面的入口<br/>
+- package.json：定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。<br/>
+scripts:脚本命令<br/>
+dependencies:项目的依赖库<br/>
+devDependencies:开发依赖库(打包好之后就不需要了)<br/>
+engines：引擎<br/>
