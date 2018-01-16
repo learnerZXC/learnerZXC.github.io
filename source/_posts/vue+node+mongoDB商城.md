@@ -65,7 +65,10 @@ vue-cli构建SPA(single page application)应用<br/>
 
 ### 3.Vue配置介绍
 - bulid文件夹：打包的配置文件所在的文件夹<br/>
-webpack.base.conf.js：打包的核心配置<br/>
+build.js:构建生产版本<br/>
+check-version:检查版本
+webpack.base.conf.js:打包的核心配置<br/>
+webpack.prod.conf:生产包的配置<br/>
 - config文件夹: 打包的配置<br/>
 index.js：开发的环境配置<br/>
 - src:项目源码<br/>
