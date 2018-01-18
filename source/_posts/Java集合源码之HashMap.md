@@ -9,6 +9,9 @@ categories: Java集合
 ### 简介
 HashMap 基于哈希表的Map接口的实现。此实现提供所有可选的映射操作，并允许使用null值和null键。（除了非同步和允许使用null之外，HashMap类与Hashtable大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。
 
+HashMap是非线程安全的，只是用于单线程环境下，多线程环境下可以采用concurrent并发包下的concurrentHashMap。
+
+HashMap 实现了Serializable接口，因此它支持序列化，实现了Cloneable接口，能被克隆。
 ### 源码
 HashMap源码如下(基于jdk1.8.0_111)：
 ``` Java
@@ -29,51 +32,26 @@ import java.util.function.Function;
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
+    //序列化版本用
     private static final long serialVersionUID = 362498820763181265L;
 
 
-
-
-    /**
-     * The default initial capacity - MUST be a power of two.
-     */
+    //默认初始容量 = 16，且实际值必须是2的幂
     static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
 
-    /**
-     * The maximum capacity, used if a higher value is implicitly specified
-     * by either of the constructors with arguments.
-     * MUST be a power of two <= 1<<30.
-     */
+    //最大容量（必须是2的幂且小于2的30次方，如果传入的值过大，则被该值替换）  
     static final int MAXIMUM_CAPACITY = 1 << 30;
 
-    /**
-     * The load factor used when none specified in constructor.
-     */
+    //填充因子，默认为0.75
     static final float DEFAULT_LOAD_FACTOR = 0.75f;
 
-    /**
-     * The bin count threshold for using a tree rather than list for a
-     * bin.  Bins are converted to trees when adding an element to a
-     * bin with at least this many nodes. The value must be greater
-     * than 2 and should be at least 8 to mesh with assumptions in
-     * tree removal about conversion back to plain bins upon
-     * shrinkage.
-     */
+    //一个桶中bin（箱子）的存储方式由链表转换成树的阈值。即当桶中bin的数量超过TREEIFY_THRESHOLD时使用树来代替链表。默认值是8
     static final int TREEIFY_THRESHOLD = 8;
 
-    /**
-     * The bin count threshold for untreeifying a (split) bin during a
-     * resize operation. Should be less than TREEIFY_THRESHOLD, and at
-     * most 6 to mesh with shrinkage detection under removal.
-     */
+    //当执行resize操作时，当桶中bin的数量少于UNTREEIFY_THRESHOLD时使用链表来代替树。默认值是6
     static final int UNTREEIFY_THRESHOLD = 6;
 
-    /**
-     * The smallest table capacity for which bins may be treeified.
-     * (Otherwise the table is resized if too many nodes in a bin.)
-     * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
-     * between resizing and treeification thresholds.
-     */
+    //树的最小的容量，至少是 4 x TREEIFY_THRESHOLD = 32 然后为了避免(resizing 和 treeification thresholds) 设置成64
     static final int MIN_TREEIFY_CAPACITY = 64;
 
     /**
@@ -81,9 +59,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)
      */
     static class Node<K,V> implements Map.Entry<K,V> {
+         //用来定位数组索引位置
         final int hash;
         final K key;
         V value;
+        //链表的下一个node
         Node<K,V> next;
 
         Node(int hash, K key, V value, Node<K,V> next) {
@@ -152,53 +132,62 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                 ((Comparable)k).compareTo(x));
     }
 
-    /**
-     * Returns a power of two size for the given target capacity.
-     */
+    //该方法保证总是返回大于cap并且是2幂的值，比如传入999 返回1024
     static final int tableSizeFor(int cap) {
         int n = cap - 1;
+        // 向右做无符号位移
         n |= n >>> 1;
         n |= n >>> 2;
         n |= n >>> 4;
         n |= n >>> 8;
         n |= n >>> 16;
+        // 三目运算符的嵌套
         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
     }
 
-
+    //存放元素的数组
     transient Node<K,V>[] table;
 
+    //用来获取键值对
     transient Set<Map.Entry<K,V>> entrySet;
 
+    //存放元素的个数，注意这个不等于数组的长度。
     transient int size;
 
+    //内部结构修改的次数，在迭代fail-fast机制时使用
     transient int modCount;
 
+    //扩容的临界值,当实际大小(容量*填充因子)超过临界值时，会进行扩容
     int threshold;
 
-
+    //  填充因子
     final float loadFactor;
 
-
+    // 指定初始容量和填充因子的构造方法
     public HashMap(int initialCapacity, float loadFactor) {
+        // 指定的初始容量非负
         if (initialCapacity < 0)
             throw new IllegalArgumentException("Illegal initial capacity: " +
                                                initialCapacity);
+        // 如果指定的初始容量大于最大容量,置为最大容量
         if (initialCapacity > MAXIMUM_CAPACITY)
             initialCapacity = MAXIMUM_CAPACITY;
+        //填充因子为正
         if (loadFactor <= 0 || Float.isNaN(loadFactor))
             throw new IllegalArgumentException("Illegal load factor: " +
                                                loadFactor);
         this.loadFactor = loadFactor;
+        //指定容量后，tableSizeFor方法计算出临界值，put数据的时候如果超出该值就会扩容，该值肯定也是2的幂
+        // 指定的初始容量没有保存下来，只用来生成了一个临界值
         this.threshold = tableSizeFor(initialCapacity);
     }
 
-
+    //构造函数，指定初始值
     public HashMap(int initialCapacity) {
         this(initialCapacity, DEFAULT_LOAD_FACTOR);
     }
 
-
+    //构造函数，默认初始容量
     public HashMap() {
         this.loadFactor = DEFAULT_LOAD_FACTOR; // all other fields defaulted
     }
@@ -1453,7 +1442,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             moveRootToFront(tab, root);
         }
 
-      
+
         final Node<K,V> untreeify(HashMap<K,V> map) {
             Node<K,V> hd = null, tl = null;
             for (Node<K,V> q = this; q != null; q = q.next) {
@@ -1467,9 +1456,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             return hd;
         }
 
-        /**
-         * Tree version of putVal.
-         */
+
         final TreeNode<K,V> putTreeVal(HashMap<K,V> map, Node<K,V>[] tab,
                                        int h, K k, V v) {
             Class<?> kc = null;
@@ -1516,16 +1503,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             }
         }
 
-        /**
-         * Removes the given node, that must be present before this call.
-         * This is messier than typical red-black deletion code because we
-         * cannot swap the contents of an interior node with a leaf
-         * successor that is pinned by "next" pointers that are accessible
-         * independently during traversal. So instead we swap the tree
-         * linkages. If the current tree appears to have too few nodes,
-         * the bin is converted back to a plain bin. (The test triggers
-         * somewhere between 2 and 6 nodes, depending on tree structure).
-         */
+
         final void removeTreeNode(HashMap<K,V> map, Node<K,V>[] tab,
                                   boolean movable) {
             int n;
@@ -1621,16 +1599,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                 moveRootToFront(tab, r);
         }
 
-        /**
-         * Splits nodes in a tree bin into lower and upper tree bins,
-         * or untreeifies if now too small. Called only from resize;
-         * see above discussion about split bits and indices.
-         *
-         * @param map the map
-         * @param tab the table for recording bin heads
-         * @param index the index of the table being split
-         * @param bit the bit of hash to split on
-         */
+
         final void split(HashMap<K,V> map, Node<K,V>[] tab, int index, int bit) {
             TreeNode<K,V> b = this;
             // Relink into lo and hi lists, preserving order
@@ -1678,8 +1647,6 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             }
         }
 
-        /* ------------------------------------------------------------ */
-        // Red-black tree methods, all adapted from CLR
 
         static <K,V> TreeNode<K,V> rotateLeft(TreeNode<K,V> root,
                                               TreeNode<K,V> p) {
@@ -1864,9 +1831,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             }
         }
 
-        /**
-         * Recursive invariant check
-         */
+
         static <K,V> boolean checkInvariants(TreeNode<K,V> t) {
             TreeNode<K,V> tp = t.parent, tl = t.left, tr = t.right,
                 tb = t.prev, tn = (TreeNode<K,V>)t.next;
