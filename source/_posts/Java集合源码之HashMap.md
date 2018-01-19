@@ -61,9 +61,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     static class Node<K,V> implements Map.Entry<K,V> {
          //用来定位数组索引位置
         final int hash;
+        //键
         final K key;
+        //值
         V value;
-        //链表的下一个node
+        //链表的下一个节点
         Node<K,V> next;
 
         Node(int hash, K key, V value, Node<K,V> next) {
@@ -72,8 +74,9 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             this.value = value;
             this.next = next;
         }
-
+        //返回键
         public final K getKey()        { return key; }
+        //返回值
         public final V getValue()      { return value; }
         public final String toString() { return key + "=" + value; }
 
@@ -81,12 +84,13 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             return Objects.hashCode(key) ^ Objects.hashCode(value);
         }
 
+        //设置新值
         public final V setValue(V newValue) {
             V oldValue = value;
             value = newValue;
             return oldValue;
         }
-
+        //比较键值对是否相等
         public final boolean equals(Object o) {
             if (o == this)
                 return true;
@@ -176,6 +180,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         if (loadFactor <= 0 || Float.isNaN(loadFactor))
             throw new IllegalArgumentException("Illegal load factor: " +
                                                loadFactor);
+        //设置填充因子
         this.loadFactor = loadFactor;
         //指定容量后，tableSizeFor方法计算出临界值，put数据的时候如果超出该值就会扩容，该值肯定也是2的幂
         // 指定的初始容量没有保存下来，只用来生成了一个临界值
@@ -192,9 +197,10 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         this.loadFactor = DEFAULT_LOAD_FACTOR; // all other fields defaulted
     }
 
-
+    //包含“Map”的构造函数
     public HashMap(Map<? extends K, ? extends V> m) {
         this.loadFactor = DEFAULT_LOAD_FACTOR;
+        //将m中的元素逐个添加到HashMap中
         putMapEntries(m, false);
     }
 
@@ -229,7 +235,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         return size == 0;
     }
 
-
+    //获取key对应的value
     public V get(Object key) {
         Node<K,V> e;
         return (e = getNode(hash(key), key)) == null ? null : e.value;
@@ -256,13 +262,14 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         return null;
     }
 
-
+    //HashMap是否包含key
     public boolean containsKey(Object key) {
         return getNode(hash(key), key) != null;
     }
 
-
+    //将key,value添加到HashMap中
     public V put(K key, V value) {
+        //此处调用putVal方法，也调用了hash方法获取哈希值
         return putVal(hash(key), key, value, false, true);
     }
 
@@ -270,6 +277,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                    boolean evict) {
         Node<K,V>[] tab; Node<K,V> p; int n, i;
+        // 如果tab为空或长度为0，就通过resize方法创建
         if ((tab = table) == null || (n = tab.length) == 0)
             n = (tab = resize()).length;
         if ((p = tab[i = (n - 1) & hash]) == null)

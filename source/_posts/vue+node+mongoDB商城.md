@@ -194,5 +194,23 @@ routes: [
   ]
 ```
 在页面中
-`<router-link v-bind:to='{name:'cart',params:{cartId:'123'}}'>跳转到购物车页面</router-link>`//注：to得用V-bind绑定 
+`<router-link v-bind:to='{name:'cart',params:{cartId:'123'}}'>跳转到购物车页面</router-link>`//注：to得用V-bind绑定
 命名视图：给不同的router-view定义名字，通过名字进行对应组件的渲染<br/>
+
+### 6.Vue-Resource（异步插件）
+#### 简介<br/>
+- 使用方式<br/>
+  1. `<script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>`<br/>
+  2. `npm install vue-resource --save`<br/>
+  `<script src="node_modules/vue/dist/vue.js"></script>`<br/>
+	`<script src = "node_modules/vue-resource/dist/vue-resource.js"></script>`//引用vue-resource插件前要先引用vue插件<br/>
+- vue-resource的请求API是按照REST风格设计的，它提供了7种请求API：<br/>
+  - get(url,[options])
+  - head(url,[options])
+  - delete(url,[options])
+  - jsonp(url,[body],[options])
+  - post(url,[body],[options])
+  - put(url,[body],[options])
+  - patch(url,[body],[options])
+
+### 7.了解AXIOS插件（异步请求插件）
