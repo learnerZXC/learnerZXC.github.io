@@ -205,12 +205,21 @@ routes: [
   `<script src="node_modules/vue/dist/vue.js"></script>`<br/>
 	`<script src = "node_modules/vue-resource/dist/vue-resource.js"></script>`//引用vue-resource插件前要先引用vue插件<br/>
 - vue-resource的请求API是按照REST风格设计的，它提供了7种请求API：<br/>
-  - get(url,[options])
-  - head(url,[options])
-  - delete(url,[options])
-  - jsonp(url,[body],[options])
-  - post(url,[body],[options])
-  - put(url,[body],[options])
-  - patch(url,[body],[options])
+  - get(url,[options])<br/>
+  - head(url,[options])<br/>
+  - delete(url,[options])<br/>
+  - jsonp(url,[body],[options])<br/>
+  - post(url,[body],[options])<br/>
+  - put(url,[body],[options])<br/>
+  - patch(url,[body],[options])<br/>
 
 ### 7.了解AXIOS插件（异步请求插件）
+
+### 8.商品列表基础组件拆分
+- Header组件<br/>
+- Footer组件<br/>
+- 面包屑组件<br/>
+组件：可以被其他页面复用的（通常放在component里面）<br/>
+页面：只是自己使用的（存放在views里面）<br/>
+
+assets和static通常用来放静态资源，assets通常用来放组件的资源，static通常放页面资源等
