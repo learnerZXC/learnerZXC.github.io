@@ -214,6 +214,20 @@ routes: [
   - patch(url,[body],[options])<br/>
 
 ### 7.了解AXIOS插件（异步请求插件）
+- 使用方式</br>
+  1. `<script src="https://unpkg.com/axios/dist/axios.min.js"></script>`<br/>
+  2. `npm install axios --save`<br/>
+  `<script src="./../node_modules/axios/dist/axios.js"></script>`<br/>
+
+- axios提供了8种请求API：<br/>
+  - axios.request(config)<br/>
+  - axios.get(url[, config])<br/>
+  - axios.delete(url[, config])<br/>
+  - axios.head(url[, config])<br/>
+  - axios.options(url[, config])<br/>
+  - axios.post(url[, data[, config]])<br/>
+  - axios.put(url[, data[, config]])<br/>
+  - axios.patch(url[, data[, config]])<br/>
 
 ### 8.商品列表基础组件拆分
 - Header组件<br/>
@@ -222,4 +236,49 @@ routes: [
 组件：可以被其他页面复用的（通常放在component里面）<br/>
 页面：只是自己使用的（存放在views里面）<br/>
 
-assets和static通常用来放静态资源，assets通常用来放组件的资源，static通常放页面资源等
+assets和static通常用来放静态资源，assets通常用来放组件的资源，static通常放页面资源等<br/>
+组件中<template></template>中必须有个根元素<br/>
+组件中如果<style></style>没用最好删掉，否则会在页面生成空的<style></style><br/>
+要变换的内容可以使用插槽<slot></slot>,如果有多个插槽，可以给插槽命名<br/>
+
+- 模拟mock数据，加载商品列表信息<br/>
+自己自定义模拟的JSON数据，来验证代码的有效性和合法性<br/>
+  1. 自定义JSON文件，按照接口给的规范模拟数据
+  2. 在webpack.dev.conf.js(老版本的dev-server.js)设置
+  新版本，在`const portfinder = require('portfinder')`下面添加：
+  ```
+  //首先
+const express = require('express')
+const app = express()
+var appData = require('../data.json')
+var seller = appData.seller
+var goods = appData.goods
+var ratings = appData.ratings
+var apiRoutes = express.Router()
+app.use('/api', apiRoutes)
+
+//找到devServer,添加
+before(app) {
+  app.get('/api/seller', (req, res) => {
+    res.json({
+      // 这里是你的json内容
+      errno: 0,
+      data: seller
+    })
+  }),
+  app.get('/api/goods', (req, res) => {
+    res.json({
+      // 这里是你的json内容
+      errno: 0,
+      data: goods
+    })
+  }),
+  app.get('/api/ratings', (req, res) => {
+    res.json({
+      // 这里是你的json内容
+      errno: 0,
+      data: ratings
+    })
+  })
+}
+  ```
