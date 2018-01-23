@@ -115,6 +115,8 @@ data: {
 - 父子组件通讯-数据传递<br/>
 - Slot<br/>
 
+5. vue自定义组件中的data必须为函数，否则是多个组件公用一个data，一个值发生变化会影响所有组件
+
 ### 5.Vue-router
 #### 路由简介
 路由：路由是根据不同的URL地址战士不同的内容或页面<br/>
@@ -255,7 +257,7 @@ var seller = appData.seller
 var goods = appData.goods
 var ratings = appData.ratings
 var apiRoutes = express.Router()
-app.use('/api', apiRoutes)
+app.use('/api', apiRoutes)  //URL必须有，否则找不到该路由
 
 //找到devServer,添加
 before(app) {
@@ -282,3 +284,4 @@ before(app) {
   })
 }
   ```
+3. 在页面请求配置的url即可得到返回的数据
