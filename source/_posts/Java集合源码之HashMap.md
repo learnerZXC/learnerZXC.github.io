@@ -79,18 +79,18 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         //返回值
         public final V getValue()      { return value; }
         public final String toString() { return key + "=" + value; }
-
+        //返回此映射项的哈希值:key值的哈希码与value值的哈希码按位异或的结果
         public final int hashCode() {
             return Objects.hashCode(key) ^ Objects.hashCode(value);
         }
 
-        //设置新值
+        //用指定值替换对应于此项的值,并返回旧值
         public final V setValue(V newValue) {
             V oldValue = value;
             value = newValue;
             return oldValue;
         }
-        //比较键值对是否相等
+        //比较指定对象与此项的相等性
         public final boolean equals(Object o) {
             if (o == this)
                 return true;
@@ -136,12 +136,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                 ((Comparable)k).compareTo(x));
     }
 
-    //该方法保证总是返回大于cap并且是2幂的值，比如传入999 返回1024
+    //找出“大于Capacity”的最小的2的幂,使Hash表的容量保持为2的次方倍
+    //算法的思想：通过使用逻辑运算来替代取余，这里有一个规律，就是当N为2的次方（Power of two），那么X％N==X&(N-1)。
     static final int tableSizeFor(int cap) {
         int n = cap - 1;
-        // 向右做无符号位移
-        n |= n >>> 1;
-        n |= n >>> 2;
+        n |= n >>> 1; //>>> 无符号右移,高位补0
+        n |= n >>> 2; //a|=b的意思就是把a和b按位或然后赋值给a
         n |= n >>> 4;
         n |= n >>> 8;
         n |= n >>> 16;
@@ -204,19 +204,20 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         putMapEntries(m, false);
     }
 
-
+    //用于帮助实现Map.putAll()方法 和Map构造器，当evict=false时表示构造初始HashMap。
     final void putMapEntries(Map<? extends K, ? extends V> m, boolean evict) {
-        int s = m.size();
+        int s = m.size();//得到指定Map的大小
         if (s > 0) {
             if (table == null) { // pre-size
                 float ft = ((float)s / loadFactor) + 1.0F;
-                int t = ((ft < (float)MAXIMUM_CAPACITY) ?
-                         (int)ft : MAXIMUM_CAPACITY);
-                if (t > threshold)
+                int t = ((ft < (float)MAXIMUM_CAPACITY) ?//通过迭代器，将“m”中的元素逐个添加到HashMap中
+                         (int)ft : MAXIMUM_CAPACITY);//得到按指定Map大小计算出的HashMap所需的容量
+                if (t > threshold) //如果容量大于阈值
                     threshold = tableSizeFor(t);
             }
-            else if (s > threshold)
+            else if (s > threshold) //指定Map的大小>扩容临界值,扩容  
                 resize();
+            //通过迭代器，将“m”中的元素逐个添加到HashMap中
             for (Map.Entry<? extends K, ? extends V> e : m.entrySet()) {
                 K key = e.getKey();
                 V value = e.getValue();
@@ -225,17 +226,17 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
 
-
+    //返回此映射中的键-值映射关系数
     public int size() {
         return size;
     }
 
-
+     //如果此映射不包含键-值映射关系，则返回 true
     public boolean isEmpty() {
         return size == 0;
     }
 
-    //获取key对应的value
+    //返回指定key所映射的value；如果对于该键来说，此映射不包含任何映射关系，则返回 null
     public V get(Object key) {
         Node<K,V> e;
         return (e = getNode(hash(key), key)) == null ? null : e.value;
@@ -245,10 +246,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     final Node<K,V> getNode(int hash, Object key) {
         Node<K,V>[] tab; Node<K,V> first, e; int n; K k;
         if ((tab = table) != null && (n = tab.length) > 0 &&
-            (first = tab[(n - 1) & hash]) != null) {
-            if (first.hash == hash && // always check first node
+            (first = tab[(n - 1) & hash]) != null) { //key的哈希值为数组下标
+            if (first.hash == hash && //检查第一个节点
                 ((k = first.key) == key || (key != null && key.equals(k))))
                 return first;
+            //如果第一个节点不对，则向后检查
             if ((e = first.next) != null) {
                 if (first instanceof TreeNode)
                     return ((TreeNode<K,V>)first).getTreeNode(hash, key);
@@ -262,11 +264,18 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         return null;
     }
 
-    //HashMap是否包含key
+    //如果此映射包含对于指定键的映射关系，则返回 true。
     public boolean containsKey(Object key) {
         return getNode(hash(key), key) != null;
     }
 
+    /**
+     * 在此映射中关联指定值与指定键。如果该映射以前包含了一个该键的映射关系，则旧值被替换。
+     *
+     * @param key 指定值将要关联的键
+     * @param value 指定键将要关联的值
+     * @return 与 key关联的旧值；如果 key没有任何映射关系，则返回 null。（返回 null 还可能表示该映射之前将null与 key关联。）
+     */
     //将key,value添加到HashMap中
     public V put(K key, V value) {
         //此处调用putVal方法，也调用了hash方法获取哈希值
@@ -277,11 +286,13 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                    boolean evict) {
         Node<K,V>[] tab; Node<K,V> p; int n, i;
+        //此处分两种情况：1.当table为null时，用默认容量16初始化table数组；2.当table非空时
         // 如果tab为空或长度为0，就通过resize方法创建
-        if ((tab = table) == null || (n = tab.length) == 0)
-            n = (tab = resize()).length;
-        if ((p = tab[i = (n - 1) & hash]) == null)
-            tab[i] = newNode(hash, key, value, null);
+        if ((tab = table) == null || (n = tab.length) == 0) //旧hash表为null或旧hash表长度为0
+            n = (tab = resize()).length; //初始化hash表的长度（16）
+        //此处又分为两种情况：1.key的hash值对应的那个节点为空；2.key的hash值对应的那个节点不为空
+        if ((p = tab[i = (n - 1) & hash]) == null) //该key的hash值对应的那个节点为空，即表示还没有元素被散列至此
+            tab[i] = newNode(hash, key, value, null);//则创建一个新的new Node<>(hash, key, value, next);
         else {
             Node<K,V> e; K k;
             // 第一节节点hash值同，且key值与插入key相同，节点key存在，直接覆盖value
@@ -320,19 +331,20 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             }
         }
         ++modCount;
-        //超过最大容量 就扩容
+        //如果加入该键值对后超过最大阀值，则进行resize操作
         if (++size > threshold)
             resize();
         afterNodeInsertion(evict);
         return null;
     }
 
-
+    //resize()方法作用有两种：1.初始化hash表的容量，为16； 2.将hash表容量翻倍
     final Node<K,V>[] resize() {
-        Node<K,V>[] oldTab = table;
-        int oldCap = (oldTab == null) ? 0 : oldTab.length;
-        int oldThr = threshold;
-        int newCap, newThr = 0;
+        Node<K,V>[] oldTab = table; //旧hash表
+        int oldCap = (oldTab == null) ? 0 : oldTab.length; //旧hash表容量
+        int oldThr = threshold; //旧hash表阈值
+        int newCap, newThr = 0; //新hash表容量与扩容临界值
+        2.旧hash表非空，则表容量翻倍
         if (oldCap > 0) {
             // 超过最大值就不再扩充了
             if (oldCap >= MAXIMUM_CAPACITY) {
@@ -342,11 +354,13 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             // 没超过最大值，就扩充为原来的2倍
             else if ((newCap = oldCap << 1) < MAXIMUM_CAPACITY &&
                      oldCap >= DEFAULT_INITIAL_CAPACITY)
+                //更新扩容临界值
                 newThr = oldThr << 1; // double threshold
         }
         // 计算新的resize上限
         else if (oldThr > 0) // initial capacity was placed in threshold
             newCap = oldThr;
+        //初始化hash表容量，设为默认值16
         else {               // zero initial threshold signifies using defaults
             newCap = DEFAULT_INITIAL_CAPACITY;
             newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
@@ -358,18 +372,21 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
         threshold = newThr;
         @SuppressWarnings({"rawtypes","unchecked"})
+            //创建一个初始容量为新hash表长度的newTab数组
             Node<K,V>[] newTab = (Node<K,V>[])new Node[newCap];
         table = newTab;
-        // 把每个bucket都移动到新的buckets中
+        // //如果旧hash表非空，则按序将旧hash表中的元素重定向到新hash表
         if (oldTab != null) {
             for (int j = 0; j < oldCap; ++j) {
-                Node<K,V> e;
+                Node<K,V> e; //e按序指向oldTab数组中的元素，即每个链表中的头结点
                 if ((e = oldTab[j]) != null) {
                     oldTab[j] = null;
-                    if (e.next == null)
+                    if (e.next == null) //如果链表只有一个头节点
                         newTab[e.hash & (newCap - 1)] = e;
                     else if (e instanceof TreeNode)
                         ((TreeNode<K,V>)e).split(this, newTab, j, oldCap);
+                    //对链表进行秩序维护：因为我们使用的是两倍扩容的方法，所以每个桶里面的元素必须要么待在原来的
+                    //索引所对应的位置，要么在新的桶中位置偏移两倍
                     else {// 链表优化重hash的代码块
                         Node<K,V> loHead = null, loTail = null;
                         Node<K,V> hiHead = null, hiTail = null;
@@ -438,28 +455,39 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
 
-
+    //将指定映射的所有映射关系复制到此映射中，这些映射关系将替换此映射目前针对指定映射中所有键的所有映射关系。
     public void putAll(Map<? extends K, ? extends V> m) {
         putMapEntries(m, true);
     }
 
-
+    //从此映射中移除指定键的映射关系（如果存在）
     public V remove(Object key) {
         Node<K,V> e;
         return (e = removeNode(hash(key), key, null, false, true)) == null ?
             null : e.value;
     }
 
-
+    /**
+     * 用于实现 Map.remove()方法和其他相关的方法
+     *
+     * @param hash 键的hash值
+     * @param key 键
+     * @param value the value to match if matchValue, else ignored
+     * @param matchValue if true only remove if value is equal
+     * @param movable if false do not move other nodes while removing
+     * @return the node, or null if none
+     */
     final Node<K,V> removeNode(int hash, Object key, Object value,
                                boolean matchValue, boolean movable) {
         Node<K,V>[] tab; Node<K,V> p; int n, index;
+        //table数组非空，键的hash值所指向的数组中的元素非空
         if ((tab = table) != null && (n = tab.length) > 0 &&
             (p = tab[index = (n - 1) & hash]) != null) {
-            Node<K,V> node = null, e; K k; V v;
-            if (p.hash == hash &&
+            Node<K,V> node = null, e; K k; V v; //node指向最终的结果结点，e为链表中的遍历指针
+            if (p.hash == hash && //检查第一个节点，如果匹配成功
                 ((k = p.key) == key || (key != null && key.equals(k))))
                 node = p;
+            //如果第一个节点匹配不成功，则向后遍历链表查找
             else if ((e = p.next) != null) {
                 if (p instanceof TreeNode)
                     node = ((TreeNode<K,V>)p).getTreeNode(hash, key);
@@ -479,7 +507,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                                  (value != null && value.equals(v)))) {
                 if (node instanceof TreeNode)
                     ((TreeNode<K,V>)node).removeTreeNode(this, tab, movable);
-                else if (node == p)
+                else if (node == p) //删除node结点
                     tab[index] = node.next;
                 else
                     p.next = node.next;
@@ -492,7 +520,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         return null;
     }
 
-
+    //从此映射中移除所有映射关系
     public void clear() {
         Node<K,V>[] tab;
         modCount++;
@@ -503,11 +531,13 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
 
-
+    //如果此映射将一个或多个键映射到指定值，则返回 true。
     public boolean containsValue(Object value) {
         Node<K,V>[] tab; V v;
         if ((tab = table) != null && size > 0) {
+            //外层循环搜索数组
             for (int i = 0; i < tab.length; ++i) {
+                //内层循环搜索链表
                 for (Node<K,V> e = tab[i]; e != null; e = e.next) {
                     if ((v = e.value) == value ||
                         (value != null && value.equals(v)))
@@ -901,16 +931,17 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     @SuppressWarnings("unchecked")
     @Override
+    //返回此 HashMap 实例的浅表副本
     public Object clone() {
         HashMap<K,V> result;
         try {
-            result = (HashMap<K,V>)super.clone();
+            result = (HashMap<K,V>)super.clone(); //调用父类clone方法
         } catch (CloneNotSupportedException e) {
             // this shouldn't happen, since we are Cloneable
             throw new InternalError(e);
         }
         result.reinitialize();
-        result.putMapEntries(this, false);
+        result.putMapEntries(this, false); //将此HashMap元素放入result中
         return result;
     }
 
@@ -922,7 +953,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             DEFAULT_INITIAL_CAPACITY;
     }
 
-
+    //java.io.Serializable的写入函数,将HashMap的“总的容量，实际容量，所有的Entry”都写入到输出流中
     private void writeObject(java.io.ObjectOutputStream s)
         throws IOException {
         int buckets = capacity();
@@ -933,7 +964,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         internalWriteEntries(s);
     }
 
-
+    //java.io.Serializable的读取函数：根据写入方式读出,将HashMap的“总的容量，实际容量，所有的Entry”依次读出
     private void readObject(java.io.ObjectInputStream s)
         throws IOException, ClassNotFoundException {
         // Read in the threshold (ignored), loadfactor, and any hidden stuff
