@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/xiaocai.jpg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="vue+node+mongodb商城系统Vue和React对比Vue和React都使用了Virtual DOM Vue： 模板和渲染函数的弹性选择 简单的语法及项目创建 更快的渲染速度和更小的体积  React： 更适用于大型应用和更好的可测试性 同时适用Web端和原生App 更大的生态圈带来的更多支持和工具  Vue和React相同点： 利用虚拟DOM实现快速渲染 轻量级 响应式组建 服务器端渲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue+node+mongodb商城系统">
+<meta property="og:url" content="learnerzxc.coding.me/2018/02/03/vue+node+mongoDB商城/index.html">
+<meta property="og:site_name" content="小菜">
+<meta property="og:description" content="vue+node+mongodb商城系统Vue和React对比Vue和React都使用了Virtual DOM Vue： 模板和渲染函数的弹性选择 简单的语法及项目创建 更快的渲染速度和更小的体积  React： 更适用于大型应用和更好的可测试性 同时适用Web端和原生App 更大的生态圈带来的更多支持和工具  Vue和React相同点： 利用虚拟DOM实现快速渲染 轻量级 响应式组建 服务器端渲">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-02T18:13:57.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue+node+mongodb商城系统">
+<meta name="twitter:description" content="vue+node+mongodb商城系统Vue和React对比Vue和React都使用了Virtual DOM Vue： 模板和渲染函数的弹性选择 简单的语法及项目创建 更快的渲染速度和更小的体积  React： 更适用于大型应用和更好的可测试性 同时适用Web端和原生App 更大的生态圈带来的更多支持和工具  Vue和React相同点： 利用虚拟DOM实现快速渲染 轻量级 响应式组建 服务器端渲">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="learnerzxc.coding.me/2018/02/03/vue+node+mongoDB商城/"/>
+
+
+
+
+
+  <title>vue+node+mongodb商城系统 | 小菜</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d62345e3d2ad79328a61ee7d6a27c23";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/02/03/vue+node+mongoDB商城/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiao cai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaocai.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小菜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue+node+mongodb商城系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T01:52:16+08:00">
+                2018-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="vue-node-mongodb商城系统"><a href="#vue-node-mongodb商城系统" class="headerlink" title="vue+node+mongodb商城系统"></a>vue+node+mongodb商城系统</h1><h3 id="Vue和React对比"><a href="#Vue和React对比" class="headerlink" title="Vue和React对比"></a>Vue和React对比</h3><p>Vue和React都使用了Virtual DOM</p>
+<h4 id="Vue："><a href="#Vue：" class="headerlink" title="Vue："></a>Vue：</h4><ul>
+<li>模板和渲染函数的弹性选择</li>
+<li>简单的语法及项目创建</li>
+<li>更快的渲染速度和更小的体积</li>
+</ul>
+<h4 id="React："><a href="#React：" class="headerlink" title="React："></a>React：</h4><ul>
+<li>更适用于大型应用和更好的可测试性</li>
+<li>同时适用Web端和原生App</li>
+<li>更大的生态圈带来的更多支持和工具</li>
+</ul>
+<h4 id="Vue和React相同点："><a href="#Vue和React相同点：" class="headerlink" title="Vue和React相同点："></a>Vue和React相同点：</h4><ul>
+<li>利用虚拟DOM实现快速渲染</li>
+<li>轻量级</li>
+<li>响应式组建</li>
+<li>服务器端渲染</li>
+<li>易于集成路由工具，打包工具及状态管理工具</li>
+<li>优秀的支持和社区</li>
+</ul>
+<h3 id="Vue概况以及核心思想"><a href="#Vue概况以及核心思想" class="headerlink" title="Vue概况以及核心思想"></a>Vue概况以及核心思想</h3><ul>
+<li>Vue本身并不是一个框架</li>
+<li>Vue结合周边生态构成一个灵活的、渐进式框架<br></li>
+</ul>
+<p>核心思想：<br></p>
+<ul>
+<li>数据驱动</li>
+<li>组件化</li>
+</ul>
+<h3 id="项目所使用的技术"><a href="#项目所使用的技术" class="headerlink" title="项目所使用的技术"></a>项目所使用的技术</h3><ul>
+<li>前端使用Vue全家桶以及ES6<br><br>前端主要采用Vue.js-MVVM渐进式框架<br><br>视图层:商品列表、购物车、地址列表、商品结算、订单成功<br><br>插件：公共组件、Vue-Router(路由)、Axios、VueS、Util、依赖（第三方插件）<br><br>工具支持：vue-cli(生成项目模板)、webpack(构建工具)<br></li>
+<li>后端使用Express框架</li>
+<li>数据库使用MongoDB</li>
+</ul>
+<h3 id="1-安装和搭建NodeJS和npm环境"><a href="#1-安装和搭建NodeJS和npm环境" class="headerlink" title="1.安装和搭建NodeJS和npm环境"></a>1.安装和搭建NodeJS和npm环境</h3><h3 id="2-vue环境搭建及vue-cli使用"><a href="#2-vue环境搭建及vue-cli使用" class="headerlink" title="2.vue环境搭建及vue-cli使用"></a>2.vue环境搭建及vue-cli使用</h3><p>vue多页面应用文件引入：<br></p>
+<ul>
+<li>官网拷贝<br><br><code>&lt;script src=&quot;https://unpkg.com/vue/dist/vie.js&quot;&gt;&lt;/script&gt;</code><br></li>
+<li>npm安装<br><br><code>npm install vue --save</code><br><br><code>&lt;script src=&quot;node_modules/vue/dist/vue.min.js&quot;&gt;&lt;/script&gt;</code><br><br>vue-cli构建SPA(single page application)应用<br></li>
+</ul>
+<ol>
+<li><code>npm install -g vue-cli</code>（使用Vue命令之前必须安装，如安装过则不需安装）<br></li>
+<li><code>vue init webpack-simple demo</code>或<code>vue init webpack demo2</code><br><br>第二个命令后会出现一些要填写的选项:<br><br><code>Project name(Demo)</code>:项目名称（不能有大写）<br><br><code>Project description(A vue.js project)</code>:项目描述<br><br><code>Author</code>:作者<br><br><code>Vue build?(Use arrow keys)</code>:选择打包方式，有两种方式（runtime和standalone），使用默认即可<br><br><code>Install vue-router? (Y/n)</code>:是否安装路由，一般都要安装<br><br><code>Use ESLint to lint your code? (Y/n)</code>:-是否启用eslint检测规则，这里个人建议选no，因为经常会各种代码报错，新手还是不安装好<br><br><code>Set up unit tests (Y/n)</code>:是否安装单元测试<br><br><code>Setup e2e tests with Nightwatch? (Y/n)</code>：是否安装e2e测试<br></li>
+</ol>
+<h3 id="3-Vue配置介绍"><a href="#3-Vue配置介绍" class="headerlink" title="3.Vue配置介绍"></a>3.Vue配置介绍</h3><ul>
+<li>bulid文件夹：打包的配置文件所在的文件夹<br><br>build.js:构建生产版本<br><br>check-version:检查版本<br>webpack.base.conf.js:打包的核心配置<br><br>webpack.prod.conf.js:生产包的配置<br></li>
+<li>config文件夹: 打包的配置<br><br>index.js：开发的环境配置<br></li>
+<li>src:项目源码<br></li>
+<li>static:静态资源<br></li>
+<li>.babelrc:ES6编译插件的配置<br></li>
+<li>.gitignore:git忽略的地址<br></li>
+<li>.editorconfig:编辑器的配置<br></li>
+<li>.postcssrc：html添加前缀的配置<br></li>
+<li>index.html:单页面的入口<br></li>
+<li>package.json：定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。<br><br>scripts:脚本命令<br><br>dependencies:项目的依赖库<br><br>devDependencies:开发依赖库(打包好之后就不需要了)<br><br>engines：引擎<br></li>
+</ul>
+<h3 id="4-Vue基础语法"><a href="#4-Vue基础语法" class="headerlink" title="4.Vue基础语法"></a>4.Vue基础语法<br></h3><ol>
+<li>模板语法<br></li>
+</ol>
+<ul>
+<li>Mustache语法：<br></li>
+<li>Html赋值：<code>v-html=&quot;&quot;</code><br></li>
+<li>绑定属性：<code>v-bind:id=&quot;&quot;</code><br></li>
+<li><p>使用表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; ok?&quot;Yes&quot;:&quot;No&quot; &#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文本赋值：<code>v-text=&quot;&quot;</code><br></p>
+</li>
+<li>指令：<code>v-if=&quot;&quot;</code><br></li>
+<li>过滤器：<code></code>和<code>v-bind:id=&quot;rawId|formatId&quot;</code><br></li>
+</ul>
+<ol>
+<li>Class和Style绑定<br></li>
+</ol>
+<ul>
+<li>class绑定对象语法：<code>v-bind:class=&quot;{active: isActive,&#39;text-danger&#39;:hasError}&quot;</code><br></li>
+<li><p>class绑定数组语法：<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:class=&quot;[activeClass, errorClass]&quot;&gt;</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">  activeClass: &apos;active&apos;,</span><br><span class="line">  errorClass: &apos;text-danger&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>style绑定对象语法：<code>v-bind:style=&quot;{ color: activeColor, fontSize: fontSize + &#39;px&#39;</code><br></p>
+</li>
+</ul>
+<ol>
+<li>vue事件处理器<br></li>
+</ol>
+<ul>
+<li><code>v-on:click=&quot;greet&quot;</code>或<code>@click=&quot;greet&quot;</code><br></li>
+</ul>
+<ol>
+<li>vue组件<br></li>
+</ol>
+<ul>
+<li>全局组件和局部组件<br></li>
+<li>父子组件通讯-数据传递<br></li>
+<li>Slot<br></li>
+</ul>
+<ol>
+<li>vue自定义组件中的data必须为函数，否则是多个组件公用一个data，一个值发生变化会影响所有组件</li>
+</ol>
+<h3 id="5-Vue-router"><a href="#5-Vue-router" class="headerlink" title="5.Vue-router"></a>5.Vue-router</h3><h4 id="路由简介"><a href="#路由简介" class="headerlink" title="路由简介"></a>路由简介</h4><p>路由：路由是根据不同的URL地址战士不同的内容或页面<br><br>前端路由：前端路由就是把不同路由对应不同的内容或页面的任务交给前端来做，之前通过服务器根据url的不同返回不同的页面实现的<br><br>什么时候使用前端路由？<br><br>在单页面应用，大部分页面结构不变，只改变部分内容的使用<br><br>前端路由的优缺点：<br></p>
+<ul>
+<li>优点：用户体验好，不需要没车都从服务器全部获取，快速展现给用户<br></li>
+<li>缺点：<br><ol>
+<li>不利于SEO<br></li>
+<li>使用浏览器的前进，后退会重新发送请求，没有合理利用缓存、<br></li>
+<li>单页面无法记住之前滚动的位置，无法在前进，后退的时候记住滚动条的位置<br><h4 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h4></li>
+</ol>
+</li>
+<li>vue-router用来构建SPA<br></li>
+<li><router-link>或者this.$router.push({path:’’})  路由调整<br></router-link></li>
+<li><vouter-view>  路由渲染<br></vouter-view></li>
+<li>动态路由匹配<br><br>动态路由举例：<br><ul>
+<li>模式：<code>/user/:username</code>  匹配路径：<code>/user/evan</code> $route.params:<code>{username:&#39;evan&#39;}</code><br></li>
+<li>模式：<code>/user/:username/post/post_id</code>  匹配路径：<code>/user/evan</code> $route.params:<code>{username:&#39;evan&#39;,post_id:123}</code><br><br>地址后面跟#因为路由模式用的hash,可以在Router下的index.js添加mode:’history’改变原生的URL方式<br></li>
+</ul>
+</li>
+<li>嵌套路由<br><br>嵌套路由即为路由嵌套路由<br><br>在路由中定义子路由（router下的index.js）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">   &#123;</span><br><span class="line">     path: &apos;/goods&apos;,</span><br><span class="line">     name: &apos;GoodsList&apos;,</span><br><span class="line">     component: GoodsList,</span><br><span class="line">     children:[</span><br><span class="line">       &#123;</span><br><span class="line">         path: &apos;title&apos;,//子路径注：路径前面不能加/,否则变为一级路由</span><br><span class="line">         name: &apos;title&apos;,</span><br><span class="line">         component: Title //组件</span><br><span class="line">       &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">         path: &apos;image&apos;, //子路径</span><br><span class="line">         name: &apos;image&apos;,</span><br><span class="line">         component: Image //组件</span><br><span class="line">       &#125;</span><br><span class="line">   ]</span><br><span class="line">   &#125;</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在父路由页面添加：<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  &lt;router-link to=&apos;/goods/title&apos;&gt;显示商品标题&lt;/router-link&gt; //路径必须自己定义到父路径，并不能只写子路径</span><br><span class="line">&lt;router-link to=&apos;/goods/img&apos;&gt;显示商品图片&lt;/router-link&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">	&lt;router-view&gt;&lt;/router-view&gt; //组件渲染载体。</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>编程式路由<br><br>通过JS来实现页面的跳转<br><br><code>$route.push(&quot;name&quot;)</code>通过名字跳转<br><br><code>$route.push({path:&quot;name&quot;})</code>通过路径跳转<br><br><code>$route.push({path:&quot;name?a=123&quot;})</code>或者<code>$route.push({path:&quot;name&quot;，query:{a:123}})</code>跳转的同时添加一些参数，获取参数用<code>$route.query.a</code>来获取<br><br><code>$route.go()</code>相当于history.go(),vue-router是对history的封装<br></li>
+<li>命名路由和命名视图<br><br>命名路由：给路由定义不同的名字，根据名字进行匹配<br><br>例如：<br>在路由中给组件命名：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/goods&apos;,</span><br><span class="line">      name: &apos;GoodsList&apos;,</span><br><span class="line">      component: GoodsList,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">    	path: &apos;/cart/:cartId&apos;,</span><br><span class="line">    	name: &apos;cart&apos;,</span><br><span class="line">    	component: Cart</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在页面中<br><code>&lt;router-link v-bind:to=&#39;{name:&#39;cart&#39;,params:{cartId:&#39;123&#39;}}&#39;&gt;跳转到购物车页面&lt;/router-link&gt;</code>//注：to得用V-bind绑定<br>命名视图：给不同的router-view定义名字，通过名字进行对应组件的渲染<br></p>
+<h3 id="6-Vue-Resource（异步插件）"><a href="#6-Vue-Resource（异步插件）" class="headerlink" title="6.Vue-Resource（异步插件）"></a>6.Vue-Resource（异步插件）</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介<br></h4><ul>
+<li>使用方式<br><ol>
+<li><code>&lt;script src=&quot;https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js&quot;&gt;&lt;/script&gt;</code><br></li>
+<li><code>npm install vue-resource --save</code><br><br><code>&lt;script src=&quot;node_modules/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code><br><br><code>&lt;script src = &quot;node_modules/vue-resource/dist/vue-resource.js&quot;&gt;&lt;/script&gt;</code>//引用vue-resource插件前要先引用vue插件<br></li>
+</ol>
+</li>
+<li>vue-resource的请求API是按照REST风格设计的，它提供了7种请求API：<br><ul>
+<li>get(url,[options])<br></li>
+<li>head(url,[options])<br></li>
+<li>delete(url,[options])<br></li>
+<li>jsonp(url,[body],[options])<br></li>
+<li>post(url,[body],[options])<br></li>
+<li>put(url,[body],[options])<br></li>
+<li>patch(url,[body],[options])<br></li>
+</ul>
+</li>
+</ul>
+<h3 id="7-了解AXIOS插件（异步请求插件）"><a href="#7-了解AXIOS插件（异步请求插件）" class="headerlink" title="7.了解AXIOS插件（异步请求插件）"></a>7.了解AXIOS插件（异步请求插件）</h3><ul>
+<li><p>使用方式<br></p>
+<ol>
+<li><code>&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</code><br></li>
+<li><code>npm install axios --save</code><br><br><code>&lt;script src=&quot;./../node_modules/axios/dist/axios.js&quot;&gt;&lt;/script&gt;</code><br></li>
+</ol>
+</li>
+<li><p>axios提供了8种请求API：<br></p>
+<ul>
+<li>axios.request(config)<br></li>
+<li>axios.get(url[, config])<br></li>
+<li>axios.delete(url[, config])<br></li>
+<li>axios.head(url[, config])<br></li>
+<li>axios.options(url[, config])<br></li>
+<li>axios.post(url[, data[, config]])<br></li>
+<li>axios.put(url[, data[, config]])<br></li>
+<li>axios.patch(url[, data[, config]])<br></li>
+</ul>
+</li>
+</ul>
+<h3 id="8-商品列表基础组件拆分"><a href="#8-商品列表基础组件拆分" class="headerlink" title="8.商品列表基础组件拆分"></a>8.商品列表基础组件拆分</h3><ul>
+<li>Header组件<br></li>
+<li>Footer组件<br></li>
+<li>面包屑组件<br><br>组件：可以被其他页面复用的（通常放在component里面）<br><br>页面：只是自己使用的（存放在views里面）<br></li>
+</ul>
+<p>assets和static通常用来放静态资源，assets通常用来放组件的资源，static通常放页面资源等<br><br>组件中<template></template>中必须有个根元素<br><br>组件中如果<style></style>没用最好删掉，否则会在页面生成空的<style></style><br><br>要变换的内容可以使用插槽<slot></slot>,如果有多个插槽，可以给插槽命名<br></p>
+<ul>
+<li>模拟mock数据，加载商品列表信息<br><br>自己自定义模拟的JSON数据，来验证代码的有效性和合法性<br><ol>
+<li>自定义JSON文件，按照接口给的规范模拟数据</li>
+<li>在webpack.dev.conf.js(老版本的dev-server.js)设置<br>新版本，在<code>const portfinder = require(&#39;portfinder&#39;)</code>下面添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">  //首先</span><br><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const app = express()</span><br><span class="line">var appData = require(&apos;../data.json&apos;)</span><br><span class="line">var seller = appData.seller</span><br><span class="line">var goods = appData.goods</span><br><span class="line">var ratings = appData.ratings</span><br><span class="line">var apiRoutes = express.Router()</span><br><span class="line">app.use(&apos;/api&apos;, apiRoutes)  //URL必须有，否则找不到该路由</span><br><span class="line"></span><br><span class="line">//找到devServer,添加</span><br><span class="line">before(app) &#123;</span><br><span class="line">  app.get(&apos;/api/seller&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      // 这里是你的json内容</span><br><span class="line">      errno: 0,</span><br><span class="line">      data: seller</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;),</span><br><span class="line">  app.get(&apos;/api/goods&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      // 这里是你的json内容</span><br><span class="line">      errno: 0,</span><br><span class="line">      data: goods</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;),</span><br><span class="line">  app.get(&apos;/api/ratings&apos;, (req, res) =&gt; &#123;</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      // 这里是你的json内容</span><br><span class="line">      errno: 0,</span><br><span class="line">      data: ratings</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>在页面请求配置的url即可得到返回的数据</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/03/css学习笔记/" rel="next" title="CSS学习笔记">
+                <i class="fa fa-chevron-left"></i> CSS学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/03/ES6语法/" rel="prev" title="ES6语法">
+                ES6语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/xiaocai.jpg"
+                alt="xiao cai" />
+            
+              <p class="site-author-name" itemprop="name">xiao cai</p>
+              <p class="site-description motion-element" itemprop="description">每天积累一点点</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-node-mongodb商城系统"><span class="nav-number">1.</span> <span class="nav-text">vue+node+mongodb商城系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue和React对比"><span class="nav-number">1.0.1.</span> <span class="nav-text">Vue和React对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue："><span class="nav-number">1.0.1.1.</span> <span class="nav-text">Vue：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React："><span class="nav-number">1.0.1.2.</span> <span class="nav-text">React：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue和React相同点："><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Vue和React相同点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue概况以及核心思想"><span class="nav-number">1.0.2.</span> <span class="nav-text">Vue概况以及核心思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目所使用的技术"><span class="nav-number">1.0.3.</span> <span class="nav-text">项目所使用的技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装和搭建NodeJS和npm环境"><span class="nav-number">1.0.4.</span> <span class="nav-text">1.安装和搭建NodeJS和npm环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-vue环境搭建及vue-cli使用"><span class="nav-number">1.0.5.</span> <span class="nav-text">2.vue环境搭建及vue-cli使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Vue配置介绍"><span class="nav-number">1.0.6.</span> <span class="nav-text">3.Vue配置介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Vue基础语法"><span class="nav-number">1.0.7.</span> <span class="nav-text">4.Vue基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Vue-router"><span class="nav-number">1.0.8.</span> <span class="nav-text">5.Vue-router</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由简介"><span class="nav-number">1.0.8.1.</span> <span class="nav-text">路由简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-router"><span class="nav-number">1.0.8.2.</span> <span class="nav-text">vue-router</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Vue-Resource（异步插件）"><span class="nav-number">1.0.9.</span> <span class="nav-text">6.Vue-Resource（异步插件）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.0.9.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-了解AXIOS插件（异步请求插件）"><span class="nav-number">1.0.10.</span> <span class="nav-text">7.了解AXIOS插件（异步请求插件）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-商品列表基础组件拆分"><span class="nav-number">1.0.11.</span> <span class="nav-text">8.商品列表基础组件拆分</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiao cai</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

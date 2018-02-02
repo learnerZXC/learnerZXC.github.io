@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/xiaocai.jpg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSS学习笔记什么是CSS？CSS 层叠样式表（Cascading Style Sheets）  用于定义HTML内容在浏览器内的显示样式CSS学习HTML页面的三种布局方式： 标准流 浮动 定位css基础语法css 规则有两部分构成：选择器，声明css注释/注释内容/css使用方法   行内样式（内联样式）：同时加载  例如：内容  内部样式表（嵌入样式）：同时加载 CSS样式样式   注：要放">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS学习笔记">
+<meta property="og:url" content="learnerzxc.coding.me/2018/02/03/css学习笔记/index.html">
+<meta property="og:site_name" content="小菜">
+<meta property="og:description" content="CSS学习笔记什么是CSS？CSS 层叠样式表（Cascading Style Sheets）  用于定义HTML内容在浏览器内的显示样式CSS学习HTML页面的三种布局方式： 标准流 浮动 定位css基础语法css 规则有两部分构成：选择器，声明css注释/注释内容/css使用方法   行内样式（内联样式）：同时加载  例如：内容  内部样式表（嵌入样式）：同时加载 CSS样式样式   注：要放">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-02T17:56:20.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS学习笔记">
+<meta name="twitter:description" content="CSS学习笔记什么是CSS？CSS 层叠样式表（Cascading Style Sheets）  用于定义HTML内容在浏览器内的显示样式CSS学习HTML页面的三种布局方式： 标准流 浮动 定位css基础语法css 规则有两部分构成：选择器，声明css注释/注释内容/css使用方法   行内样式（内联样式）：同时加载  例如：内容  内部样式表（嵌入样式）：同时加载 CSS样式样式   注：要放">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="learnerzxc.coding.me/2018/02/03/css学习笔记/"/>
+
+
+
+
+
+  <title>CSS学习笔记 | 小菜</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0d62345e3d2ad79328a61ee7d6a27c23";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小菜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/02/03/css学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiao cai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaocai.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小菜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T01:52:16+08:00">
+                2018-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="CSS学习笔记"><a href="#CSS学习笔记" class="headerlink" title="CSS学习笔记"></a>CSS学习笔记</h2><h3 id="什么是CSS？"><a href="#什么是CSS？" class="headerlink" title="什么是CSS？"></a>什么是CSS？</h3><p>CSS 层叠样式表（Cascading Style Sheets）</p>
+<ul>
+<li>用于定义HTML内容在浏览器内的显示样式<h3 id="CSS学习"><a href="#CSS学习" class="headerlink" title="CSS学习"></a>CSS学习</h3><h4 id="HTML页面的三种布局方式："><a href="#HTML页面的三种布局方式：" class="headerlink" title="HTML页面的三种布局方式："></a>HTML页面的三种布局方式：</h4><ul>
+<li>标准流</li>
+<li>浮动</li>
+<li>定位<h4 id="css基础语法"><a href="#css基础语法" class="headerlink" title="css基础语法"></a>css基础语法</h4>css 规则有两部分构成：选择器，声明<h4 id="css注释"><a href="#css注释" class="headerlink" title="css注释"></a>css注释</h4>/<em>注释内容</em>/<h4 id="css使用方法"><a href="#css使用方法" class="headerlink" title="css使用方法"></a>css使用方法</h4></li>
+</ul>
+</li>
+<li>行内样式（内联样式）：同时加载</li>
+</ul>
+<p>例如：</p><p style="color: red;">内容</p><p></p>
+<ul>
+<li><p>内部样式表（嵌入样式）：同时加载</p>
+<p>CSS样式<style type="text/css">样式</style></p>
+</li>
+</ul>
+<p>注：<style></style>要放在<head>标签之间</head></p>
+<p>-内部样式表（导入式）：在读取完html文件之后加载</p>
+<p>例如：<style type="text/css"><br>        @import url(css的url地址)；或者@import”css的url地址”<br>      </style></p>
+<ul>
+<li>外部样式表： 页面加载时，同时加载CSS样式</li>
+</ul>
+<ol>
+<li>外部样式表，把CSS样式代码写在独立的一个文件中，名称：文件名.css</li>
+<li>引入外部文件<link href="XX.css" rel="stylesheet" type="text/css"></li>
+</ol>
+<p>注：<link>标签要放在<head>标签之间</head></p>
+<h4 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h4><p>css选择器有以下类型：</p>
+<ul>
+<li>标签选择器</li>
+</ul>
+<p>以html标签作为选择器。 例如：h1{font-size: 30px;}</p>
+<ul>
+<li>类选择器</li>
+</ul>
+<p>为HTML标签添加class属性，通过类选择器来为具有此class属性的元素设置css样式<br>例如：</p><h1 class="classname">内容</h1>     .classname{color:red;}<br>还可以对不同类型元素的同一名称的类选择器设置不同的样式规则<br>例如<h1 class="red">内容<h1> <p class="red">内容</p><br>p.red{font-size:50px;} h1.red{font-size:20px}<p></p>
+<ul>
+<li>ID选择器</li>
+</ul>
+<p>为HTML标签添加ID属性，通过ID选择器来为具有此ID属性的元素设置css样式</p>
+<p></p><p id="one">内容</p>   #one{color:green;}<p></p>
+<ul>
+<li>全局选择器</li>
+</ul>
+<p>所有标签设置样式 例如：<code>*{color: blue;}</code></p>
+<ul>
+<li>群组选择器</li>
+</ul>
+<p>集体统一设置样式 例如：p,h1,h2,h3{font-size:50px;}</p>
+<ul>
+<li>后代选择器</li>
+</ul>
+<p>使用后代选择器设置，之间用空格隔开<br>例如：</p><p><em>css</em>层叠样式</p>  p em{font-size:40px;}<p></p>
+<ul>
+<li>伪类</li>
+</ul>
+<p>伪类选择器定义特殊状态下的样式，无法用标签、id、class及其他属性实现<br>例如：链接伪类 <a href=""></a></p>
+<p>a:link{color:blue;} –为访问的链接  a:visited{color:red;} –已访问的链接<br>a:hover{color:green;} –鼠标悬停状态 a:active{color:gray;} –激活的链接<br>链接伪类的顺序： :link&gt;:visited&gt;:hover&gt;:avtive</p>
+<p>说明：</p>
+<ol>
+<li>a:hover必须置于a:link和a:visited之后，才有效</li>
+<li>a:active必须置于a:hover之后才有效</li>
+<li>伪类名称对大小写不敏感<h4 id="css优先级"><a href="#css优先级" class="headerlink" title="css优先级"></a>css优先级</h4>行内样式&gt;&gt;内部样式&gt;&gt;外部样式  内部样式跟外部样式的优先级取决于接近元素的位置，越接近于元素，优先级越高</li>
+</ol>
+<p>id选择器&gt;class选择器&gt;标签选择器</p>
+<p>同一个元素引用多个class定义的样式，越接近于元素，优先级越高</p>
+<p>后代选择其中，采用权值高的样式，权值相同，则采用就近原则</p>
+<p>通过在样式中添加{!important}来调解优先级</p>
+<h4 id="css继承和层叠"><a href="#css继承和层叠" class="headerlink" title="css继承和层叠"></a>css继承和层叠</h4><p>css继承：从父元素继承部分属性，当上级样式与元素本身样式冲突时，会忽略继承来的样式</p>
+<p>css层叠：</p>
+<ul>
+<li>可以定义多个样式</li>
+<li>不冲突时，多个样式可以层叠为一个</li>
+<li>冲突时，按不同样式规则优先级来应用样式<h4 id="css命名规范"><a href="#css命名规范" class="headerlink" title="css命名规范"></a>css命名规范</h4><ul>
+<li>采用英文字母、数字以及”-“和<code>_</code>命名</li>
+<li>以小写字母开头，不能以数字和”-“、<code>_</code>开头</li>
+<li>命名形式：单字、连字符、下划线和驼峰</li>
+<li>使用有意义的命名<h4 id="css字体样式"><a href="#css字体样式" class="headerlink" title="css字体样式"></a>css字体样式</h4>css中字体加粗用font-weight</li>
+</ul>
+</li>
+</ul>
+<p>设置字体样式： font-style</p>
+<p>设置元素中文本为小型大写字母： font-variant</p>
+<h4 id="css文本样式"><a href="#css文本样式" class="headerlink" title="css文本样式"></a>css文本样式</h4><p>设置段落对齐方式：<code>text-align</code>只对块级的元素起作用</p>
+<p>设置元素内容的垂直方式： vertical-align属性。 只对行内元素、单元格元素生效，对块级元素不生效。</p>
+<p>多行元素垂直居中，将元素转换为单元格元素<code>display:table-cell;</code><br>并在其负累样式中添加<code>display:table</code></p>
+<p>设置元素中文本行高： <code>line-height:长度值|百分比</code></p>
+<p>设置字体属性： <code>word-spacing</code>设置元素内单词之间的间距(间距判断以空格为准）<br>              <code>letter-spacing</code>设置元素内字母之间的间距<br>              <code>text-transform</code>设置元素内字母的大小写<br>              <code>text-decoration</code>设置文本的装饰样式（下划线等等）</p>
+<h4 id="css背景和列表"><a href="#css背景和列表" class="headerlink" title="css背景和列表"></a>css背景和列表</h4><h5 id="背景样式："><a href="#背景样式：" class="headerlink" title="背景样式："></a>背景样式：</h5><ul>
+<li>background-color(设置元素的背景颜色)<br><code>background-color:颜色|transparent</code></li>
+</ul>
+<p>说明：</p>
+<ol>
+<li>transparent是全透明黑色的（black）速记法，类似于rgba(0,0,0,0)这样的值。</li>
+<li>颜色值（颜色名|RGB|十六进制）</li>
+<li>背景去包括内容、内边距（padding）和边框，不包括外边距（margin）。边框颜色默认为文本颜色<ul>
+<li>background-image(把图像设置为背景)</li>
+</ul>
+</li>
+</ol>
+<p><code>background-image:url(url地址)|none</code></p>
+<p>说明：</p>
+<ol>
+<li>url地址可以是相对地址也可以是觉得地址</li>
+<li>元素的背景占据了元素的觉得尺寸，包括内边距和边框，但不包括外边距</li>
+<li>默认地，背景图元素位于元素的左上角，并在水平和垂直方向上重复</li>
+<li>同时设置了背景图片和背景颜色，背景颜色会被覆盖</li>
+</ol>
+<ul>
+<li><p>background-position(设置背景图像的起始位置,,针对整个网页的位置)<br><code>background-position:百分比|值|top|right|bottom|left|center</code></p>
+</li>
+<li><p>background-attachment(背景图像是否固定或者随着页面的其余部分滚动)<br><code>background-attachment:scroll|fixed</code>设置元素背景图片的显示方式</p>
+</li>
+</ul>
+<p>说明：</p>
+<ol>
+<li>默认值，背景图片岁滚动条滚动</li>
+<li>当页面其余部分滚动是，背景图片不会移动</li>
+</ol>
+<ul>
+<li><p>background-repeat(设置背景图像是否重复及如何重复)</p>
+<ol>
+<li><code>background-repeat: repeat</code>重复</li>
+<li><code>background-repeat: no-repeat</code>不重复</li>
+<li><code>background-repeat: repeat-x</code>水平重复</li>
+<li><code>background-repeat: repeat-y</code>垂直重复</li>
+</ol>
+</li>
+<li><p>background(简写属性，作用是将背景属性设置在一个声明中)<br><code>background: [background-color] [background-image] ....</code><br>例如：<code>background: #000000 url() repeat</code></p>
+</li>
+</ul>
+<p>说明： 各值之间用空格分开，不分先后顺序</p>
+<h5 id="列表样式"><a href="#列表样式" class="headerlink" title="列表样式"></a>列表样式</h5><ul>
+<li><p>list-style-type 设置列表项标志的类型<br><code>list-style-type:关键字|none</code></p>
+</li>
+<li><p>list-style-image 将图像设置为列表标志</p>
+</li>
+</ul>
+<p><code>list-style-type:url(图片地址)|none</code></p>
+<ul>
+<li>list-style-position 设置列表中列表项标志的位置</li>
+</ul>
+<p><code>list-style-position:inside|outside</code></p>
+<p>说明：</p>
+<ol>
+<li>inside:列表项目标记放置在文本以内，且环绕文本跟据标记对齐</li>
+<li>outside: 默认值，列表项项目标记放置在文本以外，且环绕文本不根据标记对齐<ul>
+<li>list-style 简写属性。用于吧所有列表的属性设置于一个声明中</li>
+</ul>
+</li>
+</ol>
+<p><code>list-style:列表样式属性关键字</code></p>
+<p>说明：</p>
+<ol>
+<li>值之间用空格隔开</li>
+<li>顺序不固定</li>
+<li>list-style-image会覆盖list-style-type的设置<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><ul>
+<li>盒子模型用来“放”网页中的各种元素</li>
+<li>盒子设计中内容，如文字、图片等元素，都可是盒子（DIV嵌套）</li>
+</ul>
+</li>
+</ol>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><p>盒子在页面中所占的宽度由左边距（左外边距）+左边框+左填充（左内边距）+内容宽度+右填充+右边框+右边距组成。高度计算同上</p>
+<h6 id="宽度属性（内容，不含边距）"><a href="#宽度属性（内容，不含边距）" class="headerlink" title="宽度属性（内容，不含边距）"></a>宽度属性（内容，不含边距）</h6><ul>
+<li>宽度：<code>width:长度值|百分比|auto</code></li>
+<li>最大宽度：<code>max-width:长度值|百分比|auto</code></li>
+<li>最小宽度：<code>min-width:长度值|百分比|auto</code><br>设置的宽度小于最小宽度是，显示最小宽度；大于最大宽度，显示最大宽度值；值在最大宽度和最小宽度之间，显示设置值<h6 id="高度属性（内容，不含边距）"><a href="#高度属性（内容，不含边距）" class="headerlink" title="高度属性（内容，不含边距）"></a>高度属性（内容，不含边距）</h6></li>
+<li>高度：<code>height:长度值|百分比|auto</code></li>
+<li>最大高度：<code>max-height:长度值|百分比|auto</code></li>
+<li><p>最小高度：<code>min-height:长度值|百分比|auto</code></p>
+<h6 id="宽度和高度属性哪些可以设置"><a href="#宽度和高度属性哪些可以设置" class="headerlink" title="宽度和高度属性哪些可以设置"></a>宽度和高度属性哪些可以设置</h6><ol>
+<li>块级元素：<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等</dd></dt></dl></ol></li>
+<li>替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容<img>、<input>、<textarea>等</textarea></li>
+</ul></h6></h1></div></p></li></ol>
+<h6 id="边框属性"><a href="#边框属性" class="headerlink" title="边框属性"></a>边框属性</h6></li>
+<li>边框宽度（border-width）<br>设置元素边框宽度<code>border-width:thin|medium|thick长度值</code></li>
+<li>边框颜色（border-color）<br>设置元素边框颜色<code>border-color:颜色|transparent(透明色)</code></li>
+<li><p>边框样式（border-style）<br>设置边框样式<code>border-style:值</code></p>
+<p>border-style默认值为none，设置了border-style的值宽度和颜色才能显示出来</p>
+<p>设置不同方向的边框属性：<br><code>border-top：宽度|样式|颜色</code><br><code>border-left：宽度|样式|颜色</code><br><code>border-bottom：宽度|样式|颜色</code><br><code>border-right：宽度|样式|颜色</code></p>
+<h6 id="内边距（padding）属性"><a href="#内边距（padding）属性" class="headerlink" title="内边距（padding）属性"></a>内边距（padding）属性</h6><p>设置元素内容与边框之间的距离（内边距或填充），分四个方向（上右下左）</p>
+<ul>
+<li><code>padding-top:长度值|百分比</code></li>
+<li><code>padding-right:长度值|百分比</code></li>
+<li><code>padding-bottom:长度值|百分比</code></li>
+<li><code>padding-left:长度值|百分比</code></li>
+</ul>
+<p>说明：值不能为负值</p>
+<p>内边距属性缩写：</p>
+<ul>
+<li>padding: 值1； //4个方向都为值1</li>
+<li>padding: 值1 值2； //上下=值1，左右=值2</li>
+<li>padding: 值1 值2 值3； //上=值1，左右= 值2，下=值3</li>
+<li>padding: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4<h6 id="外边距（margin）属性"><a href="#外边距（margin）属性" class="headerlink" title="外边距（margin）属性"></a>外边距（margin）属性</h6>设置元素内容与元素之间的距离（外边距或填充），分四个方向（上右下左）</li>
+<li><code>padding-top:长度值|百分比</code></li>
+<li><code>padding-right:长度值|百分比</code></li>
+<li><code>padding-bottom:长度值|百分比</code></li>
+<li><code>padding-left:长度值|百分比</code></li>
+</ul>
+<p>说明：值可以为负值</p>
+<p>外边距属性缩写：</p>
+<ul>
+<li>margin: 值1； //4个方向都为值1</li>
+<li>margin: 值1 值2； //上下=值1，左右=值2</li>
+<li>margin: 值1 值2 值3； //上=值1，左右= 值2，下=值3</li>
+<li>margin: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>默认情况下，相应HTML块级元素存在外边距，如：body、h1~h6、p等</li>
+<li>声明margin属性，覆盖默认样式。如body,h1,p{margin:0;}</li>
+<li>margin值为auto,实现水平方向居中显示，由浏览器计算外边距</li>
+<li>如果垂直方向相邻的两个元素都设置margin值，去值大的<h5 id="HTML元素分类"><a href="#HTML元素分类" class="headerlink" title="HTML元素分类"></a>HTML元素分类</h5></li>
+</ul>
+</li>
+<li>块级元素，独占一行：<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等</dd></dt></dl></ol></li>
+<li><p>行内元素（内联元素），一行显示：<span>、<a>、<em>等</em></a></span></p>
+<h6 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h6><ul>
+<li>inline : 元素将显示为内联元素，元素前后没有换行符</li>
+<li>bLock : 元素将显示为块级元素，元素前后带有换行符</li>
+<li>inline-block:行内块元素，元素呈现为inline，具有block特性</li>
+<li>none:此元素不会被显示</li>
+</ul>
+<p>注:</p>
+<ol>
+<li>相应内联元素及使用<code>display:inline</code>设置成内联元素的width和height属性无效。水平方向<code>margin-left/margin-right/padding-left/padding-right</code>有效。垂直方向<code>margin-top/margin-bottom/padding-top/padding-bottom</code>无效</li>
+<li>块级元素使用<code>display:block</code>设置成块级元素的width/height/margin/padding属性都生效<h5 id="浮动（float）属性"><a href="#浮动（float）属性" class="headerlink" title="浮动（float）属性"></a>浮动（float）属性</h5>float中的四个参数：</li>
+</ol>
+</li>
+<li>float:left  //左浮动</li>
+<li>float:right //右浮动</li>
+<li>float:none  //不浮动</li>
+<li>float:inherit  //继承浮动</li>
+</ul>
+<p>浮动的副作用：给元素设置了浮动属性，元素可能脱离正常的标准流布局</p>
+<p>解决副作用的方法：</p>
+<ol>
+<li>手动给父元素添加高度</li>
+<li>通过clear清除内部和外部浮动</li>
+<li>给父元素添加overfloat属性并结合zoom:1使用</li>
+<li>给父元素添加浮动<h6 id="clear属性"><a href="#clear属性" class="headerlink" title="clear属性"></a>clear属性</h6></li>
+</ol>
+<ul>
+<li>clear:none</li>
+<li>clear:left //不允许左边有浮动对象</li>
+<li>clear:right  //不允许右边有浮动对象</li>
+<li>clear:both  //不允许有浮动对象</li>
+</ul>
+<h5 id="定位（position）属性"><a href="#定位（position）属性" class="headerlink" title="定位（position）属性"></a>定位（position）属性</h5><h6 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h6><ul>
+<li>position属性决定了元素将如何定位</li>
+<li>通过top、right、bottom、left实现位置<h6 id="position中的可选参数"><a href="#position中的可选参数" class="headerlink" title="position中的可选参数"></a>position中的可选参数</h6></li>
+<li>static //默认属性，元素按照标准流排布</li>
+<li>relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置</li>
+<li>absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置</li>
+<li>fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素</li>
+<li>inherit //继承父类元素的属性<h6 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h6><ul>
+<li>可以设置元素的叠加顺序，但依赖定位属性</li>
+<li>z-index大的元素会覆盖z-index小的元素</li>
+<li>z-index为auto的元素不参与层级比较</li>
+<li>z-index为负值，元素会被普通流中的元素覆盖<h5 id="css页面布局"><a href="#css页面布局" class="headerlink" title="css页面布局"></a>css页面布局</h5><h6 id="经典的行布局"><a href="#经典的行布局" class="headerlink" title="经典的行布局"></a>经典的行布局</h6></li>
+</ul>
+</li>
+<li>基础的行布局</li>
+<li>行布局自适应</li>
+<li>行布局自适应限制最大宽</li>
+<li>行布局垂直水平剧中</li>
+</ul>
+</h6></h1></div></p></li></ul></h1></h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/03/TCP IP协议之HTTP协议/" rel="next" title="TCP/IP协议之HTTP协议">
+                <i class="fa fa-chevron-left"></i> TCP/IP协议之HTTP协议
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/03/vue+node+mongoDB商城/" rel="prev" title="vue+node+mongodb商城系统">
+                vue+node+mongodb商城系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/xiaocai.jpg"
+                alt="xiao cai" />
+            
+              <p class="site-author-name" itemprop="name">xiao cai</p>
+              <p class="site-description motion-element" itemprop="description">每天积累一点点</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS学习笔记"><span class="nav-number">1.</span> <span class="nav-text">CSS学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CSS？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是CSS？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS学习"><span class="nav-number">1.2.</span> <span class="nav-text">CSS学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML页面的三种布局方式："><span class="nav-number">1.2.1.</span> <span class="nav-text">HTML页面的三种布局方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css基础语法"><span class="nav-number">1.2.2.</span> <span class="nav-text">css基础语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css注释"><span class="nav-number">1.2.3.</span> <span class="nav-text">css注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css使用方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">css使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器"><span class="nav-number">1.2.5.</span> <span class="nav-text">css选择器</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">内容 内容p.red{font-size:50px;} h1.red{font-size:20px}
+
+ID选择器
+
+为HTML标签添加ID属性，通过ID选择器来为具有此ID属性的元素设置css样式
+内容   #one{color:green;}
+
+全局选择器
+
+所有标签设置样式 例如：*{color: blue;}
+
+群组选择器
+
+集体统一设置样式 例如：p,h1,h2,h3{font-size:50px;}
+
+后代选择器
+
+使用后代选择器设置，之间用空格隔开例如：css层叠样式  p em{font-size:40px;}
+
+伪类
+
+伪类选择器定义特殊状态下的样式，无法用标签、id、class及其他属性实现例如：链接伪类 
+a:link{color:blue;} –为访问的链接  a:visited{color:red;} –已访问的链接a:hover{color:green;} –鼠标悬停状态 a:active{color:gray;} –激活的链接链接伪类的顺序： :link&gt;:visited&gt;:hover&gt;:avtive
+说明：
+
+a:hover必须置于a:link和a:visited之后，才有效
+a:active必须置于a:hover之后才有效
+伪类名称对大小写不敏感css优先级行内样式&gt;&gt;内部样式&gt;&gt;外部样式  内部样式跟外部样式的优先级取决于接近元素的位置，越接近于元素，优先级越高
+
+id选择器&gt;class选择器&gt;标签选择器
+同一个元素引用多个class定义的样式，越接近于元素，优先级越高
+后代选择其中，采用权值高的样式，权值相同，则采用就近原则
+通过在样式中添加{!important}来调解优先级
+css继承和层叠css继承：从父元素继承部分属性，当上级样式与元素本身样式冲突时，会忽略继承来的样式
+css层叠：
+
+可以定义多个样式
+不冲突时，多个样式可以层叠为一个
+冲突时，按不同样式规则优先级来应用样式css命名规范
+采用英文字母、数字以及”-“和_命名
+以小写字母开头，不能以数字和”-“、_开头
+命名形式：单字、连字符、下划线和驼峰
+使用有意义的命名css字体样式css中字体加粗用font-weight
+
+
+
+设置字体样式： font-style
+设置元素中文本为小型大写字母： font-variant
+css文本样式设置段落对齐方式：text-align只对块级的元素起作用
+设置元素内容的垂直方式： vertical-align属性。 只对行内元素、单元格元素生效，对块级元素不生效。
+多行元素垂直居中，将元素转换为单元格元素display:table-cell;并在其负累样式中添加display:table
+设置元素中文本行高： line-height:长度值|百分比
+设置字体属性： word-spacing设置元素内单词之间的间距(间距判断以空格为准）              letter-spacing设置元素内字母之间的间距              text-transform设置元素内字母的大小写              text-decoration设置文本的装饰样式（下划线等等）
+css背景和列表背景样式：
+background-color(设置元素的背景颜色)background-color:颜色|transparent
+
+说明：
+
+transparent是全透明黑色的（black）速记法，类似于rgba(0,0,0,0)这样的值。
+颜色值（颜色名|RGB|十六进制）
+背景去包括内容、内边距（padding）和边框，不包括外边距（margin）。边框颜色默认为文本颜色
+background-image(把图像设置为背景)
+
+
+
+background-image:url(url地址)|none
+说明：
+
+url地址可以是相对地址也可以是觉得地址
+元素的背景占据了元素的觉得尺寸，包括内边距和边框，但不包括外边距
+默认地，背景图元素位于元素的左上角，并在水平和垂直方向上重复
+同时设置了背景图片和背景颜色，背景颜色会被覆盖
+
+
+background-position(设置背景图像的起始位置,,针对整个网页的位置)background-position:百分比|值|top|right|bottom|left|center
+
+background-attachment(背景图像是否固定或者随着页面的其余部分滚动)background-attachment:scroll|fixed设置元素背景图片的显示方式
+
+
+说明：
+
+默认值，背景图片岁滚动条滚动
+当页面其余部分滚动是，背景图片不会移动
+
+
+background-repeat(设置背景图像是否重复及如何重复)
+
+background-repeat: repeat重复
+background-repeat: no-repeat不重复
+background-repeat: repeat-x水平重复
+background-repeat: repeat-y垂直重复
+
+
+background(简写属性，作用是将背景属性设置在一个声明中)background: [background-color] [background-image] ....例如：background: #000000 url() repeat
+
+
+说明： 各值之间用空格分开，不分先后顺序
+列表样式
+list-style-type 设置列表项标志的类型list-style-type:关键字|none
+
+list-style-image 将图像设置为列表标志
+
+
+list-style-type:url(图片地址)|none
+
+list-style-position 设置列表中列表项标志的位置
+
+list-style-position:inside|outside
+说明：
+
+inside:列表项目标记放置在文本以内，且环绕文本跟据标记对齐
+outside: 默认值，列表项项目标记放置在文本以外，且环绕文本不根据标记对齐
+list-style 简写属性。用于吧所有列表的属性设置于一个声明中
+
+
+
+list-style:列表样式属性关键字
+说明：
+
+值之间用空格隔开
+顺序不固定
+list-style-image会覆盖list-style-type的设置盒子模型概念
+盒子模型用来“放”网页中的各种元素
+盒子设计中内容，如文字、图片等元素，都可是盒子（DIV嵌套）
+
+
+
+属性盒子在页面中所占的宽度由左边距（左外边距）+左边框+左填充（左内边距）+内容宽度+右填充+右边框+右边距组成。高度计算同上
+宽度属性（内容，不含边距）
+宽度：width:长度值|百分比|auto
+最大宽度：max-width:长度值|百分比|auto
+最小宽度：min-width:长度值|百分比|auto设置的宽度小于最小宽度是，显示最小宽度；大于最大宽度，显示最大宽度值；值在最大宽度和最小宽度之间，显示设置值高度属性（内容，不含边距）
+高度：height:长度值|百分比|auto
+最大高度：max-height:长度值|百分比|auto
+最小高度：min-height:长度值|百分比|auto
+宽度和高度属性哪些可以设置
+块级元素：、、~、、、、、、等
+替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容、、等
+
+边框属性
+边框宽度（border-width）设置元素边框宽度border-width:thin|medium|thick长度值
+边框颜色（border-color）设置元素边框颜色border-color:颜色|transparent(透明色)
+边框样式（border-style）设置边框样式border-style:值
+border-style默认值为none，设置了border-style的值宽度和颜色才能显示出来
+设置不同方向的边框属性：border-top：宽度|样式|颜色border-left：宽度|样式|颜色border-bottom：宽度|样式|颜色border-right：宽度|样式|颜色
+内边距（padding）属性设置元素内容与边框之间的距离（内边距或填充），分四个方向（上右下左）
+
+padding-top:长度值|百分比
+padding-right:长度值|百分比
+padding-bottom:长度值|百分比
+padding-left:长度值|百分比
+
+说明：值不能为负值
+内边距属性缩写：
+
+padding: 值1； //4个方向都为值1
+padding: 值1 值2； //上下=值1，左右=值2
+padding: 值1 值2 值3； //上=值1，左右= 值2，下=值3
+padding: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4外边距（margin）属性设置元素内容与元素之间的距离（外边距或填充），分四个方向（上右下左）
+padding-top:长度值|百分比
+padding-right:长度值|百分比
+padding-bottom:长度值|百分比
+padding-left:长度值|百分比
+
+说明：值可以为负值
+外边距属性缩写：
+
+margin: 值1； //4个方向都为值1
+margin: 值1 值2； //上下=值1，左右=值2
+margin: 值1 值2 值3； //上=值1，左右= 值2，下=值3
+margin: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4
+
+注意：
+
+默认情况下，相应HTML块级元素存在外边距，如：body、h1~h6、p等
+声明margin属性，覆盖默认样式。如body,h1,p{margin:0;}
+margin值为auto,实现水平方向居中显示，由浏览器计算外边距
+如果垂直方向相邻的两个元素都设置margin值，去值大的HTML元素分类
+
+
+块级元素，独占一行：、、~、、、、、、等
+行内元素（内联元素），一行显示：、、等
+display属性
+inline : 元素将显示为内联元素，元素前后没有换行符
+bLock : 元素将显示为块级元素，元素前后带有换行符
+inline-block:行内块元素，元素呈现为inline，具有block特性
+none:此元素不会被显示
+
+注:
+
+相应内联元素及使用display:inline设置成内联元素的width和height属性无效。水平方向margin-left/margin-right/padding-left/padding-right有效。垂直方向margin-top/margin-bottom/padding-top/padding-bottom无效
+块级元素使用display:block设置成块级元素的width/height/margin/padding属性都生效浮动（float）属性float中的四个参数：
+
+
+float:left  //左浮动
+float:right //右浮动
+float:none  //不浮动
+float:inherit  //继承浮动
+
+浮动的副作用：给元素设置了浮动属性，元素可能脱离正常的标准流布局
+解决副作用的方法：
+
+手动给父元素添加高度
+通过clear清除内部和外部浮动
+给父元素添加overfloat属性并结合zoom:1使用
+给父元素添加浮动clear属性
+
+
+clear:none
+clear:left //不允许左边有浮动对象
+clear:right  //不允许右边有浮动对象
+clear:both  //不允许有浮动对象
+
+定位（position）属性意义
+position属性决定了元素将如何定位
+通过top、right、bottom、left实现位置position中的可选参数
+static //默认属性，元素按照标准流排布
+relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置
+absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置
+fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素
+inherit //继承父类元素的属性z-index
+可以设置元素的叠加顺序，但依赖定位属性
+z-index大的元素会覆盖z-index小的元素
+z-index为auto的元素不参与层级比较
+z-index为负值，元素会被普通流中的元素覆盖css页面布局经典的行布局
+
+
+基础的行布局
+行布局自适应
+行布局自适应限制最大宽
+行布局垂直水平剧中
+
+</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text"> 内容p.red{font-size:50px;} h1.red{font-size:20px}
+
+ID选择器
+
+为HTML标签添加ID属性，通过ID选择器来为具有此ID属性的元素设置css样式
+内容   #one{color:green;}
+
+全局选择器
+
+所有标签设置样式 例如：*{color: blue;}
+
+群组选择器
+
+集体统一设置样式 例如：p,h1,h2,h3{font-size:50px;}
+
+后代选择器
+
+使用后代选择器设置，之间用空格隔开例如：css层叠样式  p em{font-size:40px;}
+
+伪类
+
+伪类选择器定义特殊状态下的样式，无法用标签、id、class及其他属性实现例如：链接伪类 
+a:link{color:blue;} –为访问的链接  a:visited{color:red;} –已访问的链接a:hover{color:green;} –鼠标悬停状态 a:active{color:gray;} –激活的链接链接伪类的顺序： :link&gt;:visited&gt;:hover&gt;:avtive
+说明：
+
+a:hover必须置于a:link和a:visited之后，才有效
+a:active必须置于a:hover之后才有效
+伪类名称对大小写不敏感css优先级行内样式&gt;&gt;内部样式&gt;&gt;外部样式  内部样式跟外部样式的优先级取决于接近元素的位置，越接近于元素，优先级越高
+
+id选择器&gt;class选择器&gt;标签选择器
+同一个元素引用多个class定义的样式，越接近于元素，优先级越高
+后代选择其中，采用权值高的样式，权值相同，则采用就近原则
+通过在样式中添加{!important}来调解优先级
+css继承和层叠css继承：从父元素继承部分属性，当上级样式与元素本身样式冲突时，会忽略继承来的样式
+css层叠：
+
+可以定义多个样式
+不冲突时，多个样式可以层叠为一个
+冲突时，按不同样式规则优先级来应用样式css命名规范
+采用英文字母、数字以及”-“和_命名
+以小写字母开头，不能以数字和”-“、_开头
+命名形式：单字、连字符、下划线和驼峰
+使用有意义的命名css字体样式css中字体加粗用font-weight
+
+
+
+设置字体样式： font-style
+设置元素中文本为小型大写字母： font-variant
+css文本样式设置段落对齐方式：text-align只对块级的元素起作用
+设置元素内容的垂直方式： vertical-align属性。 只对行内元素、单元格元素生效，对块级元素不生效。
+多行元素垂直居中，将元素转换为单元格元素display:table-cell;并在其负累样式中添加display:table
+设置元素中文本行高： line-height:长度值|百分比
+设置字体属性： word-spacing设置元素内单词之间的间距(间距判断以空格为准）              letter-spacing设置元素内字母之间的间距              text-transform设置元素内字母的大小写              text-decoration设置文本的装饰样式（下划线等等）
+css背景和列表背景样式：
+background-color(设置元素的背景颜色)background-color:颜色|transparent
+
+说明：
+
+transparent是全透明黑色的（black）速记法，类似于rgba(0,0,0,0)这样的值。
+颜色值（颜色名|RGB|十六进制）
+背景去包括内容、内边距（padding）和边框，不包括外边距（margin）。边框颜色默认为文本颜色
+background-image(把图像设置为背景)
+
+
+
+background-image:url(url地址)|none
+说明：
+
+url地址可以是相对地址也可以是觉得地址
+元素的背景占据了元素的觉得尺寸，包括内边距和边框，但不包括外边距
+默认地，背景图元素位于元素的左上角，并在水平和垂直方向上重复
+同时设置了背景图片和背景颜色，背景颜色会被覆盖
+
+
+background-position(设置背景图像的起始位置,,针对整个网页的位置)background-position:百分比|值|top|right|bottom|left|center
+
+background-attachment(背景图像是否固定或者随着页面的其余部分滚动)background-attachment:scroll|fixed设置元素背景图片的显示方式
+
+
+说明：
+
+默认值，背景图片岁滚动条滚动
+当页面其余部分滚动是，背景图片不会移动
+
+
+background-repeat(设置背景图像是否重复及如何重复)
+
+background-repeat: repeat重复
+background-repeat: no-repeat不重复
+background-repeat: repeat-x水平重复
+background-repeat: repeat-y垂直重复
+
+
+background(简写属性，作用是将背景属性设置在一个声明中)background: [background-color] [background-image] ....例如：background: #000000 url() repeat
+
+
+说明： 各值之间用空格分开，不分先后顺序
+列表样式
+list-style-type 设置列表项标志的类型list-style-type:关键字|none
+
+list-style-image 将图像设置为列表标志
+
+
+list-style-type:url(图片地址)|none
+
+list-style-position 设置列表中列表项标志的位置
+
+list-style-position:inside|outside
+说明：
+
+inside:列表项目标记放置在文本以内，且环绕文本跟据标记对齐
+outside: 默认值，列表项项目标记放置在文本以外，且环绕文本不根据标记对齐
+list-style 简写属性。用于吧所有列表的属性设置于一个声明中
+
+
+
+list-style:列表样式属性关键字
+说明：
+
+值之间用空格隔开
+顺序不固定
+list-style-image会覆盖list-style-type的设置盒子模型概念
+盒子模型用来“放”网页中的各种元素
+盒子设计中内容，如文字、图片等元素，都可是盒子（DIV嵌套）
+
+
+
+属性盒子在页面中所占的宽度由左边距（左外边距）+左边框+左填充（左内边距）+内容宽度+右填充+右边框+右边距组成。高度计算同上
+宽度属性（内容，不含边距）
+宽度：width:长度值|百分比|auto
+最大宽度：max-width:长度值|百分比|auto
+最小宽度：min-width:长度值|百分比|auto设置的宽度小于最小宽度是，显示最小宽度；大于最大宽度，显示最大宽度值；值在最大宽度和最小宽度之间，显示设置值高度属性（内容，不含边距）
+高度：height:长度值|百分比|auto
+最大高度：max-height:长度值|百分比|auto
+最小高度：min-height:长度值|百分比|auto
+宽度和高度属性哪些可以设置
+块级元素：、、~、、、、、、等
+替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容、、等
+
+边框属性
+边框宽度（border-width）设置元素边框宽度border-width:thin|medium|thick长度值
+边框颜色（border-color）设置元素边框颜色border-color:颜色|transparent(透明色)
+边框样式（border-style）设置边框样式border-style:值
+border-style默认值为none，设置了border-style的值宽度和颜色才能显示出来
+设置不同方向的边框属性：border-top：宽度|样式|颜色border-left：宽度|样式|颜色border-bottom：宽度|样式|颜色border-right：宽度|样式|颜色
+内边距（padding）属性设置元素内容与边框之间的距离（内边距或填充），分四个方向（上右下左）
+
+padding-top:长度值|百分比
+padding-right:长度值|百分比
+padding-bottom:长度值|百分比
+padding-left:长度值|百分比
+
+说明：值不能为负值
+内边距属性缩写：
+
+padding: 值1； //4个方向都为值1
+padding: 值1 值2； //上下=值1，左右=值2
+padding: 值1 值2 值3； //上=值1，左右= 值2，下=值3
+padding: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4外边距（margin）属性设置元素内容与元素之间的距离（外边距或填充），分四个方向（上右下左）
+padding-top:长度值|百分比
+padding-right:长度值|百分比
+padding-bottom:长度值|百分比
+padding-left:长度值|百分比
+
+说明：值可以为负值
+外边距属性缩写：
+
+margin: 值1； //4个方向都为值1
+margin: 值1 值2； //上下=值1，左右=值2
+margin: 值1 值2 值3； //上=值1，左右= 值2，下=值3
+margin: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4
+
+注意：
+
+默认情况下，相应HTML块级元素存在外边距，如：body、h1~h6、p等
+声明margin属性，覆盖默认样式。如body,h1,p{margin:0;}
+margin值为auto,实现水平方向居中显示，由浏览器计算外边距
+如果垂直方向相邻的两个元素都设置margin值，去值大的HTML元素分类
+
+
+块级元素，独占一行：、、~、、、、、、等
+行内元素（内联元素），一行显示：、、等
+display属性
+inline : 元素将显示为内联元素，元素前后没有换行符
+bLock : 元素将显示为块级元素，元素前后带有换行符
+inline-block:行内块元素，元素呈现为inline，具有block特性
+none:此元素不会被显示
+
+注:
+
+相应内联元素及使用display:inline设置成内联元素的width和height属性无效。水平方向margin-left/margin-right/padding-left/padding-right有效。垂直方向margin-top/margin-bottom/padding-top/padding-bottom无效
+块级元素使用display:block设置成块级元素的width/height/margin/padding属性都生效浮动（float）属性float中的四个参数：
+
+
+float:left  //左浮动
+float:right //右浮动
+float:none  //不浮动
+float:inherit  //继承浮动
+
+浮动的副作用：给元素设置了浮动属性，元素可能脱离正常的标准流布局
+解决副作用的方法：
+
+手动给父元素添加高度
+通过clear清除内部和外部浮动
+给父元素添加overfloat属性并结合zoom:1使用
+给父元素添加浮动clear属性
+
+
+clear:none
+clear:left //不允许左边有浮动对象
+clear:right  //不允许右边有浮动对象
+clear:both  //不允许有浮动对象
+
+定位（position）属性意义
+position属性决定了元素将如何定位
+通过top、right、bottom、left实现位置position中的可选参数
+static //默认属性，元素按照标准流排布
+relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置
+absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置
+fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素
+inherit //继承父类元素的属性z-index
+可以设置元素的叠加顺序，但依赖定位属性
+z-index大的元素会覆盖z-index小的元素
+z-index为auto的元素不参与层级比较
+z-index为负值，元素会被普通流中的元素覆盖css页面布局经典的行布局
+
+
+基础的行布局
+行布局自适应
+行布局自适应限制最大宽
+行布局垂直水平剧中
+
+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#css优先级"><span class="nav-number">0.0.1.</span> <span class="nav-text">css优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css继承和层叠"><span class="nav-number">0.0.2.</span> <span class="nav-text">css继承和层叠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css命名规范"><span class="nav-number">0.0.3.</span> <span class="nav-text">css命名规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css字体样式"><span class="nav-number">0.0.4.</span> <span class="nav-text">css字体样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css文本样式"><span class="nav-number">0.0.5.</span> <span class="nav-text">css文本样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css背景和列表"><span class="nav-number">0.0.6.</span> <span class="nav-text">css背景和列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#背景样式："><span class="nav-number">0.0.6.1.</span> <span class="nav-text">背景样式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表样式"><span class="nav-number">0.0.6.2.</span> <span class="nav-text">列表样式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒子模型"><span class="nav-number">0.0.7.</span> <span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念"><span class="nav-number">0.0.7.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#属性"><span class="nav-number">0.0.7.2.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#宽度属性（内容，不含边距）"><span class="nav-number">0.0.7.2.1.</span> <span class="nav-text">宽度属性（内容，不含边距）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#高度属性（内容，不含边距）"><span class="nav-number">0.0.7.2.2.</span> <span class="nav-text">高度属性（内容，不含边距）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#宽度和高度属性哪些可以设置"><span class="nav-number">0.0.7.2.3.</span> <span class="nav-text">宽度和高度属性哪些可以设置</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">~、、、、、、等
+替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容、、等
+</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">0.0.0.0.1.</span> <span class="nav-text">、、、、、、等
+替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容、、等
+</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#边框属性"><span class="nav-number">0.0.0.0.2.</span> <span class="nav-text">边框属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#内边距（padding）属性"><span class="nav-number">0.0.0.0.3.</span> <span class="nav-text">内边距（padding）属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#外边距（margin）属性"><span class="nav-number">0.0.0.0.4.</span> <span class="nav-text">外边距（margin）属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML元素分类"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">HTML元素分类</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">~、、、、、、等
+行内元素（内联元素），一行显示：、、等
+display属性
+inline : 元素将显示为内联元素，元素前后没有换行符
+bLock : 元素将显示为块级元素，元素前后带有换行符
+inline-block:行内块元素，元素呈现为inline，具有block特性
+none:此元素不会被显示
+
+注:
+
+相应内联元素及使用display:inline设置成内联元素的width和height属性无效。水平方向margin-left/margin-right/padding-left/padding-right有效。垂直方向margin-top/margin-bottom/padding-top/padding-bottom无效
+块级元素使用display:block设置成块级元素的width/height/margin/padding属性都生效浮动（float）属性float中的四个参数：
+
+
+float:left  //左浮动
+float:right //右浮动
+float:none  //不浮动
+float:inherit  //继承浮动
+
+浮动的副作用：给元素设置了浮动属性，元素可能脱离正常的标准流布局
+解决副作用的方法：
+
+手动给父元素添加高度
+通过clear清除内部和外部浮动
+给父元素添加overfloat属性并结合zoom:1使用
+给父元素添加浮动clear属性
+
+
+clear:none
+clear:left //不允许左边有浮动对象
+clear:right  //不允许右边有浮动对象
+clear:both  //不允许有浮动对象
+
+定位（position）属性意义
+position属性决定了元素将如何定位
+通过top、right、bottom、left实现位置position中的可选参数
+static //默认属性，元素按照标准流排布
+relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置
+absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置
+fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素
+inherit //继承父类元素的属性z-index
+可以设置元素的叠加顺序，但依赖定位属性
+z-index大的元素会覆盖z-index小的元素
+z-index为auto的元素不参与层级比较
+z-index为负值，元素会被普通流中的元素覆盖css页面布局经典的行布局
+
+
+基础的行布局
+行布局自适应
+行布局自适应限制最大宽
+行布局垂直水平剧中
+
+</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">0.0.0.0.1.</span> <span class="nav-text">、、、、、、等
+行内元素（内联元素），一行显示：、、等
+display属性
+inline : 元素将显示为内联元素，元素前后没有换行符
+bLock : 元素将显示为块级元素，元素前后带有换行符
+inline-block:行内块元素，元素呈现为inline，具有block特性
+none:此元素不会被显示
+
+注:
+
+相应内联元素及使用display:inline设置成内联元素的width和height属性无效。水平方向margin-left/margin-right/padding-left/padding-right有效。垂直方向margin-top/margin-bottom/padding-top/padding-bottom无效
+块级元素使用display:block设置成块级元素的width/height/margin/padding属性都生效浮动（float）属性float中的四个参数：
+
+
+float:left  //左浮动
+float:right //右浮动
+float:none  //不浮动
+float:inherit  //继承浮动
+
+浮动的副作用：给元素设置了浮动属性，元素可能脱离正常的标准流布局
+解决副作用的方法：
+
+手动给父元素添加高度
+通过clear清除内部和外部浮动
+给父元素添加overfloat属性并结合zoom:1使用
+给父元素添加浮动clear属性
+
+
+clear:none
+clear:left //不允许左边有浮动对象
+clear:right  //不允许右边有浮动对象
+clear:both  //不允许有浮动对象
+
+定位（position）属性意义
+position属性决定了元素将如何定位
+通过top、right、bottom、left实现位置position中的可选参数
+static //默认属性，元素按照标准流排布
+relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置
+absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置
+fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素
+inherit //继承父类元素的属性z-index
+可以设置元素的叠加顺序，但依赖定位属性
+z-index大的元素会覆盖z-index小的元素
+z-index为auto的元素不参与层级比较
+z-index为负值，元素会被普通流中的元素覆盖css页面布局经典的行布局
+
+
+基础的行布局
+行布局自适应
+行布局自适应限制最大宽
+行布局垂直水平剧中
+
+</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#display属性"><span class="nav-number">0.0.0.0.2.</span> <span class="nav-text">display属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮动（float）属性"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">浮动（float）属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#clear属性"><span class="nav-number">0.0.0.1.1.</span> <span class="nav-text">clear属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定位（position）属性"><span class="nav-number">0.0.0.2.</span> <span class="nav-text">定位（position）属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#意义"><span class="nav-number">0.0.0.2.1.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position中的可选参数"><span class="nav-number">0.0.0.2.2.</span> <span class="nav-text">position中的可选参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#z-index"><span class="nav-number">0.0.0.2.3.</span> <span class="nav-text">z-index</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#css页面布局"><span class="nav-number">0.0.0.3.</span> <span class="nav-text">css页面布局</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经典的行布局"><span class="nav-number">0.0.0.3.1.</span> <span class="nav-text">经典的行布局</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiao cai</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
