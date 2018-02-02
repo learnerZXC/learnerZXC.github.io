@@ -89,7 +89,11 @@ engines：引擎<br/>
 - Mustache语法：{{ msg }}<br/>
 - Html赋值：`v-html=""`<br/>
 - 绑定属性：`v-bind:id=""`<br/>
-- 使用表达式：`{{ ok?"Yes":"No" }}`<br/>
+- 使用表达式：
+```
+{{ ok?"Yes":"No" }}
+```
+
 - 文本赋值：`v-text=""`<br/>
 - 指令：`v-if=""`<br/>
 - 过滤器：`{{ message|capitalize}}`和`v-bind:id="rawId|formatId"`<br/>
