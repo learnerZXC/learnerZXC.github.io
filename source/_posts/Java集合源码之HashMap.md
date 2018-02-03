@@ -548,7 +548,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         return false;
     }
 
-
+    //此映射中包含的键的 set 视图
     public Set<K> keySet() {
         Set<K> ks = keySet;
         if (ks == null) {
@@ -585,7 +585,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
 
-
+    //返回此映射所包含的值的 Collection 视图。
     public Collection<V> values() {
         Collection<V> vs = values;
         if (vs == null) {
@@ -619,7 +619,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
 
-
+    //返回此映射所包含的映射关系的 Set 视图。
     public Set<Map.Entry<K,V>> entrySet() {
         Set<Map.Entry<K,V>> es;
         return (es = entrySet) == null ? (entrySet = new EntrySet()) : es;
@@ -1920,3 +1920,6 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 }
 
 ```
+
+1. HashMap原理总结
+HashMap基于Hash算法，通过put(key,value)来存储数值，通过get(key)来获取对应的value值。当HashMap保存对应的key-value时，HashMap会根据hash(key)[(h=key.hashCode())^(h>>>16)]计算对应的hash值，然后根据hash值将value保存到table中。HashMap是使用哈希来存储数据，当使用hasn表时有可能产生hasn冲突，HashMap通过链表和红黑树来解决hasn冲突，来存储相同hash值的value。当Hash冲突的个数比较少时使用链表（默认为8个），否则使用红黑树
