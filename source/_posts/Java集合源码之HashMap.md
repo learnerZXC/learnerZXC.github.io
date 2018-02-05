@@ -8,7 +8,7 @@ categories: Java集合
 # Java集合之HashMap
 ### 简介
 HashMap 基于哈希表的Map接口的实现。此实现提供所有可选的映射操作，并允许使用null值和null键。（除了非同步和允许使用null之外，HashMap类与Hashtable大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。
-
+<!--more-->
 HashMap是非线程安全的，只是用于单线程环境下，多线程环境下可以采用concurrent并发包下的concurrentHashMap。
 
 HashMap 实现了Serializable接口，因此它支持序列化，实现了Cloneable接口，能被克隆。
