@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="JavaScript正则表达式概念正则表达式（Regular Expression）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。简单来讲就是按照某种规则去匹配符合条件的字符串。 JavaScript正则表达式语法RegExp修饰符 g:全文搜索 i:忽略大小写 m:多行搜索ES6中新增修饰符： y:全局匹配，和g修饰符一样可以被执行多次，lastIndex移动到匹配位置的下一个位置。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-03T13:38:24.052Z">
+<meta property="og:updated_time" content="2018-02-05T00:29:22.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript正则表达式">
 <meta name="twitter:description" content="JavaScript正则表达式概念正则表达式（Regular Expression）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。简单来讲就是按照某种规则去匹配符合条件的字符串。 JavaScript正则表达式语法RegExp修饰符 g:全文搜索 i:忽略大小写 m:多行搜索ES6中新增修饰符： y:全局匹配，和g修饰符一样可以被执行多次，lastIndex移动到匹配位置的下一个位置。">
@@ -421,7 +421,7 @@
 </ul>
 <h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>使用()可以达到分组的功能，使量词作用于分组<br></p>
 <p>或:使用<code>|</code>可以达到或的效果<br></p>
-<p>反向引用：2015-12-25 =&gt; 12/25/2015<br><br><code>2015-12-25.replace(/\(d{4})-(\d{2})-(\d{2})/g,&#39;$2/$3/$1&#39;)</code><br></p>
+<p>反向引用：2015-12-25 =&gt; 12/25/2015<br><br><code>2015-12-25.replace(/(\d{4})-(\d{2})-(\d{2})/g,&#39;$2/$3/$1&#39;)</code><br></p>
 <p>忽略分组：不想捕获某些分组，只需在分组内加?:即可<br><br>例：<code>(?:\d{2})</code>表示忽略此分组<br></p>
 <h3 id="前瞻"><a href="#前瞻" class="headerlink" title="前瞻"></a>前瞻</h3><p>正则表达式从文本头部向尾部开始解析，文本尾部方向，称为“前”。<br><br>前瞻就是正则表达式匹配到规则时，向前检查是否符合断言，后顾/后瞻方向相反<br><br>注：JavaScript不支持后瞻<br><br>符合和不符合特定断言称为肯定/正向匹配和否定/负向匹配<br></p>
 <ul>
@@ -455,7 +455,7 @@
 <h3 id="字符串的对象方法"><a href="#字符串的对象方法" class="headerlink" title="字符串的对象方法"></a>字符串的对象方法</h3><ul>
 <li>String.prototype.search(reg)<br><br>作用：search()方法用于检索字符串字符中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br><br>返回值：方法返回第一个匹配结果index，查找不到返回-1.<br><br>注：search()方法不执行全局搜索，它将忽略标志g,并且总是从字符串的开始进行检索<br></li>
 <li>String.prototype.match(reg)<br><br>作用：match()方法将检索字符串，以找到一个或多个regexp匹配的文本<br><br>注：regexp是否具有全局（g）对结果影响很大<br><ul>
-<li>非全局调用（在非全局下lastIndex不生效）<br><br>match()方法就只能在字符串中执行一次<br><br>返回值：如果没有任何匹配的文本，返回null,否则返回一个数组，其中存放了与他找到的匹配文本有关的信息<br><br>说明:返回数组的第一个元素存放的是匹配文本，起源元素存放与正则表达式的子表达式（分组）匹配的文本<ul>
+<li>非全局调用（在非全局下lastIndex不生效）<br><br>match()方法就只能在字符串中执行一次<br><br>返回值：如果没有任何匹配的文本，返回null,否则返回一个数组，其中存放了与他找到的匹配文本有关的信息<br><br>说明:返回数组的第一个元素存放的是匹配文本，其余元素存放与正则表达式的子表达式（分组）匹配的文本<ul>
 <li>index声明匹配文本的起始字符在字符串的位置</li>
 <li>input声明对stringObject的引用<br></li>
 </ul>
