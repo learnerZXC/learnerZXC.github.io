@@ -25,7 +25,7 @@ HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户�
 ### HTTP工作原理
 一次HTTP操作称为一个事务，其工作整个过程如下：<br/>
 1. 地址解析<br/>
-如用客户端浏览器请求这个页面：http://localhost.com:8080/index.html<br/>
+如用客户端浏览器请求这个页面：`http://localhost.com:8080/index.html`<br/>
 从中分解出协议名、主机、端口、对象路径等部分，对于上面这个地址，解析得到结果如下：<br/>
 协议名：http<br/>
 主机名：localhost.com<br/>
