@@ -1668,8 +1668,6 @@
 <li>Date：当前的GMT时间。你可以用setDateHeader来设置这个头以避免转换时间格式的麻烦；</li>
 <li>Expires：指明应该在什么时候认为文档已经过期，从而不再缓存它。</li>
 <li>Last-Modified：文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，该请求将被视为一个条件GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个304（Not Modified）状态。Last-Modified也可用setDateHeader方法来设置；</li>
-<li>Location：表示客户应当到哪里去提取文档。Location通常不是直接设置的，而是通过HttpServletResponse的sendRedirect方法，该方法同时设置状态代码为302；</li>
-<li>Refresh：表示浏览器应该在多少时间之后刷新文档，以秒计。除了刷新当前文档之外，你还可以通过setHeader(“Refresh”, “5; URL=<a href="http://host/path&quot;)让浏览器读取指定的页面。注意这种功能通常是通过设置HTML页面HEAD区的" target="_blank" rel="noopener">http://host/path&quot;)让浏览器读取指定的页面。注意这种功能通常是通过设置HTML页面HEAD区的</a><meta http-equiv="Refresh" content="5;URL=http://host/path">实现，这是因为，自动刷新或重定向对于那些不能使用CGI或Servlet的HTML编写者十分重要。但是，对于Servlet来说，直接设置Refresh头更加方便。注意Refresh的意义是“N秒之后刷新本页面或访问指定页面”，而不是“每隔N秒刷新本页面或访问指定页面”。因此，连续刷新要求每次都发送一个Refresh头，而发送204状态代码则可以阻止浏览器继续刷新，不管是使用Refresh头还是<meta http-equiv="Refresh" ...="">。注意Refresh头不属于HTTP 1.1正式规范的一部分，而是一个扩展，但Netscape和IE都支持它。</li>
 </ul>
 <p>###HTTP之实体头<br>实体头用坐实体内容的元信息，描述了实体内容的属性，包括实体信息类型，长度，压缩方法，最后一次修改时间，数据有效性等。<br></p>
 <ul>
@@ -1684,7 +1682,13 @@
 <li>Expires：为0证明不缓存；</li>
 <li>Last-Modified：WEB 服务器认为对象的最后修改时间，比如文件的最后修改时间，动态页面的最后产生时间等等。例如：Last-Modified：Tue, 06 May 2008 02:42:43 GMT.</li>
 </ul>
-<h3 id="HTTP之扩展头"><a href="#HTTP之扩展头" class="headerlink" title="HTTP之扩展头"></a>HTTP之扩展头</h3><h3 id="GET方式和POST方式的区别："><a href="#GET方式和POST方式的区别：" class="headerlink" title="GET方式和POST方式的区别："></a>GET方式和POST方式的区别：</h3><p>GET方式：是以实体的方式得到由请求URI所指定资源的信息，如果请求URI只是一个数据产生过程，那么最终要在响应实体中返回的是处理过程的结果所指向的资源，而不是处理过程的描述。<br><br>POST方式：用来向目的服务器发出请求，要求它接受被附在请求后的实体，并把它当作请求队列中请求URI所指定资源的附加新子项，Post被设计成用统一的方法实现下列功能：<br></p>
+<h3 id="HTTP之扩展头"><a href="#HTTP之扩展头" class="headerlink" title="HTTP之扩展头"></a>HTTP之扩展头</h3><p>在HTTP消息中，也可以使用一些再HTTP1.1正式规范里没有定义的头字段，这些头字段统称为自定义的HTTP头或者扩展头，他们通常被当作是一种实体头处理。<br><br>现在流行的浏览器实际上都支持Cookie,Set-Cookie,Refresh和Content-Disposition等几个常用的扩展头字段。</p>
+<ul>
+<li>Refresh：1;url=<a href="http://www.dfdf.org" target="_blank" rel="noopener">http://www.dfdf.org</a>  //过1秒跳转到指定位置；</li>
+<li>Content-Disposition：头字段,可参考“2.5响应头”；</li>
+<li>Content-Type：WEB 服务器告诉浏览器自己响应的对象的类型。</li>
+</ul>
+<h3 id="GET方式和POST方式的区别："><a href="#GET方式和POST方式的区别：" class="headerlink" title="GET方式和POST方式的区别："></a>GET方式和POST方式的区别：</h3><p>GET方式：是以实体的方式得到由请求URI所指定资源的信息，如果请求URI只是一个数据产生过程，那么最终要在响应实体中返回的是处理过程的结果所指向的资源，而不是处理过程的描述。<br><br>POST方式：用来向目的服务器发出请求，要求它接受被附在请求后的实体，并把它当作请求队列中请求URI所指定资源的附加新子项，Post被设计成用统一的方法实现下列功能：<br></p>
 <ul>
 <li>对现有资源的解释；<br></li>
 <li>向电子公告栏、新闻组、邮件列表或类似讨论组发信息；<br></li>
