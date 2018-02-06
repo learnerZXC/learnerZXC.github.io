@@ -1504,7 +1504,7 @@
 </ol>
 <h3 id="HTTP工作原理"><a href="#HTTP工作原理" class="headerlink" title="HTTP工作原理"></a>HTTP工作原理</h3><p>一次HTTP操作称为一个事务，其工作整个过程如下：<br></p>
 <ol>
-<li>地址解析<br><br>如用客户端浏览器请求这个页面：<a href="http://localhost.com:8080/index.html" target="_blank" rel="noopener">http://localhost.com:8080/index.html</a><br><br>从中分解出协议名、主机、端口、对象路径等部分，对于上面这个地址，解析得到结果如下：<br><br>协议名：http<br><br>主机名：localhost.com<br><br>端口：8080<br><br>对象路径：/index.html<br><br>在这一步，需要域名系统DNS解析域名localhost.com,得主机的IP地址。<br></li>
+<li>地址解析<br><br>如用客户端浏览器请求这个页面：<code>http://localhost.com:8080/index.html</code><br><br>从中分解出协议名、主机、端口、对象路径等部分，对于上面这个地址，解析得到结果如下：<br><br>协议名：http<br><br>主机名：localhost.com<br><br>端口：8080<br><br>对象路径：/index.html<br><br>在这一步，需要域名系统DNS解析域名localhost.com,得主机的IP地址。<br></li>
 <li>封装HTTP请求数据包<br><br>把以上部分结合本机自己的信息，封装成一个HTTP请求数据包。<br></li>
 <li>封装成TCP包，建立TCP连接（TCP的三次握手）<br><br>在HTTP工作开始之前，客户机（Web浏览器）首先要通过网络与服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，即著名的TCP/IP协议族，因此Internet又被称作是TCP/IP网络。HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能，才能进行更层协议的连接，因此，首先要建立TCP连接，一般TCP连接的端口号是80。这里是8080端口。<br></li>
 <li>客户机发送请求命令<br><br>建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可内容。<br></li>
