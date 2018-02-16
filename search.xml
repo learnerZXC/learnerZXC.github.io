@@ -29,17 +29,6 @@
   </entry>
   <entry>
     <title><![CDATA[Java集合]]></title>
-    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Java集合</category>
-      </categories>
-      <tags>
-        <tag>Collection</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java集合]]></title>
     <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%2F</url>
     <content type="text"><![CDATA[Java集合]]></content>
       <categories>
@@ -47,6 +36,17 @@
       </categories>
       <tags>
         <tag>Java集合综述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java集合]]></title>
+    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Java集合</category>
+      </categories>
+      <tags>
+        <tag>Collection</tag>
       </tags>
   </entry>
   <entry>
