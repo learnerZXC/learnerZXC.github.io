@@ -16,7 +16,7 @@ Map是将键映射到值的对象。一个映射不能包含重复的键；每�
 返回值类型：无返回值<br/>
 - `containsKey(Object key)`：如果此映射包含指定键的映射关系，则返回 true。<br/>
 返回值类型：boolean类型<br/>
-- `containsKey(Object value)`：如果此映将一个或多个键映射到指定值，则返回 true。<br/>
+- `containsKey(Object value)`：如果此映射将一个或多个键映射到指定值，则返回 true。<br/>
 返回值类型：boolean类型<br/>
 - `entrySet()`:返回此映射中包含的映射关系的 Set 视图。<br/>
 返回值类型：Set<Map.Entry<K,V>><br/>
