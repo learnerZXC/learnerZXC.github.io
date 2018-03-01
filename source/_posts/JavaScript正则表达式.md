@@ -8,7 +8,7 @@ categories: JavaScript
 ## JavaScript正则表达式
 ### 概念
 正则表达式（Regular Expression）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。简单来讲就是按照某种规则去匹配符合条件的字符串。<br/>
-
+<!--more-->
 ### JavaScript正则表达式语法
 #### RegExp修饰符
 - `g`:全文搜索

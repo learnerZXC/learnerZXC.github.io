@@ -8,6 +8,7 @@ categories:
 ## HTML学习笔记
 #### HTML概念
 HTML（Hypertext Markup Language）即超文本标记语言。是标准通用标记语言下的一个应用，也是一种规范，一种标准，它通过标记符号来标记要显示的网页中的各个部分。
+<!--more-->
 ### HTML特点
 - HTML不需要编译，直接由浏览器执行
 - HTML是一个文本文件
