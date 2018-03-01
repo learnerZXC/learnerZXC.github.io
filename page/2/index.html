@@ -1903,10 +1903,11 @@
 <p>客户端在进入到TIME-WAIT状态后，并不会马上释放TCP，必须经过时间等待计时器设置的时间2MSL（最长报文段寿命），才进入到CLOSED状态。为什么？</p>
 <ol>
 <li>为了保证发送的最后一个ACK报文段能够达到服务器</li>
-<li>防止“已失效的连接请求报文段”出现在本连接中<h4 id="TCP-IP协议之UDP协议"><a href="#TCP-IP协议之UDP协议" class="headerlink" title="TCP/IP协议之UDP协议"></a>TCP/IP协议之UDP协议</h4><h4 id="TCP-IP协议之IP协议"><a href="#TCP-IP协议之IP协议" class="headerlink" title="TCP/IP协议之IP协议"></a>TCP/IP协议之IP协议</h4>IP（internet protocol）,这里IP不是指我们通常所说的IP地址（如192.168.1.1），而是一种协议。IP协议的作用在于把各种各样的数据包准确无误的传递给对方，其中两个重要的条件是IP地址和MAC地址（Media Access Control Address）.</li>
+<li>防止“已失效的连接请求报文段”出现在本连接中</li>
 </ol>
 </li>
 </ol>
+<h4 id="TCP-IP协议之UDP协议"><a href="#TCP-IP协议之UDP协议" class="headerlink" title="TCP/IP协议之UDP协议"></a>TCP/IP协议之UDP协议</h4><h4 id="TCP-IP协议之IP协议"><a href="#TCP-IP协议之IP协议" class="headerlink" title="TCP/IP协议之IP协议"></a>TCP/IP协议之IP协议</h4><p>IP（internet protocol）,这里IP不是指我们通常所说的IP地址（如192.168.1.1），而是一种协议。IP协议的作用在于把各种各样的数据包准确无误的传递给对方，其中两个重要的条件是IP地址和MAC地址（Media Access Control Address）.</p>
 <h4 id="TCP-IP协议之DNS协议"><a href="#TCP-IP协议之DNS协议" class="headerlink" title="TCP/IP协议之DNS协议"></a>TCP/IP协议之DNS协议</h4>
           
         
@@ -2349,7 +2350,6 @@
 <li>迪米特法则：一个软件实体应当尽可能少地与其他实体发生相互作用。</li>
 <li>开放-封闭原则：一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。</li>
 </ol>
-<p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/03/设计模式/#more" rel="contents">
