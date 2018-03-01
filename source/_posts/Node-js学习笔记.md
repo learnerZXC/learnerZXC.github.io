@@ -6,7 +6,7 @@ categories:
 ---
 ### 了解Node.js
 简单的说 Node.js 就是运行在服务端的 JavaScript。是一个事件驱动I/O服务端JavaScript环境，基于Chrome的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。
-
+<!--more-->
 可以经常逛一逛下面这些网站来了解Node.js:
 nodejs.org
 npmjs.com

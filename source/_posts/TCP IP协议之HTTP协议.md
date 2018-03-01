@@ -10,9 +10,11 @@ categories: TCP/IP协议
 ### 简介
 
 HTTP全称是HyperText Transfer Protocal，即：超文本传输协议。超文本传输协议(HTTP)是一种通信协议，它允许将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器。<br/>
+<!--more-->
+
 从1990年开始就在WWW上广泛应用，是现今在WWW上应用最多的议<br/>
 Http是应用层协议。<br/>
-HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。Web服务器根据接收到的请求后，向客户端发送响应信息。Http是一个基于请求/响应模式的、无状态的协议。即我们通常所说的Request/Response。
+HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。Web服务器根据接收到的请求后，向客户端发送响应信息。Http是一个基于请求/响应模式的、无状态的协议。即我们通常所说的Request/Response。
 
 ### HTTP协议的特点
 
@@ -25,7 +27,7 @@ HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户�
 ### HTTP工作原理
 一次HTTP操作称为一个事务，其工作整个过程如下：<br/>
 1. 地址解析<br/>
-如用客户端浏览器请求这个页面：http://localhost.com:8080/index.html<br/>
+如用客户端浏览器请求这个页面：`http://localhost.com:8080/index.html`<br/>
 从中分解出协议名、主机、端口、对象路径等部分，对于上面这个地址，解析得到结果如下：<br/>
 协议名：http<br/>
 主机名：localhost.com<br/>
@@ -226,7 +228,7 @@ HTTP最常见的响应头如下所示：<br/>
 - Expires：指明应该在什么时候认为文档已经过期，从而不再缓存它。
 - Last-Modified：文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，该请求将被视为一个条件GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个304（Not Modified）状态。Last-Modified也可用setDateHeader方法来设置；
 - Location：表示客户应当到哪里去提取文档。Location通常不是直接设置的，而是通过HttpServletResponse的sendRedirect方法，该方法同时设置状态代码为302；
-- Refresh：表示浏览器应该在多少时间之后刷新文档，以秒计。除了刷新当前文档之外，你还可以通过setHeader("Refresh", "5; URL=http://host/path")让浏览器读取指定的页面。注意这种功能通常是通过设置HTML页面HEAD区的<META HTTP-EQUIV="Refresh" CONTENT="5;URL=http://host/path">实现，这是因为，自动刷新或重定向对于那些不能使用CGI或Servlet的HTML编写者十分重要。但是，对于Servlet来说，直接设置Refresh头更加方便。注意Refresh的意义是“N秒之后刷新本页面或访问指定页面”，而不是“每隔N秒刷新本页面或访问指定页面”。因此，连续刷新要求每次都发送一个Refresh头，而发送204状态代码则可以阻止浏览器继续刷新，不管是使用Refresh头还是<META HTTP-EQUIV="Refresh" ...>。注意Refresh头不属于HTTP 1.1正式规范的一部分，而是一个扩展，但Netscape和IE都支持它。
+- Refresh：表示浏览器应该在多少时间之后刷新文档，以秒计。除了刷新当前文档之外，你还可以通过`setHeader("Refresh", "5; URL=http://host/path")`让浏览器读取指定的页面。注意这种功能通常是通过设置HTML页面HEAD区的`<META HTTP-EQUIV="Refresh" CONTENT="5;URL=http://host/path">`实现，这是因为，自动刷新或重定向对于那些不能使用CGI或Servlet的HTML编写者十分重要。但是，对于Servlet来说，直接设置Refresh头更加方便。注意Refresh的意义是“N秒之后刷新本页面或访问指定页面”，而不是“每隔N秒刷新本页面或访问指定页面”。因此，连续刷新要求每次都发送一个Refresh头，而发送204状态代码则可以阻止浏览器继续刷新，不管是使用Refresh头还是<META HTTP-EQUIV="Refresh" ...>。注意Refresh头不属于HTTP 1.1正式规范的一部分，而是一个扩展，但Netscape和IE都支持它。
 
 ###HTTP之实体头
 实体头用坐实体内容的元信息，描述了实体内容的属性，包括实体信息类型，长度，压缩方法，最后一次修改时间，数据有效性等。<br/>

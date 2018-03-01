@@ -7,6 +7,8 @@ categories: Java基础
 
 ## currentThread()方法
 currentThread（）方法可返回代码段正在被哪个线程调用的信息
+<!--more-->
+
 ## isAlive()方法
 isAlive()方法是判断线程是否处于活动状态。
 ## sleep（）方法

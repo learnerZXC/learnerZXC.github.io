@@ -7,6 +7,7 @@ categories:
 # vue+node+mongodb商城系统
 ### Vue和React对比
 Vue和React都使用了Virtual DOM
+<!--more-->
 #### Vue：
 - 模板和渲染函数的弹性选择
 - 简单的语法及项目创建
