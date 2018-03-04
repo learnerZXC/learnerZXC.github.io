@@ -882,7 +882,37 @@
       
         
           
-            <h2 id="MySQL查询的5种子句："><a href="#MySQL查询的5种子句：" class="headerlink" title="MySQL查询的5种子句："></a>MySQL查询的5种子句：</h2><p>where(条件查询)、having(筛选)、group by(分组)、order by(排序)、limit(限制结果数)</p>
+            <h3 id="MySQL查询的5种子句："><a href="#MySQL查询的5种子句：" class="headerlink" title="MySQL查询的5种子句："></a>MySQL查询的5种子句：</h3><p>where(条件查询)、having(筛选)、group by(分组)、order by(排序)、limit(限制结果数)</p>
+<h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><p>连接查询：将多张表(&gt;=2)进行记录的连接(按照某个指定的条件进行数据拼接)。<br>连接查询的意义: 在用户查看数据的时候,需要显示的数据来自多张表.</p>
+<ul>
+<li>内连接（inner join）</li>
+</ul>
+<p>INNER JOIN定义：在查询的几个表中，每个表都存在至少一个匹配时，INNER JOIN 关键字返回行。也就是共有部分，即几个表的交集。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table1 INNER JOIN table2 ON 查询条件;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>外连接（outer jion）</p>
+<ul>
+<li>左外连接(left outer jion)</li>
+</ul>
+<p>LEFT JOIN定义：关键字会从左表那里返回所有的行，即使在右表 中没有匹配的行，右表没有的都会显示NULL。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table1(左表) LEFT JOIN table2(右表) ON 查询条件;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>右外连接(right outer jion)</li>
+</ul>
+<p>RIGHT JOIN定义：关键字会右表那里返回所有的行，即使在左表中没有匹配的行，左表没有的都会显示NULL。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table1(左表) RIGHT JOIN table2(右表) ON 查询条件;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>完全外连接(full join)</li>
+</ul>
+<p>是结合左连接与右连接的方式，会得到两表都会没有的记录，以NULL的形式显示，但是MySQL不支持。不过可以用UNION关键字来建立左连接与右连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table1(左表) LEFT JOIN table2(右表) ON 查询条件（注意不要有分号）</span><br><span class="line">UNION</span><br><span class="line">SELECT * FROM table1(左表) RIGHT JOIN table2(右表) ON 查询条件;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自然连接(natural jion)</p>
+</li>
+</ul>
+<p>自然连接的作用：自动将表中相同的列进行匹配，同时排除掉重复出现的列，保证相同的列只出现一次。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table1 natural join table2;</span><br></pre></td></tr></table></figure></p>
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>子查询是一个查询语句嵌套着另外的查询语句，用来进行一定层次的查询，其中子查询相当于第一步查询过滤，外查询就是最后得到结果的查询。</p>
+<h3 id="合并查询"><a href="#合并查询" class="headerlink" title="合并查询"></a>合并查询</h3><p>合并查询主要是UNION与UNION ALL两个，是将查询结果合并，但是必须满足：合并的列的数据与数据类型必须相同。</p>
 
           
         
