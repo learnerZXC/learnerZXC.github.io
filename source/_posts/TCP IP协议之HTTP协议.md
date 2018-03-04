@@ -12,7 +12,7 @@ categories: TCP/IP协议
 HTTP全称是HyperText Transfer Protocal，即：超文本传输协议。超文本传输协议(HTTP)是一种通信协议，它允许将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器。<br/>
 <!--more-->
 
-从1990年开始就在WWW上广泛应用，是现今在WWW上应用最多的议<br/>
+从1990年开始就在WWW上广泛应用，是现今在WWW上应用最多的协议<br/>
 Http是应用层协议。<br/>
 HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。Web服务器根据接收到的请求后，向客户端发送响应信息。Http是一个基于请求/响应模式的、无状态的协议。即我们通常所说的Request/Response。
 
