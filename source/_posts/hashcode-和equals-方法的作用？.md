@@ -2,7 +2,7 @@
 title: hashcode()和equals()方法的作用？
 date: 2018-03-06 23:54:46
 tags:
-categories:面试题
+categories: 面试题
 ---
 hashcode()和equals()方法的作用？什么时候必须重写？
 
