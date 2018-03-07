@@ -10,7 +10,9 @@ categories:
 CSS 层叠样式表（Cascading Style Sheets）
 - 用于定义HTML内容在浏览器内的显示样式
 <!--more-->
+
 ### CSS学习
+
 #### HTML页面的三种布局方式：
   - 标准流
   - 浮动
@@ -51,6 +53,7 @@ css 规则有两部分构成：选择器，声明
 注：`<link/>标签要放在<head>标签之间`
 
 #### css选择器
+
 css选择器有以下类型：
 - 标签选择器
 
@@ -93,7 +96,9 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
   1. a:hover必须置于a:link和a:visited之后，才有效
   2. a:active必须置于a:hover之后才有效
   3. 伪类名称对大小写不敏感
+
 #### css优先级
+
 行内样式>>内部样式>>外部样式  内部样式跟外部样式的优先级取决于接近元素的位置，越接近于元素，优先级越高
 
 id选择器>class选择器>标签选择器
@@ -103,25 +108,33 @@ id选择器>class选择器>标签选择器
 后代选择其中，采用权值高的样式，权值相同，则采用就近原则
 
 通过在样式中添加{!important}来调解优先级
+
 #### css继承和层叠
+
 css继承：从父元素继承部分属性，当上级样式与元素本身样式冲突时，会忽略继承来的样式
 
 css层叠：
  - 可以定义多个样式
  - 不冲突时，多个样式可以层叠为一个
  - 冲突时，按不同样式规则优先级来应用样式
+
 #### css命名规范
+
 - 采用英文字母、数字以及"-"和`_`命名
 - 以小写字母开头，不能以数字和"-"、`_`开头
 - 命名形式：单字、连字符、下划线和驼峰
 - 使用有意义的命名
+
 #### css字体样式
+
 css中字体加粗用`font-weight`
 
 设置字体样式： `font-style`
 
 设置元素中文本为小型大写字母：` font-variant`
+
 #### css文本样式
+
 设置段落对齐方式：` text-align`只对块级的元素起作用
 
 设置元素内容的垂直方式： `vertical-align属性。` 只对行内元素、单元格元素生效，对块级元素不生效。
@@ -139,6 +152,7 @@ css中字体加粗用`font-weight`
 #### css背景和列表
 
 ##### 背景样式：
+
 - background-color(设置元素的背景颜色)
 `background-color:颜色|transparent`
 
@@ -179,6 +193,7 @@ css中字体加粗用`font-weight`
 说明： 各值之间用空格分开，不分先后顺序
 
 ##### 列表样式
+
 - list-style-type 设置列表项标志的类型
 `list-style-type:关键字|none`
 
@@ -219,10 +234,13 @@ css中字体加粗用`font-weight`
   - 最大宽度：`max-width:长度值|百分比|auto`
   - 最小宽度：`min-width:长度值|百分比|auto`
   设置的宽度小于最小宽度是，显示最小宽度；大于最大宽度，显示最大宽度值；值在最大宽度和最小宽度之间，显示设置值
+
 ###### 高度属性（内容，不含边距）
+
   - 高度：`height:长度值|百分比|auto`
   - 最大高度：`max-height:长度值|百分比|auto`
   - 最小高度：`min-height:长度值|百分比|auto`
+
 ###### 宽度和高度属性哪些可以设置
 
  1. 块级元素：`<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等`
@@ -244,7 +262,9 @@ css中字体加粗用`font-weight`
   `border-left：宽度|样式|颜色`
   `border-bottom：宽度|样式|颜色`
   `border-right：宽度|样式|颜色`
+
 ###### 内边距（padding）属性
+
 设置元素内容与边框之间的距离（内边距或填充），分四个方向（上右下左）
  - `padding-top:长度值|百分比`
  - `padding-right:长度值|百分比`
@@ -286,7 +306,9 @@ css中字体加粗用`font-weight`
 
   - 块级元素，独占一行：`<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等`
   - 行内元素（内联元素），一行显示：`<span>、<a>、<em>等`
+
 ###### display属性
+
    - inline : 元素将显示为内联元素，元素前后没有换行符
    - bLock : 元素将显示为块级元素，元素前后带有换行符
    - inline-block:行内块元素，元素呈现为inline，具有block特性
@@ -295,7 +317,9 @@ css中字体加粗用`font-weight`
    注:
     1. 相应内联元素及使用`display:inline`设置成内联元素的width和height属性无效。水平方向`margin-left/margin-right/padding-left/padding-right`有效。垂直方向`margin-top/margin-bottom/padding-top/padding-bottom`无效
     2. 块级元素使用`display:block`设置成块级元素的width/height/margin/padding属性都生效
+
 ##### 浮动（float）属性
+
 float中的四个参数：
   - float:left  //左浮动
   - float:right //右浮动
@@ -309,29 +333,41 @@ float中的四个参数：
   2. 通过clear清除内部和外部浮动
   3. 给父元素添加overfloat属性并结合zoom:1使用
   4. 给父元素添加浮动
+
 ###### clear属性
+
   - clear:none
   - clear:left //不允许左边有浮动对象
   - clear:right  //不允许右边有浮动对象
   - clear:both  //不允许有浮动对象
 
 ##### 定位（position）属性
+
 ###### 意义
+
  - position属性决定了元素将如何定位
  - 通过top、right、bottom、left实现位置
+
 ###### position中的可选参数
+
  - static //默认属性，元素按照标准流排布
  - relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置
+
  - absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置
  - fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素
  - inherit //继承父类元素的属性
+
 ###### z-index
+
   - 可以设置元素的叠加顺序，但依赖定位属性
   - z-index大的元素会覆盖z-index小的元素
   - z-index为auto的元素不参与层级比较
   - z-index为负值，元素会被普通流中的元素覆盖
+
 ##### css页面布局
+
 ###### 经典的行布局
+
  - 基础的行布局
  - 行布局自适应
  - 行布局自适应限制最大宽
