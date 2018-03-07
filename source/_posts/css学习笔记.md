@@ -15,67 +15,79 @@ CSS 层叠样式表（Cascading Style Sheets）
   - 标准流
   - 浮动
   - 定位
+
 #### css基础语法
+
 css 规则有两部分构成：选择器，声明
+
 #### css注释
+
 /*注释内容*/
+
 #### css使用方法
+
 - 行内样式（内联样式）：同时加载
 
-例如：<p Style="color: red;">内容</p>
+例如：`<p Style="color: red;">内容</p>`
 - 内部样式表（嵌入样式）：同时加载
 
- CSS样式<style type="text/css">样式</style>
+ CSS样式`<style type="text/css">样式</style>`
 
-注：<style></style>要放在<head>标签之间
+注：`<style></style>要放在<head>标签之间`
 
 -内部样式表（导入式）：在读取完html文件之后加载
 
-例如：<style  type="text/css">
+例如：
+```
+<style  type="text/css">
         @import url(css的url地址)；或者@import"css的url地址"
       </style>
+```
 - 外部样式表： 页面加载时，同时加载CSS样式
 
 1. 外部样式表，把CSS样式代码写在独立的一个文件中，名称：文件名.css
-2. 引入外部文件<link href="XX.css" rel="stylesheet" type="text/css"/>
+2. 引入外部文件`<link href="XX.css" rel="stylesheet" type="text/css"/>`
 
-注：<link/>标签要放在<head>标签之间
+注：`<link/>标签要放在<head>标签之间`
 
 #### css选择器
 css选择器有以下类型：
 - 标签选择器
 
-以html标签作为选择器。 例如：h1{font-size: 30px;}
+以html标签作为选择器。 例如：`h1{font-size: 30px;}`
 - 类选择器
 
 为HTML标签添加class属性，通过类选择器来为具有此class属性的元素设置css样式
-例如：<h1 class="classname">内容</h1>     .classname{color:red;}
+例如：`<h1 class="classname">内容</h1>     .classname{color:red;}`
 还可以对不同类型元素的同一名称的类选择器设置不同的样式规则
-例如<h1 class="red">内容<h1> <p class="red">内容</p>
+例如:
+```
+<h1 class="red">内容<h1> <p class="red">内容</p>
 p.red{font-size:50px;} h1.red{font-size:20px}
+```
 - ID选择器
 
 为HTML标签添加ID属性，通过ID选择器来为具有此ID属性的元素设置css样式
-<p id="one">内容</p>   #one{color:green;}
+`<p id="one">内容</p>   #one{color:green;}`
 - 全局选择器
 
 所有标签设置样式 例如：`*{color: blue;}`
 
 - 群组选择器
 
-集体统一设置样式 例如：p,h1,h2,h3{font-size:50px;}
+集体统一设置样式 例如：`p,h1,h2,h3{font-size:50px;}`
 - 后代选择器
 
 使用后代选择器设置，之间用空格隔开
-例如：<p><em>css</em>层叠样式</p>  p em{font-size:40px;}
+例如：`<p><em>css</em>层叠样式</p>  p em{font-size:40px;}`
 - 伪类
 
 伪类选择器定义特殊状态下的样式，无法用标签、id、class及其他属性实现
-例如：链接伪类 <a href=""></a>
+例如：链接伪类` <a href=""></a>`
 
-a:link{color:blue;} --为访问的链接  a:visited{color:red;} --已访问的链接
+`a:link{color:blue;} --为访问的链接  a:visited{color:red;} --已访问的链接
 a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链接
-链接伪类的顺序： :link>:visited>:hover>:avtive
+链接伪类的顺序： :link>:visited>:hover>:avtive`
 
 说明：
   1. a:hover必须置于a:link和a:visited之后，才有效
