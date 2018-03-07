@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="CSS学习笔记什么是CSS？CSS 层叠样式表（Cascading Style Sheets）  用于定义HTML内容在浏览器内的显示样式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T03:35:16.817Z">
+<meta property="og:updated_time" content="2018-03-07T03:40:18.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习笔记">
 <meta name="twitter:description" content="CSS学习笔记什么是CSS？CSS 层叠样式表（Cascading Style Sheets）  用于定义HTML内容在浏览器内的显示样式">
@@ -347,12 +347,12 @@
         <h2 id="CSS学习笔记"><a href="#CSS学习笔记" class="headerlink" title="CSS学习笔记"></a>CSS学习笔记</h2><h3 id="什么是CSS？"><a href="#什么是CSS？" class="headerlink" title="什么是CSS？"></a>什么是CSS？</h3><p>CSS 层叠样式表（Cascading Style Sheets）</p>
 <ul>
 <li>用于定义HTML内容在浏览器内的显示样式<a id="more"></a>
+</li>
+</ul>
 <h3 id="CSS学习"><a href="#CSS学习" class="headerlink" title="CSS学习"></a>CSS学习</h3><h4 id="HTML页面的三种布局方式："><a href="#HTML页面的三种布局方式：" class="headerlink" title="HTML页面的三种布局方式："></a>HTML页面的三种布局方式：</h4><ul>
 <li>标准流</li>
 <li>浮动</li>
 <li>定位</li>
-</ul>
-</li>
 </ul>
 <h4 id="css基础语法"><a href="#css基础语法" class="headerlink" title="css基础语法"></a>css基础语法</h4><p>css 规则有两部分构成：选择器，声明</p>
 <h4 id="css注释"><a href="#css注释" class="headerlink" title="css注释"></a>css注释</h4><p>/<em>注释内容</em>/</p>
@@ -412,8 +412,9 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <ol>
 <li>a:hover必须置于a:link和a:visited之后，才有效</li>
 <li>a:active必须置于a:hover之后才有效</li>
-<li>伪类名称对大小写不敏感<h4 id="css优先级"><a href="#css优先级" class="headerlink" title="css优先级"></a>css优先级</h4>行内样式&gt;&gt;内部样式&gt;&gt;外部样式  内部样式跟外部样式的优先级取决于接近元素的位置，越接近于元素，优先级越高</li>
+<li>伪类名称对大小写不敏感</li>
 </ol>
+<h4 id="css优先级"><a href="#css优先级" class="headerlink" title="css优先级"></a>css优先级</h4><p>行内样式&gt;&gt;内部样式&gt;&gt;外部样式  内部样式跟外部样式的优先级取决于接近元素的位置，越接近于元素，优先级越高</p>
 <p>id选择器&gt;class选择器&gt;标签选择器</p>
 <p>同一个元素引用多个class定义的样式，越接近于元素，优先级越高</p>
 <p>后代选择其中，采用权值高的样式，权值相同，则采用就近原则</p>
@@ -423,14 +424,15 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <ul>
 <li>可以定义多个样式</li>
 <li>不冲突时，多个样式可以层叠为一个</li>
-<li>冲突时，按不同样式规则优先级来应用样式<h4 id="css命名规范"><a href="#css命名规范" class="headerlink" title="css命名规范"></a>css命名规范</h4><ul>
+<li>冲突时，按不同样式规则优先级来应用样式</li>
+</ul>
+<h4 id="css命名规范"><a href="#css命名规范" class="headerlink" title="css命名规范"></a>css命名规范</h4><ul>
 <li>采用英文字母、数字以及”-“和<code>_</code>命名</li>
 <li>以小写字母开头，不能以数字和”-“、<code>_</code>开头</li>
 <li>命名形式：单字、连字符、下划线和驼峰</li>
-<li>使用有意义的命名<h4 id="css字体样式"><a href="#css字体样式" class="headerlink" title="css字体样式"></a>css字体样式</h4>css中字体加粗用<code>font-weight</code></li>
+<li>使用有意义的命名</li>
 </ul>
-</li>
-</ul>
+<h4 id="css字体样式"><a href="#css字体样式" class="headerlink" title="css字体样式"></a>css字体样式</h4><p>css中字体加粗用<code>font-weight</code></p>
 <p>设置字体样式： <code>font-style</code></p>
 <p>设置元素中文本为小型大写字母：<code>font-variant</code></p>
 <h4 id="css文本样式"><a href="#css文本样式" class="headerlink" title="css文本样式"></a>css文本样式</h4><p>设置段落对齐方式：<code>text-align</code>只对块级的元素起作用</p>
@@ -516,38 +518,38 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <h6 id="宽度属性（内容，不含边距）"><a href="#宽度属性（内容，不含边距）" class="headerlink" title="宽度属性（内容，不含边距）"></a>宽度属性（内容，不含边距）</h6><ul>
 <li>宽度：<code>width:长度值|百分比|auto</code></li>
 <li>最大宽度：<code>max-width:长度值|百分比|auto</code></li>
-<li>最小宽度：<code>min-width:长度值|百分比|auto</code><br>设置的宽度小于最小宽度是，显示最小宽度；大于最大宽度，显示最大宽度值；值在最大宽度和最小宽度之间，显示设置值<h6 id="高度属性（内容，不含边距）"><a href="#高度属性（内容，不含边距）" class="headerlink" title="高度属性（内容，不含边距）"></a>高度属性（内容，不含边距）</h6></li>
+<li>最小宽度：<code>min-width:长度值|百分比|auto</code><br>设置的宽度小于最小宽度是，显示最小宽度；大于最大宽度，显示最大宽度值；值在最大宽度和最小宽度之间，显示设置值</li>
+</ul>
+<h6 id="高度属性（内容，不含边距）"><a href="#高度属性（内容，不含边距）" class="headerlink" title="高度属性（内容，不含边距）"></a>高度属性（内容，不含边距）</h6><ul>
 <li>高度：<code>height:长度值|百分比|auto</code></li>
 <li>最大高度：<code>max-height:长度值|百分比|auto</code></li>
-<li><p>最小高度：<code>min-height:长度值|百分比|auto</code></p>
+<li>最小高度：<code>min-height:长度值|百分比|auto</code></li>
+</ul>
 <h6 id="宽度和高度属性哪些可以设置"><a href="#宽度和高度属性哪些可以设置" class="headerlink" title="宽度和高度属性哪些可以设置"></a>宽度和高度属性哪些可以设置</h6><ol>
 <li>块级元素：<code>&lt;p&gt;、&lt;div&gt;、&lt;h1&gt;~&lt;h6&gt;、&lt;ul&gt;、&lt;li&gt;、&lt;ol&gt;、&lt;dl&gt;、&lt;dt&gt;、&lt;dd&gt;等</code></li>
 <li>替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容&lt;<code>img&gt;、&lt;input&gt;、&lt;textarea&gt;等</code></li>
 </ol>
-</li>
-</ul>
 <h6 id="边框属性"><a href="#边框属性" class="headerlink" title="边框属性"></a>边框属性</h6><ul>
 <li>边框宽度（border-width）<br>设置元素边框宽度<code>border-width:thin|medium|thick长度值</code></li>
 <li>边框颜色（border-color）<br>设置元素边框颜色<code>border-color:颜色|transparent(透明色)</code></li>
 <li><p>边框样式（border-style）<br>设置边框样式<code>border-style:值</code></p>
 <p>border-style默认值为none，设置了border-style的值宽度和颜色才能显示出来</p>
 <p>设置不同方向的边框属性：<br><code>border-top：宽度|样式|颜色</code><br><code>border-left：宽度|样式|颜色</code><br><code>border-bottom：宽度|样式|颜色</code><br><code>border-right：宽度|样式|颜色</code></p>
+</li>
+</ul>
 <h6 id="内边距（padding）属性"><a href="#内边距（padding）属性" class="headerlink" title="内边距（padding）属性"></a>内边距（padding）属性</h6><p>设置元素内容与边框之间的距离（内边距或填充），分四个方向（上右下左）</p>
 <ul>
 <li><code>padding-top:长度值|百分比</code></li>
 <li><code>padding-right:长度值|百分比</code></li>
 <li><code>padding-bottom:长度值|百分比</code></li>
-<li><code>padding-left:长度值|百分比</code></li>
-</ul>
+<li><p><code>padding-left:长度值|百分比</code></p>
 <p>说明：值不能为负值</p>
 <p>内边距属性缩写：</p>
-<ul>
+</li>
 <li>padding: 值1； //4个方向都为值1</li>
 <li>padding: 值1 值2； //上下=值1，左右=值2</li>
 <li>padding: 值1 值2 值3； //上=值1，左右= 值2，下=值3</li>
 <li>padding: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4</li>
-</ul>
-</li>
 </ul>
 <h6 id="外边距（margin）属性"><a href="#外边距（margin）属性" class="headerlink" title="外边距（margin）属性"></a>外边距（margin）属性</h6><p>设置元素内容与元素之间的距离（外边距或填充），分四个方向（上右下左）</p>
 <ul>
@@ -572,19 +574,22 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 </ul>
 <h5 id="HTML元素分类"><a href="#HTML元素分类" class="headerlink" title="HTML元素分类"></a>HTML元素分类</h5><ul>
 <li>块级元素，独占一行：<code>&lt;p&gt;、&lt;div&gt;、&lt;h1&gt;~&lt;h6&gt;、&lt;ul&gt;、&lt;li&gt;、&lt;ol&gt;、&lt;dl&gt;、&lt;dt&gt;、&lt;dd&gt;等</code></li>
-<li><p>行内元素（内联元素），一行显示：<code>&lt;span&gt;、&lt;a&gt;、&lt;em&gt;等</code></p>
+<li>行内元素（内联元素），一行显示：<code>&lt;span&gt;、&lt;a&gt;、&lt;em&gt;等</code></li>
+</ul>
 <h6 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h6><ul>
 <li>inline : 元素将显示为内联元素，元素前后没有换行符</li>
 <li>bLock : 元素将显示为块级元素，元素前后带有换行符</li>
 <li>inline-block:行内块元素，元素呈现为inline，具有block特性</li>
-<li>none:此元素不会被显示</li>
-</ul>
+<li><p>none:此元素不会被显示</p>
 <p>注:</p>
 <ol>
 <li>相应内联元素及使用<code>display:inline</code>设置成内联元素的width和height属性无效。水平方向<code>margin-left/margin-right/padding-left/padding-right</code>有效。垂直方向<code>margin-top/margin-bottom/padding-top/padding-bottom</code>无效</li>
-<li>块级元素使用<code>display:block</code>设置成块级元素的width/height/margin/padding属性都生效<h5 id="浮动（float）属性"><a href="#浮动（float）属性" class="headerlink" title="浮动（float）属性"></a>浮动（float）属性</h5>float中的四个参数：</li>
+<li>块级元素使用<code>display:block</code>设置成块级元素的width/height/margin/padding属性都生效</li>
 </ol>
 </li>
+</ul>
+<h5 id="浮动（float）属性"><a href="#浮动（float）属性" class="headerlink" title="浮动（float）属性"></a>浮动（float）属性</h5><p>float中的四个参数：</p>
+<ul>
 <li>float:left  //左浮动</li>
 <li>float:right //右浮动</li>
 <li>float:none  //不浮动</li>
@@ -596,9 +601,9 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <li>手动给父元素添加高度</li>
 <li>通过clear清除内部和外部浮动</li>
 <li>给父元素添加overfloat属性并结合zoom:1使用</li>
-<li>给父元素添加浮动<h6 id="clear属性"><a href="#clear属性" class="headerlink" title="clear属性"></a>clear属性</h6></li>
+<li>给父元素添加浮动</li>
 </ol>
-<ul>
+<h6 id="clear属性"><a href="#clear属性" class="headerlink" title="clear属性"></a>clear属性</h6><ul>
 <li>clear:none</li>
 <li>clear:left //不允许左边有浮动对象</li>
 <li>clear:right  //不允许右边有浮动对象</li>
@@ -606,18 +611,24 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 </ul>
 <h5 id="定位（position）属性"><a href="#定位（position）属性" class="headerlink" title="定位（position）属性"></a>定位（position）属性</h5><h6 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h6><ul>
 <li>position属性决定了元素将如何定位</li>
-<li>通过top、right、bottom、left实现位置<h6 id="position中的可选参数"><a href="#position中的可选参数" class="headerlink" title="position中的可选参数"></a>position中的可选参数</h6></li>
+<li>通过top、right、bottom、left实现位置</li>
+</ul>
+<h6 id="position中的可选参数"><a href="#position中的可选参数" class="headerlink" title="position中的可选参数"></a>position中的可选参数</h6><ul>
 <li>static //默认属性，元素按照标准流排布</li>
-<li>relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置</li>
-<li>absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置</li>
+<li><p>relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置</p>
+</li>
+<li><p>absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置</p>
+</li>
 <li>fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素</li>
-<li>inherit //继承父类元素的属性<h6 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h6><ul>
+<li>inherit //继承父类元素的属性</li>
+</ul>
+<h6 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h6><ul>
 <li>可以设置元素的叠加顺序，但依赖定位属性</li>
 <li>z-index大的元素会覆盖z-index小的元素</li>
 <li>z-index为auto的元素不参与层级比较</li>
-<li>z-index为负值，元素会被普通流中的元素覆盖<h5 id="css页面布局"><a href="#css页面布局" class="headerlink" title="css页面布局"></a>css页面布局</h5><h6 id="经典的行布局"><a href="#经典的行布局" class="headerlink" title="经典的行布局"></a>经典的行布局</h6></li>
+<li>z-index为负值，元素会被普通流中的元素覆盖</li>
 </ul>
-</li>
+<h5 id="css页面布局"><a href="#css页面布局" class="headerlink" title="css页面布局"></a>css页面布局</h5><h6 id="经典的行布局"><a href="#经典的行布局" class="headerlink" title="经典的行布局"></a>经典的行布局</h6><ul>
 <li>基础的行布局</li>
 <li>行布局自适应</li>
 <li>行布局自适应限制最大宽</li>
