@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="CSS学习笔记什么是CSS？CSS 层叠样式表（Cascading Style Sheets）  用于定义HTML内容在浏览器内的显示样式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T03:22:04.290Z">
+<meta property="og:updated_time" content="2018-03-07T03:35:16.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习笔记">
 <meta name="twitter:description" content="CSS学习笔记什么是CSS？CSS 层叠样式表（Cascading Style Sheets）  用于定义HTML内容在浏览器内的显示样式">
@@ -427,14 +427,14 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <li>采用英文字母、数字以及”-“和<code>_</code>命名</li>
 <li>以小写字母开头，不能以数字和”-“、<code>_</code>开头</li>
 <li>命名形式：单字、连字符、下划线和驼峰</li>
-<li>使用有意义的命名<h4 id="css字体样式"><a href="#css字体样式" class="headerlink" title="css字体样式"></a>css字体样式</h4>css中字体加粗用font-weight</li>
+<li>使用有意义的命名<h4 id="css字体样式"><a href="#css字体样式" class="headerlink" title="css字体样式"></a>css字体样式</h4>css中字体加粗用<code>font-weight</code></li>
 </ul>
 </li>
 </ul>
-<p>设置字体样式： font-style</p>
-<p>设置元素中文本为小型大写字母： font-variant</p>
+<p>设置字体样式： <code>font-style</code></p>
+<p>设置元素中文本为小型大写字母：<code>font-variant</code></p>
 <h4 id="css文本样式"><a href="#css文本样式" class="headerlink" title="css文本样式"></a>css文本样式</h4><p>设置段落对齐方式：<code>text-align</code>只对块级的元素起作用</p>
-<p>设置元素内容的垂直方式： vertical-align属性。 只对行内元素、单元格元素生效，对块级元素不生效。</p>
+<p>设置元素内容的垂直方式： <code>vertical-align属性。</code> 只对行内元素、单元格元素生效，对块级元素不生效。</p>
 <p>多行元素垂直居中，将元素转换为单元格元素<code>display:table-cell;</code><br>并在其负累样式中添加<code>display:table</code></p>
 <p>设置元素中文本行高： <code>line-height:长度值|百分比</code></p>
 <p>设置字体属性： <code>word-spacing</code>设置元素内单词之间的间距(间距判断以空格为准）<br>              <code>letter-spacing</code>设置元素内字母之间的间距<br>              <code>text-transform</code>设置元素内字母的大小写<br>              <code>text-decoration</code>设置文本的装饰样式（下划线等等）</p>
@@ -506,12 +506,12 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <ol>
 <li>值之间用空格隔开</li>
 <li>顺序不固定</li>
-<li>list-style-image会覆盖list-style-type的设置<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><ul>
+<li>list-style-image会覆盖list-style-type的设置</li>
+</ol>
+<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><ul>
 <li>盒子模型用来“放”网页中的各种元素</li>
 <li>盒子设计中内容，如文字、图片等元素，都可是盒子（DIV嵌套）</li>
 </ul>
-</li>
-</ol>
 <h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><p>盒子在页面中所占的宽度由左边距（左外边距）+左边框+左填充（左内边距）+内容宽度+右填充+右边框+右边距组成。高度计算同上</p>
 <h6 id="宽度属性（内容，不含边距）"><a href="#宽度属性（内容，不含边距）" class="headerlink" title="宽度属性（内容，不含边距）"></a>宽度属性（内容，不含边距）</h6><ul>
 <li>宽度：<code>width:长度值|百分比|auto</code></li>
@@ -521,10 +521,12 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <li>最大高度：<code>max-height:长度值|百分比|auto</code></li>
 <li><p>最小高度：<code>min-height:长度值|百分比|auto</code></p>
 <h6 id="宽度和高度属性哪些可以设置"><a href="#宽度和高度属性哪些可以设置" class="headerlink" title="宽度和高度属性哪些可以设置"></a>宽度和高度属性哪些可以设置</h6><ol>
-<li>块级元素：<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等</dd></dt></dl></ol></li>
-<li>替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容<img>、<input>、<textarea>等</textarea></li>
-</ul></h6></h1></div></p></li></ol>
-<h6 id="边框属性"><a href="#边框属性" class="headerlink" title="边框属性"></a>边框属性</h6></li>
+<li>块级元素：<code>&lt;p&gt;、&lt;div&gt;、&lt;h1&gt;~&lt;h6&gt;、&lt;ul&gt;、&lt;li&gt;、&lt;ol&gt;、&lt;dl&gt;、&lt;dt&gt;、&lt;dd&gt;等</code></li>
+<li>替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容&lt;<code>img&gt;、&lt;input&gt;、&lt;textarea&gt;等</code></li>
+</ol>
+</li>
+</ul>
+<h6 id="边框属性"><a href="#边框属性" class="headerlink" title="边框属性"></a>边框属性</h6><ul>
 <li>边框宽度（border-width）<br>设置元素边框宽度<code>border-width:thin|medium|thick长度值</code></li>
 <li>边框颜色（border-color）<br>设置元素边框颜色<code>border-color:颜色|transparent(透明色)</code></li>
 <li><p>边框样式（border-style）<br>设置边框样式<code>border-style:值</code></p>
@@ -543,30 +545,34 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <li>padding: 值1； //4个方向都为值1</li>
 <li>padding: 值1 值2； //上下=值1，左右=值2</li>
 <li>padding: 值1 值2 值3； //上=值1，左右= 值2，下=值3</li>
-<li>padding: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4<h6 id="外边距（margin）属性"><a href="#外边距（margin）属性" class="headerlink" title="外边距（margin）属性"></a>外边距（margin）属性</h6>设置元素内容与元素之间的距离（外边距或填充），分四个方向（上右下左）</li>
+<li>padding: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4</li>
+</ul>
+</li>
+</ul>
+<h6 id="外边距（margin）属性"><a href="#外边距（margin）属性" class="headerlink" title="外边距（margin）属性"></a>外边距（margin）属性</h6><p>设置元素内容与元素之间的距离（外边距或填充），分四个方向（上右下左）</p>
+<ul>
 <li><code>padding-top:长度值|百分比</code></li>
 <li><code>padding-right:长度值|百分比</code></li>
 <li><code>padding-bottom:长度值|百分比</code></li>
-<li><code>padding-left:长度值|百分比</code></li>
-</ul>
+<li><p><code>padding-left:长度值|百分比</code></p>
 <p>说明：值可以为负值</p>
 <p>外边距属性缩写：</p>
-<ul>
+</li>
 <li>margin: 值1； //4个方向都为值1</li>
 <li>margin: 值1 值2； //上下=值1，左右=值2</li>
 <li>margin: 值1 值2 值3； //上=值1，左右= 值2，下=值3</li>
-<li>margin: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4</li>
-</ul>
+<li><p>margin: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4</p>
 <p>注意：</p>
-<ul>
-<li>默认情况下，相应HTML块级元素存在外边距，如：body、h1~h6、p等</li>
+</li>
+<li><p>默认情况下，相应HTML块级元素存在外边距，如：body、h1~h6、p等</p>
+</li>
 <li>声明margin属性，覆盖默认样式。如body,h1,p{margin:0;}</li>
 <li>margin值为auto,实现水平方向居中显示，由浏览器计算外边距</li>
-<li>如果垂直方向相邻的两个元素都设置margin值，去值大的<h5 id="HTML元素分类"><a href="#HTML元素分类" class="headerlink" title="HTML元素分类"></a>HTML元素分类</h5></li>
+<li>如果垂直方向相邻的两个元素都设置margin值，去值大的</li>
 </ul>
-</li>
-<li>块级元素，独占一行：<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等</dd></dt></dl></ol></li>
-<li><p>行内元素（内联元素），一行显示：<span>、<a>、<em>等</em></a></span></p>
+<h5 id="HTML元素分类"><a href="#HTML元素分类" class="headerlink" title="HTML元素分类"></a>HTML元素分类</h5><ul>
+<li>块级元素，独占一行：<code>&lt;p&gt;、&lt;div&gt;、&lt;h1&gt;~&lt;h6&gt;、&lt;ul&gt;、&lt;li&gt;、&lt;ol&gt;、&lt;dl&gt;、&lt;dt&gt;、&lt;dd&gt;等</code></li>
+<li><p>行内元素（内联元素），一行显示：<code>&lt;span&gt;、&lt;a&gt;、&lt;em&gt;等</code></p>
 <h6 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h6><ul>
 <li>inline : 元素将显示为内联元素，元素前后没有换行符</li>
 <li>bLock : 元素将显示为块级元素，元素前后带有换行符</li>
@@ -617,7 +623,7 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
 <li>行布局自适应限制最大宽</li>
 <li>行布局垂直水平剧中</li>
 </ul>
-</h6></h1></div></p></li></ul>
+
       
     </div>
     
@@ -797,115 +803,7 @@ a:hover{color:green;} --鼠标悬停状态 a:active{color:gray;} --激活的链�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS学习笔记"><span class="nav-number">1.</span> <span class="nav-text">CSS学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CSS？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是CSS？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS学习"><span class="nav-number">1.2.</span> <span class="nav-text">CSS学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML页面的三种布局方式："><span class="nav-number">1.2.1.</span> <span class="nav-text">HTML页面的三种布局方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css基础语法"><span class="nav-number">1.2.2.</span> <span class="nav-text">css基础语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css注释"><span class="nav-number">1.2.3.</span> <span class="nav-text">css注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css使用方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">css使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器"><span class="nav-number">1.2.5.</span> <span class="nav-text">css选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css优先级"><span class="nav-number">1.2.6.</span> <span class="nav-text">css优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css继承和层叠"><span class="nav-number">1.2.7.</span> <span class="nav-text">css继承和层叠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css命名规范"><span class="nav-number">1.2.8.</span> <span class="nav-text">css命名规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css字体样式"><span class="nav-number">1.2.9.</span> <span class="nav-text">css字体样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css文本样式"><span class="nav-number">1.2.10.</span> <span class="nav-text">css文本样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css背景和列表"><span class="nav-number">1.2.11.</span> <span class="nav-text">css背景和列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#背景样式："><span class="nav-number">1.2.11.1.</span> <span class="nav-text">背景样式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表样式"><span class="nav-number">1.2.11.2.</span> <span class="nav-text">列表样式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒子模型"><span class="nav-number">1.2.12.</span> <span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念"><span class="nav-number">1.2.12.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#属性"><span class="nav-number">1.2.12.2.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#宽度属性（内容，不含边距）"><span class="nav-number">1.2.12.2.1.</span> <span class="nav-text">宽度属性（内容，不含边距）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#高度属性（内容，不含边距）"><span class="nav-number">1.2.12.2.2.</span> <span class="nav-text">高度属性（内容，不含边距）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#宽度和高度属性哪些可以设置"><span class="nav-number">1.2.12.2.3.</span> <span class="nav-text">宽度和高度属性哪些可以设置</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">~、、、、、、等
-替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容、、等
-</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">0.0.0.0.1.</span> <span class="nav-text">、、、、、、等
-替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容、、等
-</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#边框属性"><span class="nav-number">0.0.0.0.2.</span> <span class="nav-text">边框属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#内边距（padding）属性"><span class="nav-number">0.0.0.0.3.</span> <span class="nav-text">内边距（padding）属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#外边距（margin）属性"><span class="nav-number">0.0.0.0.4.</span> <span class="nav-text">外边距（margin）属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML元素分类"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">HTML元素分类</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">~、、、、、、等
-行内元素（内联元素），一行显示：、、等
-display属性
-inline : 元素将显示为内联元素，元素前后没有换行符
-bLock : 元素将显示为块级元素，元素前后带有换行符
-inline-block:行内块元素，元素呈现为inline，具有block特性
-none:此元素不会被显示
-
-注:
-
-相应内联元素及使用display:inline设置成内联元素的width和height属性无效。水平方向margin-left/margin-right/padding-left/padding-right有效。垂直方向margin-top/margin-bottom/padding-top/padding-bottom无效
-块级元素使用display:block设置成块级元素的width/height/margin/padding属性都生效浮动（float）属性float中的四个参数：
-
-
-float:left  //左浮动
-float:right //右浮动
-float:none  //不浮动
-float:inherit  //继承浮动
-
-浮动的副作用：给元素设置了浮动属性，元素可能脱离正常的标准流布局
-解决副作用的方法：
-
-手动给父元素添加高度
-通过clear清除内部和外部浮动
-给父元素添加overfloat属性并结合zoom:1使用
-给父元素添加浮动clear属性
-
-
-clear:none
-clear:left //不允许左边有浮动对象
-clear:right  //不允许右边有浮动对象
-clear:both  //不允许有浮动对象
-
-定位（position）属性意义
-position属性决定了元素将如何定位
-通过top、right、bottom、left实现位置position中的可选参数
-static //默认属性，元素按照标准流排布
-relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置
-absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置
-fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素
-inherit //继承父类元素的属性z-index
-可以设置元素的叠加顺序，但依赖定位属性
-z-index大的元素会覆盖z-index小的元素
-z-index为auto的元素不参与层级比较
-z-index为负值，元素会被普通流中的元素覆盖css页面布局经典的行布局
-
-
-基础的行布局
-行布局自适应
-行布局自适应限制最大宽
-行布局垂直水平剧中
-
-</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">0.0.0.0.1.</span> <span class="nav-text">、、、、、、等
-行内元素（内联元素），一行显示：、、等
-display属性
-inline : 元素将显示为内联元素，元素前后没有换行符
-bLock : 元素将显示为块级元素，元素前后带有换行符
-inline-block:行内块元素，元素呈现为inline，具有block特性
-none:此元素不会被显示
-
-注:
-
-相应内联元素及使用display:inline设置成内联元素的width和height属性无效。水平方向margin-left/margin-right/padding-left/padding-right有效。垂直方向margin-top/margin-bottom/padding-top/padding-bottom无效
-块级元素使用display:block设置成块级元素的width/height/margin/padding属性都生效浮动（float）属性float中的四个参数：
-
-
-float:left  //左浮动
-float:right //右浮动
-float:none  //不浮动
-float:inherit  //继承浮动
-
-浮动的副作用：给元素设置了浮动属性，元素可能脱离正常的标准流布局
-解决副作用的方法：
-
-手动给父元素添加高度
-通过clear清除内部和外部浮动
-给父元素添加overfloat属性并结合zoom:1使用
-给父元素添加浮动clear属性
-
-
-clear:none
-clear:left //不允许左边有浮动对象
-clear:right  //不允许右边有浮动对象
-clear:both  //不允许有浮动对象
-
-定位（position）属性意义
-position属性决定了元素将如何定位
-通过top、right、bottom、left实现位置position中的可选参数
-static //默认属性，元素按照标准流排布
-relative //相对定位，正常按照标准流排布，但可通过top、right、bottom、left改变元素位置
-absolute //绝对定位，元素脱离正常标准流排布，通过top、right、bottom、left改变元素位置
-fixed  //固定定位。通过top、right、bottom、left改变元素位置，不受制于父元素
-inherit //继承父类元素的属性z-index
-可以设置元素的叠加顺序，但依赖定位属性
-z-index大的元素会覆盖z-index小的元素
-z-index为auto的元素不参与层级比较
-z-index为负值，元素会被普通流中的元素覆盖css页面布局经典的行布局
-
-
-基础的行布局
-行布局自适应
-行布局自适应限制最大宽
-行布局垂直水平剧中
-
-</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#display属性"><span class="nav-number">0.0.0.0.2.</span> <span class="nav-text">display属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮动（float）属性"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">浮动（float）属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#clear属性"><span class="nav-number">0.0.0.1.1.</span> <span class="nav-text">clear属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定位（position）属性"><span class="nav-number">0.0.0.2.</span> <span class="nav-text">定位（position）属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#意义"><span class="nav-number">0.0.0.2.1.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position中的可选参数"><span class="nav-number">0.0.0.2.2.</span> <span class="nav-text">position中的可选参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#z-index"><span class="nav-number">0.0.0.2.3.</span> <span class="nav-text">z-index</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#css页面布局"><span class="nav-number">0.0.0.3.</span> <span class="nav-text">css页面布局</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经典的行布局"><span class="nav-number">0.0.0.3.1.</span> <span class="nav-text">经典的行布局</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS学习笔记"><span class="nav-number">1.</span> <span class="nav-text">CSS学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CSS？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是CSS？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS学习"><span class="nav-number">1.2.</span> <span class="nav-text">CSS学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML页面的三种布局方式："><span class="nav-number">1.2.1.</span> <span class="nav-text">HTML页面的三种布局方式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css基础语法"><span class="nav-number">1.2.2.</span> <span class="nav-text">css基础语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css注释"><span class="nav-number">1.2.3.</span> <span class="nav-text">css注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css使用方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">css使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器"><span class="nav-number">1.2.5.</span> <span class="nav-text">css选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css优先级"><span class="nav-number">1.2.6.</span> <span class="nav-text">css优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css继承和层叠"><span class="nav-number">1.2.7.</span> <span class="nav-text">css继承和层叠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css命名规范"><span class="nav-number">1.2.8.</span> <span class="nav-text">css命名规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css字体样式"><span class="nav-number">1.2.9.</span> <span class="nav-text">css字体样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css文本样式"><span class="nav-number">1.2.10.</span> <span class="nav-text">css文本样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css背景和列表"><span class="nav-number">1.2.11.</span> <span class="nav-text">css背景和列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#背景样式："><span class="nav-number">1.2.11.1.</span> <span class="nav-text">背景样式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表样式"><span class="nav-number">1.2.11.2.</span> <span class="nav-text">列表样式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒子模型"><span class="nav-number">1.2.12.</span> <span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念"><span class="nav-number">1.2.12.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#属性"><span class="nav-number">1.2.12.2.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#宽度属性（内容，不含边距）"><span class="nav-number">1.2.12.2.1.</span> <span class="nav-text">宽度属性（内容，不含边距）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#高度属性（内容，不含边距）"><span class="nav-number">1.2.12.2.2.</span> <span class="nav-text">高度属性（内容，不含边距）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#宽度和高度属性哪些可以设置"><span class="nav-number">1.2.12.2.3.</span> <span class="nav-text">宽度和高度属性哪些可以设置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#边框属性"><span class="nav-number">1.2.12.2.4.</span> <span class="nav-text">边框属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#内边距（padding）属性"><span class="nav-number">1.2.12.2.5.</span> <span class="nav-text">内边距（padding）属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#外边距（margin）属性"><span class="nav-number">1.2.12.2.6.</span> <span class="nav-text">外边距（margin）属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML元素分类"><span class="nav-number">1.2.12.3.</span> <span class="nav-text">HTML元素分类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#display属性"><span class="nav-number">1.2.12.3.1.</span> <span class="nav-text">display属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮动（float）属性"><span class="nav-number">1.2.12.4.</span> <span class="nav-text">浮动（float）属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#clear属性"><span class="nav-number">1.2.12.4.1.</span> <span class="nav-text">clear属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定位（position）属性"><span class="nav-number">1.2.12.5.</span> <span class="nav-text">定位（position）属性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#意义"><span class="nav-number">1.2.12.5.1.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position中的可选参数"><span class="nav-number">1.2.12.5.2.</span> <span class="nav-text">position中的可选参数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#z-index"><span class="nav-number">1.2.12.5.3.</span> <span class="nav-text">z-index</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#css页面布局"><span class="nav-number">1.2.12.6.</span> <span class="nav-text">css页面布局</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#经典的行布局"><span class="nav-number">1.2.12.6.1.</span> <span class="nav-text">经典的行布局</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
