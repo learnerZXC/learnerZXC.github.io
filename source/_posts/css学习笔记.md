@@ -116,15 +116,15 @@ css层叠：
 - 命名形式：单字、连字符、下划线和驼峰
 - 使用有意义的命名
 #### css字体样式
-css中字体加粗用font-weight
+css中字体加粗用`font-weight`
 
-设置字体样式： font-style
+设置字体样式： `font-style`
 
-设置元素中文本为小型大写字母： font-variant
+设置元素中文本为小型大写字母：` font-variant`
 #### css文本样式
 设置段落对齐方式：` text-align`只对块级的元素起作用
 
-设置元素内容的垂直方式： vertical-align属性。 只对行内元素、单元格元素生效，对块级元素不生效。
+设置元素内容的垂直方式： `vertical-align属性。` 只对行内元素、单元格元素生效，对块级元素不生效。
 
 多行元素垂直居中，将元素转换为单元格元素`display:table-cell;`
 并在其负累样式中添加`display:table`
@@ -137,6 +137,7 @@ css中字体加粗用font-weight
               `text-decoration`设置文本的装饰样式（下划线等等）
 
 #### css背景和列表
+
 ##### 背景样式：
 - background-color(设置元素的背景颜色)
 `background-color:颜色|transparent`
@@ -176,6 +177,7 @@ css中字体加粗用font-weight
 例如：`background: #000000 url() repeat`
 
 说明： 各值之间用空格分开，不分先后顺序
+
 ##### 列表样式
 - list-style-type 设置列表项标志的类型
 `list-style-type:关键字|none`
@@ -199,15 +201,20 @@ css中字体加粗用font-weight
  1. 值之间用空格隔开
  2. 顺序不固定
  3. list-style-image会覆盖list-style-type的设置
+
 #### 盒子模型
+
 ##### 概念
+
   - 盒子模型用来“放”网页中的各种元素
   - 盒子设计中内容，如文字、图片等元素，都可是盒子（DIV嵌套）
 
 ##### 属性
+
 盒子在页面中所占的宽度由左边距（左外边距）+左边框+左填充（左内边距）+内容宽度+右填充+右边框+右边距组成。高度计算同上
 
 ###### 宽度属性（内容，不含边距）
+
   - 宽度：`width:长度值|百分比|auto`
   - 最大宽度：`max-width:长度值|百分比|auto`
   - 最小宽度：`min-width:长度值|百分比|auto`
@@ -217,10 +224,12 @@ css中字体加粗用font-weight
   - 最大高度：`max-height:长度值|百分比|auto`
   - 最小高度：`min-height:长度值|百分比|auto`
 ###### 宽度和高度属性哪些可以设置
- 1. 块级元素：<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等
- 2. 替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容<img>、<input>、<textarea>等
 
- ###### 边框属性
+ 1. 块级元素：`<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等`
+ 2. 替换元素：浏览器根据其标签的元素和属性来判断显示的具体内容<`img>、<input>、<textarea>等`
+
+###### 边框属性
+
   - 边框宽度（border-width）
   设置元素边框宽度`border-width:thin|medium|thick长度值`
   - 边框颜色（border-color）
@@ -249,7 +258,9 @@ css中字体加粗用font-weight
  - padding: 值1 值2； //上下=值1，左右=值2
  - padding: 值1 值2 值3； //上=值1，左右= 值2，下=值3
  - padding: 值1 值2 值3 值4； //上=值1，右=值2，下=值3，左=值4
+
 ###### 外边距（margin）属性
+
 设置元素内容与元素之间的距离（外边距或填充），分四个方向（上右下左）
  - `padding-top:长度值|百分比`
  - `padding-right:长度值|百分比`
@@ -270,9 +281,11 @@ css中字体加粗用font-weight
  - 声明margin属性，覆盖默认样式。如body,h1,p{margin:0;}
  - margin值为auto,实现水平方向居中显示，由浏览器计算外边距
  - 如果垂直方向相邻的两个元素都设置margin值，去值大的
+
 ##### HTML元素分类
-  - 块级元素，独占一行：<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等
-  - 行内元素（内联元素），一行显示：<span>、<a>、<em>等
+
+  - 块级元素，独占一行：`<p>、<div>、<h1>~<h6>、<ul>、<li>、<ol>、<dl>、<dt>、<dd>等`
+  - 行内元素（内联元素），一行显示：`<span>、<a>、<em>等`
 ###### display属性
    - inline : 元素将显示为内联元素，元素前后没有换行符
    - bLock : 元素将显示为块级元素，元素前后带有换行符
