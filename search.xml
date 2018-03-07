@@ -57,17 +57,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java集合之Collection接口]]></title>
-    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Java集合</category>
-      </categories>
-      <tags>
-        <tag>Collection</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java集合]]></title>
     <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%2F</url>
     <content type="text"><![CDATA[Java集合]]></content>
@@ -76,6 +65,17 @@
       </categories>
       <tags>
         <tag>Java集合综述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java集合之Collection接口]]></title>
+    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Java集合</category>
+      </categories>
+      <tags>
+        <tag>Collection</tag>
       </tags>
   </entry>
   <entry>
@@ -133,7 +133,7 @@
   <entry>
     <title><![CDATA[HTML学习笔记]]></title>
     <url>%2F2018%2F02%2F03%2FHTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[HTML学习笔记HTML概念HTML（Hypertext Markup Language）即超文本标记语言。是标准通用标记语言下的一个应用，也是一种规范，一种标准，它通过标记符号来标记要显示的网页中的各个部分。 HTML特点 HTML不需要编译，直接由浏览器执行 HTML是一个文本文件 HTML 文件必须使用html或者htm为文件后缀名 HTML对大小写不敏感。HTML和html一样HTML基础语法 HTML 基本结构&lt;!DOCTYPE html&gt; ——————声明文档类型网页头部信息标题 网页主体内容标签内的所有内容不会再网页中显示 HTML标签 成对出现，开始标签和结束标签，结束标签比开始标签多了一个/ 单标签：没有结束标签。例如 标题标签:~ 段落标签： 换行标签： 水平线标签 文字斜体：、 文字加粗：、 下标： 上标： 插入内容（下划线）： 删除内容： 特殊符号: 比如&lt; &lt; 无序列表： 有序列表： 定义列表：定义列表项列表项描述列表项描述 锚链接（同一页面）：目录名 锚链接（不同页面页面）：目录名 电子邮箱链接： 名称 HTML元素 HTML属性 注释html使用进行注释]]></content>
+    <content type="text"><![CDATA[HTML学习笔记HTML概念HTML（Hypertext Markup Language）即超文本标记语言。是标准通用标记语言下的一个应用，也是一种规范，一种标准，它通过标记符号来标记要显示的网页中的各个部分。 HTML特点 HTML不需要编译，直接由浏览器执行 HTML是一个文本文件 HTML 文件必须使用html或者htm为文件后缀名 HTML对大小写不敏感。HTML和html一样HTML基础语法 HTML 基本结构 1234567891011&lt;!DOCTYPE html&gt; ——————声明文档类型&lt;html&gt;&lt;head&gt; 网页头部信息 &lt;title&gt;标题&lt;/title&gt;&lt;/head&gt;&lt;body&gt; 网页主体内容&lt;/body&gt;&lt;/html&gt;&lt;head&gt;&lt;/head&gt;标签内的所有内容不会再网页中显示 HTML标签 成对出现，开始标签和结束标签，结束标签比开始标签多了一个/ 单标签：没有结束标签。例如 标题标签:&lt;h1&gt;&lt;/h1&gt;~&lt;h6&gt;&lt;/h6&gt; 段落标签：&lt;p&gt;&lt;/p&gt; 换行标签：&lt;br/&gt; 水平线标签&lt;hr/&gt; 文字斜体：&lt;i&gt;&lt;/i&gt;、&lt;em&gt;&lt;/em&gt; 文字加粗：&lt;b&gt;&lt;/b&gt;、&lt;strong&gt;&lt;/strong&gt; 下标：&lt;sub&gt;&lt;/sub&gt; 上标：&lt;sup&gt;&lt;/sup&gt; 插入内容（下划线）：&lt;ins&gt;&lt;/ins&gt;删除内容：&lt;del&gt;&lt;/del&gt; 特殊符号: 比如&amp;lt; &lt; 无序列表：&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt; 有序列表：&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt; 定义列表：&lt;dl&gt;&lt;dt&gt;定义列表项&lt;/dt&gt;&lt;dd&gt;列表项描述&lt;/dd&gt;&lt;dd&gt;列表项描述&lt;/dd&gt;&lt;/dl&gt; 锚链接（同一页面）：&lt;a href=&quot;#锚名&quot;&gt;目录名&lt;/a&gt; 锚链接（不同页面页面）：&lt;a href=&quot;网页名称#锚名&quot;&gt;目录名&lt;/a&gt; 电子邮箱链接：&lt;a href=&quot;mailto:邮件地址&quot;&gt;名称&lt;/a&gt; HTML元素 HTML属性 注释html使用&lt;!-- --&gt;进行注释]]></content>
       <tags>
         <tag>HTML</tag>
       </tags>

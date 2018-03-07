@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="HTML学习笔记HTML概念HTML（Hypertext Markup Language）即超文本标记语言。是标准通用标记语言下的一个应用，也是一种规范，一种标准，它通过标记符号来标记要显示的网页中的各个部分。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T14:47:53.031Z">
+<meta property="og:updated_time" content="2018-03-07T03:16:16.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML学习笔记">
 <meta name="twitter:description" content="HTML学习笔记HTML概念HTML（Hypertext Markup Language）即超文本标记语言。是标准通用标记语言下的一个应用，也是一种规范，一种标准，它通过标记符号来标记要显示的网页中的各个部分。">
@@ -352,32 +352,35 @@
 <li>HTML对大小写不敏感。HTML和html一样<h3 id="HTML基础语法"><a href="#HTML基础语法" class="headerlink" title="HTML基础语法"></a>HTML基础语法</h3></li>
 </ul>
 <ol>
-<li>HTML 基本结构<br>&lt;!DOCTYPE html&gt;    ——————声明文档类型<br><html><br><head><br>网页头部信息<br><title>标题</title><br></head><br><body><br> 网页主体内容<br></body><br></html><br><head></head>标签内的所有内容不会再网页中显示</li>
-<li>HTML标签<ul>
+<li><p>HTML 基本结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;    ——————声明文档类型</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  网页头部信息</span><br><span class="line">  &lt;title&gt;标题&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;  </span><br><span class="line">    网页主体内容</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;head&gt;&lt;/head&gt;标签内的所有内容不会再网页中显示</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTML标签</p>
+<ul>
 <li>成对出现，开始标签和结束标签，结束标签比开始标签多了一个/</li>
 <li>单标签：没有结束标签。例如<hr></li>
 </ul>
 <ol>
-<li>标题标签:<h1></h1>~<h6></h6></li>
-<li>段落标签：<p></p></li>
-<li>换行标签：<br></li>
-<li>水平线标签<hr></li>
-<li>文字斜体：<i></i>、<em></em></li>
-<li>文字加粗：<b></b>、<strong></strong></li>
-<li>下标：<sub></sub>   上标：<sup></sup></li>
-<li>插入内容（下划线）：<ins></ins> 删除内容：<del></del></li>
-<li>特殊符号: 比如&lt; &lt;</li>
-<li>无序列表：<ul><li></li></ul></li>
-<li>有序列表：<ol><li></li></ol></li>
-<li>定义列表：<dl><dt>定义列表项</dt><dd>列表项描述</dd><dd>列表项描述</dd></dl></li>
-<li>锚链接（同一页面）：<a href="#锚名">目录名</a></li>
-<li>锚链接（不同页面页面）：<a href="网页名称#锚名">目录名</a></li>
-<li>电子邮箱链接： <a href="mailto:邮件地址" target="_blank" rel="noopener">名称</a></li>
+<li>标题标签:<code>&lt;h1&gt;&lt;/h1&gt;~&lt;h6&gt;&lt;/h6&gt;</code></li>
+<li>段落标签：<code>&lt;p&gt;&lt;/p&gt;</code></li>
+<li>换行标签：<code>&lt;br/&gt;</code></li>
+<li>水平线标签<code>&lt;hr/&gt;</code></li>
+<li>文字斜体：<code>&lt;i&gt;&lt;/i&gt;、&lt;em&gt;&lt;/em&gt;</code></li>
+<li>文字加粗：<code>&lt;b&gt;&lt;/b&gt;、&lt;strong&gt;&lt;/strong&gt;</code></li>
+<li>下标：<code>&lt;sub&gt;&lt;/sub&gt;</code>  上标：<code>&lt;sup&gt;&lt;/sup&gt;</code></li>
+<li>插入内容（下划线）：<code>&lt;ins&gt;&lt;/ins&gt;</code>删除内容：<code>&lt;del&gt;&lt;/del&gt;</code></li>
+<li>特殊符号: 比如<code>&amp;lt; &lt;</code></li>
+<li>无序列表：<code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code></li>
+<li>有序列表：<code>&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</code></li>
+<li>定义列表：<code>&lt;dl&gt;&lt;dt&gt;定义列表项&lt;/dt&gt;&lt;dd&gt;列表项描述&lt;/dd&gt;&lt;dd&gt;列表项描述&lt;/dd&gt;&lt;/dl&gt;</code></li>
+<li>锚链接（同一页面）：<code>&lt;a href=&quot;#锚名&quot;&gt;目录名&lt;/a&gt;</code></li>
+<li>锚链接（不同页面页面）：<code>&lt;a href=&quot;网页名称#锚名&quot;&gt;目录名&lt;/a&gt;</code></li>
+<li>电子邮箱链接：<code>&lt;a href=&quot;mailto:邮件地址&quot;&gt;名称&lt;/a&gt;</code></li>
 </ol>
 </li>
 <li>HTML元素</li>
 <li>HTML属性</li>
-<li>注释<br>html使用<!-- -->进行注释</li>
+<li>注释<br><code>html使用&lt;!-- --&gt;进行注释</code></li>
 </ol>
 
       
@@ -559,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML学习笔记"><span class="nav-number">1.</span> <span class="nav-text">HTML学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">HTML概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML特点"><span class="nav-number">1.1.</span> <span class="nav-text">HTML特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML基础语法"><span class="nav-number">1.2.</span> <span class="nav-text">HTML基础语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">0.0.0.0.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML学习笔记"><span class="nav-number">1.</span> <span class="nav-text">HTML学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML概念"><span class="nav-number">1.0.1.</span> <span class="nav-text">HTML概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML特点"><span class="nav-number">1.1.</span> <span class="nav-text">HTML特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML基础语法"><span class="nav-number">1.2.</span> <span class="nav-text">HTML基础语法</span></a></li></ol></li></ol></div>
             
 
           </div>
