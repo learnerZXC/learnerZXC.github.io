@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="每天积累一点点">
+<meta name="description" content="SpringBoot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。 特点 化繁为简，简化配置  快速创建项目maven构建项目 访问http://start.spring.io/  选择构建工具 Maven Project、编程语言Java、Sp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot">
 <meta property="og:url" content="learnerzxc.coding.me/2018/03/09/SpringBoot/index.html">
 <meta property="og:site_name" content="小菜">
-<meta property="og:description" content="每天积累一点点">
+<meta property="og:description" content="SpringBoot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。 特点 化繁为简，简化配置  快速创建项目maven构建项目 访问http://start.spring.io/  选择构建工具 Maven Project、编程语言Java、Sp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T08:51:22.135Z">
+<meta property="og:updated_time" content="2018-03-14T01:35:54.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot">
-<meta name="twitter:description" content="每天积累一点点">
+<meta name="twitter:description" content="SpringBoot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。 特点 化繁为简，简化配置  快速创建项目maven构建项目 访问http://start.spring.io/  选择构建工具 Maven Project、编程语言Java、Sp">
 
 
 
@@ -316,6 +316,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringBoot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -343,7 +365,48 @@
       
 
       
-        
+        <h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>化繁为简，简化配置</li>
+</ul>
+<h3 id="快速创建项目"><a href="#快速创建项目" class="headerlink" title="快速创建项目"></a>快速创建项目</h3><h4 id="maven构建项目"><a href="#maven构建项目" class="headerlink" title="maven构建项目"></a>maven构建项目</h4><ol>
+<li><p>访问<a href="http://start.spring.io/" target="_blank" rel="noopener">http://start.spring.io/</a></p>
+</li>
+<li><p>选择构建工具 <code>Maven Project</code>、编程语言<code>Java</code>、SpringBoot版本以及一些工程的基本信息。点击下方的<code>Switch to the full version</code>可以选择更多的信息以及勾选相关组件。</p>
+</li>
+<li><p>点击<code>Generate Project</code>下载项目压缩包。</p>
+</li>
+<li><p>解压后，使用Eclipse,Import———&gt;Maven——&gt;Existing Maven Projects ——&gt;Next<br>——&gt;选择解压后的文件夹-&gt; Finsh</p>
+</li>
+</ol>
+<h3 id="项目结构介绍"><a href="#项目结构介绍" class="headerlink" title="项目结构介绍"></a>项目结构介绍</h3><ul>
+<li><code>src/main/java</code>: 程序开发以及主程序入口</li>
+<li><code>src/main/resource</code>: 配置文件</li>
+<li><code>src/test/java</code>: 测试程序</li>
+</ul>
+<p>另外，SpringBoot建议目录如下：</p>
+<ol>
+<li><p>Application.java: 建议放在根目录下，主要用于一些框架配置</p>
+</li>
+<li><p>domain目录主要用于实体（Entity）与数据访问层（Repository）</p>
+</li>
+<li><p>service 层主要是业务类代码</p>
+</li>
+<li><p>controller 负责页面访问控制</p>
+</li>
+</ol>
+<p>采用默认配置可以省去很多配置，当然也可以根据自己的喜欢来进行更改。</p>
+<p>启动Application main方法，至此一个java项目搭建好了！</p>
+<h3 id="项目启动方式"><a href="#项目启动方式" class="headerlink" title="项目启动方式"></a>项目启动方式</h3><ul>
+<li><p><code>src/main/java/包名/Application.java</code>中直接run运行。</p>
+</li>
+<li><p>命令行启动: 进入项目路径：<code>cd 项目路径</code>，使用命令<code>mvn spring-boot:run</code>来启动</p>
+</li>
+<li><p>命令行启动: 进入项目路径：<code>cd 项目路径</code>，编译项目<code>mvn install</code>, 进入target文件夹<code>cd traget</code>, 然后使用<code>java -jar 文件名</code>来启动</p>
+</li>
+</ul>
+<h3 id="项目属性配置"><a href="#项目属性配置" class="headerlink" title="项目属性配置"></a>项目属性配置</h3><p>推荐使用yml来配置项目</p>
+
       
     </div>
     
@@ -427,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -458,7 +530,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -494,6 +566,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.0.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.0.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速创建项目"><span class="nav-number">1.0.3.</span> <span class="nav-text">快速创建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#maven构建项目"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">maven构建项目</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目结构介绍"><span class="nav-number">1.0.4.</span> <span class="nav-text">项目结构介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目启动方式"><span class="nav-number">1.0.5.</span> <span class="nav-text">项目启动方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目属性配置"><span class="nav-number">1.0.6.</span> <span class="nav-text">项目属性配置</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
