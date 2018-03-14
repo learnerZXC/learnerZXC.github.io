@@ -53,3 +53,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 - 命令行启动: 进入项目路径：`cd 项目路径`，使用命令`mvn spring-boot:run`来启动
 
 - 命令行启动: 进入项目路径：`cd 项目路径`，编译项目`mvn install`, 进入target文件夹`cd traget`, 然后使用`java -jar 文件名`来启动
+
+### 项目属性配置
+
+推荐使用yml来配置项目
