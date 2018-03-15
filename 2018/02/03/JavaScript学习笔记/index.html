@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="JavaScript学习笔记什么是JavaScript?JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T14:48:19.998Z">
+<meta property="og:updated_time" content="2018-03-15T00:41:14.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript学习笔记">
 <meta name="twitter:description" content="JavaScript学习笔记什么是JavaScript?JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。">
@@ -344,58 +344,83 @@
       
 
       
-        <h3 id="JavaScript学习笔记"><a href="#JavaScript学习笔记" class="headerlink" title="JavaScript学习笔记"></a>JavaScript学习笔记</h3><h4 id="什么是JavaScript"><a href="#什么是JavaScript" class="headerlink" title="什么是JavaScript?"></a>什么是JavaScript?</h4><p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。<br><a id="more"></a><br>完整的JavaScript由ECMAScript(语法)、Brower Object(DOM、BOM)（特性）组成的。</p>
-<h4 id="JavaScript语法"><a href="#JavaScript语法" class="headerlink" title="JavaScript语法"></a>JavaScript语法</h4><h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><p><code>//</code>单行注释<br><br><code>/**/</code>多行注释</p>
+        <h3 id="JavaScript学习笔记"><a href="#JavaScript学习笔记" class="headerlink" title="JavaScript学习笔记"></a>JavaScript学习笔记</h3><h4 id="什么是JavaScript"><a href="#什么是JavaScript" class="headerlink" title="什么是JavaScript?"></a>什么是JavaScript?</h4><p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。<br><a id="more"></a></p>
+<p>完整的JavaScript由ECMAScript(语法)、Brower Object(DOM、BOM)（特性）组成的。</p>
+<h4 id="JavaScript语法"><a href="#JavaScript语法" class="headerlink" title="JavaScript语法"></a>JavaScript语法</h4><h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><p><code>//</code>单行注释</p>
+<p><code>/**/</code>多行注释</p>
 <h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><p>ECMAScript中的一切（变量、函数名和操作符）都区分大小写。</p>
 <p>标识符： 变量、函数、属性的名字或者函数的参数。</p>
 <p>标识符的命名规则：</p>
 <ol>
-<li>由字母、数字、下划线（ _ ）或美元符（$）组成</li>
-<li>不能以数字开头</li>
-<li>不能使用关键字、保留字作为标识符。</li>
+<li><p>由字母、数字、下划线（ _ ）或美元符（$）组成</p>
+</li>
+<li><p>不能以数字开头</p>
+</li>
+<li><p>不能使用关键字、保留字作为标识符。</p>
+</li>
 </ol>
-<h6 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h6><p>ECMAScript中的变量是松散类型。换句话说，每个变量仅仅是一个用于保存至的占位符而已。<br><br>松散类型：可以用来保存任何类型的数据<br></p>
+<h6 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h6><p>ECMAScript中的变量是松散类型。换句话说，每个变量仅仅是一个用于保存值的占位符而已。</p>
+<p>松散类型：可以用来保存任何类型的数据</p>
 <ol>
-<li>变量声明：变量声明要使用var操作符<br><br>语法：var 变量名<br></li>
-<li>变量赋值：<br><br>声明的同时赋值： var 变量名 = 值<br><br>先声明后赋值： 变量名 = 值<br><br>说明：省略var声明的变量是全局变量<br></li>
+<li><p>变量声明：变量声明要使用var操作符</p>
+<p>语法：var 变量名</p>
+</li>
+<li><p>变量赋值：</p>
+<p>声明的同时赋值： var 变量名 = 值</p>
+<p>先声明后赋值： 变量名 = 值</p>
+<p>说明：省略var声明的变量是全局变量</p>
+</li>
 </ol>
 <h6 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h6><ul>
-<li>简单数据类型：Undefined、Null、Boolean、Number(NaN是一个特殊的数值)、String</li>
-<li>复杂数据类型：Object</li>
-<li>ES6新增了symbol数据类型</li>
+<li><p>简单数据类型：Undefined、Null、Boolean、Number(NaN是一个特殊的数值)、String</p>
+</li>
+<li><p>复杂数据类型：Object</p>
+</li>
+<li><p>ES6新增了symbol数据类型</p>
+</li>
 </ul>
 <h6 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h6><p>功能： 检测变量类型</p>
 <p>语法： typeof&nbsp;变量或typeof(变量)</p>
 <p>返回值类型：string类型，有可能是：string、number、boolean、undefined、object、function。//前四个是值类型，后两个是引用类型</p>
 <h6 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h6><ul>
-<li>Number: 表示整数和浮点数</li>
-<li>NaN: 即非数值（Not&nbsp;a&nbsp;Number）是一个特殊的数值</li>
+<li><p>Number: 表示整数和浮点数</p>
+</li>
+<li><p>NaN: 即非数值（Not&nbsp;a&nbsp;Number）是一个特殊的数值</p>
+</li>
 </ul>
 <p>说明：</p>
 <ol>
-<li>任何涉及NaN的操作（例如NaN/10）都会返回NaN</li>
-<li>NaN与任何值都不相等，包括NaN本身</li>
-<li>typeof(NaN类型的值)结果为number</li>
+<li><p>任何涉及NaN的操作（例如NaN/10）都会返回NaN</p>
+</li>
+<li><p>NaN与任何值都不相等，包括NaN本身</p>
+</li>
+<li><p>typeof(NaN类型的值)结果为number</p>
+</li>
 </ol>
 <p>isNaN(n)：检测n是否为“非数值”，返回值为boolean类型，参数n可以是任意类型。</p>
 <p>说明：isNaN对接受的值，先尝试转换为数值，再检测是否为非数值。比如：var&nbsp;age=”18”,Number.isNaN(age)返回值为false;</p>
 <p>数值转换:有3个函数可以把非数值转换为数值：</p>
 <ul>
-<li>Number()</li>
-<li>parseInt()</li>
+<li><p>Number()</p>
+</li>
+<li><p>parseInt()</p>
+</li>
 <li><p>ParseFloat()</p>
 <p>说明：</p>
 <ol>
-<li>Number()可以用于认可数据类型。</li>
-<li>parseInt()和parseFloat（）则专门用于把字符串转换为数值。<br>提取的字符串必须以数字开头，如果以非数字开头，则类型为NaN。</li>
+<li><p>Number()可以用于认可数据类型。</p>
+</li>
+<li><p>parseInt()和parseFloat（）则专门用于把字符串转换为数值。</p>
+</li>
 </ol>
 </li>
 </ul>
+<p>提取的字符串必须以数字开头，如果以非数字开头，则类型为NaN。</p>
 <h6 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h6><p>String类型用于表示由零或多个16位Unicode字符组成的字符序列，即字符串。字符串可以由双引号（””）或单引号（’’）表示</p>
 <p>数值转换： 将其他类型转换为字符串有两种方法：</p>
 <ul>
 <li><p>toString()</p>
-<p> 语法：str.toString;&nbsp;&nbsp;功能：将str转换为字符串&nbsp;&nbsp;返回值：str的一个副本<br><br> 参数：str是要转换的类型，可以是数值、布尔型、对象和字符串。<br></p>
+<p> 语法：str.toString;&nbsp;&nbsp;功能：将str转换为字符串&nbsp;&nbsp;返回值：str的一个副本<br><br> 参数：str是要转换的类型，可以是数值、布尔型、对象和字符串。</p>
 <ul>
 <li>String()</li>
 </ul>
@@ -408,226 +433,512 @@
 <li><p>Boolean()</p>
 <p>注意：</p>
 <ol>
-<li>除0之外的所有数字，转换为布尔型都为true</li>
-<li>除””之外的所有字符，转换为布尔型都为true(“”是空，空格也为true)</li>
-<li>null 和 undefined转换为布尔型为false</li>
+<li><p>除0之外的所有数字，转换为布尔型都为true</p>
+</li>
+<li><p>除””之外的所有字符，转换为布尔型都为true(“”是空，空格也为true)</p>
+</li>
+<li><p>null 和 undefined转换为布尔型为false</p>
+</li>
 </ol>
 </li>
 </ul>
 <h6 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h6><ol>
-<li>算数操作符（<code>+、-、*、/、% 、a++ 、++a、a--、--a</code>）<br><br>运算时会做隐士数据类型转换</li>
-<li><p>逻辑操作符<br><code>&amp;&amp;、||、!</code><br><br>&amp;&amp;(与):在有一个操作数不是布尔值的情况，逻辑与操作就不一定返回布尔值，此时他遵循以下规则：</p>
+<li><p>算数操作符（<code>+、-、*、/、% 、a++ 、++a、a--、--a</code>）</p>
+<p>运算时会做隐士数据类型转换</p>
+</li>
+<li><p>逻辑操作符</p>
+<p><code>&amp;&amp;、||、!</code></p>
+<p>&amp;&amp;(与):在有一个操作数不是布尔值的情况，逻辑与操作就不一定返回布尔值，此时他遵循以下规则：</p>
 <ol>
-<li>如果操作数隐士类型转换后都为true,则返回最后一个操作数。例如：80&amp;&amp;55返回结果为55(80隐士类型转换为true).</li>
-<li>如果操作数隐士类型转换后不都为true,则返回第一个为false的值。例如：0&amp;55返回结果为0(0隐士转换为false).</li>
-<li>只要有一个操作数是null，则返回null</li>
-<li>只要有一个操作数是NaN，则返回NaN</li>
-<li>只要有一个操作数是undefined，则返回undefined</li>
+<li><p>如果操作数隐士类型转换后都为true,则返回最后一个操作数。例如：80&amp;&amp;55返回结果为55(80隐士类型转换为true).</p>
+</li>
+<li><p>如果操作数隐士类型转换后不都为true,则返回第一个为false的值。例如：0&amp;55返回结果为0(0隐士转换为false).</p>
+</li>
+<li><p>只要有一个操作数是null，则返回null</p>
+</li>
+<li><p>只要有一个操作数是NaN，则返回NaN</p>
+</li>
+<li><p>只要有一个操作数是undefined，则返回undefined</p>
+</li>
 </ol>
 <p>||(或)：在有一个操作数不是布尔值的情况，逻辑与操作就不一定返回布尔值，此时他遵循以下规则：</p>
 <ol>
-<li>如果操作数隐士类型转换后不都为false,返回第一个为true操作数。例如：80&amp;&amp;55返回结果为80(80隐士类型转换为true).</li>
-<li>如果操作数隐士类型转换后都为false,则返回最后一个操作数。例如：0&amp;55返回结果为55(0隐士转换为false).</li>
-<li>如果两个操作数都是null，则返回null</li>
-<li>如果两个操作数都是NaN，则返回NaN</li>
-<li>如果两个操作数都是undefined，则返回undefined</li>
+<li><p>如果操作数隐士类型转换后不都为false,返回第一个为true操作数。例如：80&amp;&amp;55返回结果为80(80隐士类型转换为true).</p>
+</li>
+<li><p>如果操作数隐士类型转换后都为false,则返回最后一个操作数。例如：0&amp;55返回结果为55(0隐士转换为false).</p>
+</li>
+<li><p>如果两个操作数都是null，则返回null</p>
+</li>
+<li><p>如果两个操作数都是NaN，则返回NaN</p>
+</li>
+<li><p>如果两个操作数都是undefined，则返回undefined</p>
+</li>
 </ol>
 <p>!(非)：</p>
 <ol>
-<li>无论操作数是什么数据类型，逻辑非都会返回一个布尔值。</li>
-<li>!!同时使用两个逻辑非操作符时：<ul>
-<li>第一个逻辑非操作会基于无论什么操作数返回一个布尔值</li>
-<li>第二个逻辑非则对该布尔值求反</li>
+<li><p>无论操作数是什么数据类型，逻辑非都会返回一个布尔值。</p>
+</li>
+<li><p>!!同时使用两个逻辑非操作符时：</p>
+<ul>
+<li><p>第一个逻辑非操作会基于无论什么操作数返回一个布尔值</p>
+</li>
+<li><p>第二个逻辑非则对该布尔值求反</p>
+</li>
 </ul>
 </li>
 </ol>
 </li>
-<li>赋值操作符<br><br>简单赋值：<code>=</code><br><br>复合赋值：<code>+=、-=、*=、/=、%=</code></li>
-<li>比较操作符<br><br><code>&gt;、&lt;、&gt;=、&lt;=、==、===、!=、!==</code>返回值为boolean类型</li>
-<li>三元操作符<br><br>语法：条件?执行代码1:执行代码2<br><br>说明：可替代简单if语句，如果条件成立，执行代码1，否则执行代码2</li>
+<li><p>赋值操作符</p>
+<p>简单赋值：<code>=</code></p>
+<p>复合赋值：<code>+=、-=、*=、/=、%=</code></p>
+</li>
+<li><p>比较操作符</p>
+<p><code>&gt;、&lt;、&gt;=、&lt;=、==、===、!=、!==</code>返回值为boolean类型</p>
+</li>
+<li><p>三元操作符</p>
+<p>语法：条件?执行代码1:执行代码2</p>
+<p>说明：可替代简单if语句，如果条件成立，执行代码1，否则执行代码2</p>
+</li>
 </ol>
-<h5 id="JavaScript条件语句"><a href="#JavaScript条件语句" class="headerlink" title="JavaScript条件语句"></a>JavaScript条件语句</h5><h6 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h6><p>if语句<br><br>switch语句</p>
-<h6 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h6><p>for循环<br><br>语法：for(语句1;语句2;语句3){被执行的代码块}<br><br>语句1：在循环(代码块)开始前执行<br><br>语句2：定义循环（代码块）的条件<br><br>语句3：在循环(代码块)已被执行之后执行<br></p>
-<p><hr><br>while循环<br><br>语法：while(条件){需要执行的代码块}</p>
-<p><hr><br>do-while语句<br><br>语法：do{需要执行的代码}while(条件)<br><br>说明：这种语法的循环只是要被执行一次。</p>
-<p><hr><br>continue:结束本次循环，继续开始下一次。<br><br>break:退出整个循环体。</p>
-<h5 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h5><h6 id="ECMAScript中的Array"><a href="#ECMAScript中的Array" class="headerlink" title="ECMAScript中的Array"></a>ECMAScript中的Array</h6><p>创建数组<br><br>创建数组的基本方式有两种：</p>
+<h5 id="JavaScript条件语句"><a href="#JavaScript条件语句" class="headerlink" title="JavaScript条件语句"></a>JavaScript条件语句</h5><h6 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h6><p>if语句</p>
+<p>switch语句</p>
+<h6 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h6><p>for循环</p>
+<p>语法：for(语句1;语句2;语句3){被执行的代码块}</p>
+<p>语句1：在循环(代码块)开始前执行</p>
+<p>语句2：定义循环（代码块）的条件</p>
+<p>语句3：在循环(代码块)已被执行之后执行</p>
+<p>while循环</p>
+<p>语法：while(条件){需要执行的代码块}</p>
+<p>do-while语句</p>
+<p>语法：do{需要执行的代码}while(条件)</p>
+<p>说明：这种语法的循环只是要被执行一次。</p>
+<p>continue:结束本次循环，继续开始下一次。</p>
+<p>break:退出整个循环体。</p>
+<h5 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h5><h6 id="ECMAScript中的Array"><a href="#ECMAScript中的Array" class="headerlink" title="ECMAScript中的Array"></a>ECMAScript中的Array</h6><p>创建数组</p>
+<p>创建数组的基本方式有两种：</p>
 <ol>
-<li>使用Array构造函数<br><br>语法：new&nbsp;Array()<br><br>小括号()说明：<ul>
-<li>预先知道数组要保存的项目的数量</li>
-<li>向Array构造函数中传递数组应包含的项</li>
-</ul>
-</li>
+<li>使用Array构造函数<br>语法：<code>new Array()</code></li>
+</ol>
+<p>小括号()说明：</p>
+<pre><code>- 预先知道数组要保存的项目的数量
+
+- 向Array构造函数中传递数组应包含的项
+</code></pre><ol>
 <li>使用数组字面量表示法：由一对包含数组项的方括号[]表示，多个数组项之间用逗号隔开。</li>
 </ol>
-<p>数组长度<br><br>语法:array.length<br><br>功能：获取数组array的长度<br>返回值：number<br>说明：通过设置length可以从数组的末尾移除项或者向数组中添加新项</p>
+<p>数组长度</p>
+<p>语法:<code>array.length</code><br>功能：获取数组array的长度</p>
+<p>返回值：number</p>
+<p>说明：通过设置length可以从数组的末尾移除项或者向数组中添加新项</p>
 <p>数组的栈方法：</p>
 <ul>
-<li>push()<br><br>语法：arrayObject.push(newele1,newele2,…)<br><br>功能：把它的参数顺序添加到arrayObject的尾部。<br><br>返回值：把指定值添加到数组后的新长度。</li>
-<li>unshift()<br>语法：arrayObject.unshift(newele1,newele2,…)<br><br>功能：把它的参数顺序添加到arrayObject的开头。<br><br>返回值：把指定值添加到数组后的新长度。</li>
-<li>pop()<br>语法：arrayObject.pop()<br><br>功能：删除arrayObject的最后一个元素。<br><br>返回值：被删除的那个元素</li>
-<li>shift()<br>语法：arrayObject.pop()<br><br>功能：删除arrayObject的第一个元素。<br><br>返回值：被删除的那个元素</li>
+<li>push()</li>
 </ul>
-<p>数组的转换方法：<br><br><code>join()</code><br><br>语法：arrayObject.join(separator)<br><br>说明：separator指访问时用什么分割符。没有参数时，默认用逗号连接起来<br><br>功能:用于把数组中所有元素放入一个字符串。<br><br>返回值：字符串<br></p>
-<p>数组重排序：<br><br><code>reverse（）</code><br><br>语法：arrayObject.reverse()<br><br>功能：用于颠倒数组中元素的顺序。<br><br>返回值：排完序以后的数组。<br></p>
-<p><code>sort()</code><br>语法：arrayObject.sort(sortby)<br><br>功能：用于对数组中元素进行排序。<br><br>返回值：排完序以后的数组。<br><br>说明：</p>
-<ol>
-<li>即使数组中的每一项都说数值，sort()方法比较的也是字符串。</li>
-<li>sort()方法可以接受一个比较函数作为参数。<br>例如：数字降序。<code>arrayObject.sort(function(a,b){return b-a})</code></li>
-</ol>
-<p>数组连接：<br><br><code>concat()</code><br><br>语法：arrayObject.concat(arrayX,arrayX,….)<br><br>功能：用于连接两个或者多个数组。<br><br>返回值：数组。</p>
-<p>截取数组中的元素：<br><br>语法：arrayObject.slice(start,end)<br><br>功能：从已有的数组中截取从start和end（不包含该元素）的元素，即截取从start到end-1的元素<br><br>参数：</p>
+<p>语法：<code>arrayObject.push(newele1,newele2,...)</code></p>
+<p>功能：把它的参数顺序添加到arrayObject的尾部。</p>
+<p>返回值：把指定值添加到数组后的新长度。</p>
 <ul>
-<li>start(必须)规定从何处开始选取，如果是负数，从数组尾部开始算起。</li>
-<li>end(可选)规定从何处结束选取，是数组片段结束处的下标。<br></li>
+<li>unshift()<br>语法：<code>arrayObject.unshift(newele1,newele2,...)</code></li>
+</ul>
+<p>功能：把它的参数顺序添加到arrayObject的开头。</p>
+<p>返回值：把指定值添加到数组后的新长度。</p>
+<ul>
+<li>pop()</li>
+</ul>
+<p>语法：<code>arrayObject.pop()</code></p>
+<p>功能：删除arrayObject的最后一个元素。</p>
+<p>返回值：被删除的那个元素</p>
+<ul>
+<li>shift()</li>
+</ul>
+<p>语法：<code>arrayObject.pop()</code></p>
+<p>功能：删除arrayObject的第一个元素。</p>
+<p>返回值：被删除的那个元素</p>
+<p>数组的转换方法：</p>
+<p><code>join()</code></p>
+<p>语法：<code>arrayObject.join(separator)</code></p>
+<p>说明：separator指访问时用什么分割符。没有参数时，默认用逗号连接起来</p>
+<p>功能:用于把数组中所有元素放入一个字符串。</p>
+<p>返回值：字符串</p>
+<p>数组重排序：</p>
+<p><code>reverse（）</code></p>
+<p>语法：<code>arrayObject.reverse()</code></p>
+<p>功能：用于颠倒数组中元素的顺序。</p>
+<p>返回值：排完序以后的数组。</p>
+<p><code>sort()</code></p>
+<p>语法：<code>arrayObject.sort(sortby)</code></p>
+<p>功能：用于对数组中元素进行排序。</p>
+<p>返回值：排完序以后的数组。</p>
+<p>说明：</p>
+<ol>
+<li><p>即使数组中的每一项都说数值，sort()方法比较的也是字符串。</p>
+</li>
+<li><p>sort()方法可以接受一个比较函数作为参数。</p>
+</li>
+</ol>
+<p>例如：数字降序。<code>arrayObject.sort(function(a,b){return b-a})</code></p>
+<p>数组连接：</p>
+<p><code>concat()</code></p>
+<p>语法：arrayObject.concat(arrayX,arrayX,….)</p>
+<p>功能：用于连接两个或者多个数组。</p>
+<p>返回值：数组。</p>
+<p>截取数组中的元素：</p>
+<p>语法：<code>arrayObject.slice(start,end)</code></p>
+<p>功能：从已有的数组中截取从start和end（不包含该元素）的元素，即截取从start到end-1的元素</p>
+<p>参数：</p>
+<ul>
+<li><p>start(必须)规定从何处开始选取，如果是负数，从数组尾部开始算起。</p>
+</li>
+<li><p>end(可选)规定从何处结束选取，是数组片段结束处的下标。</p>
+</li>
 </ul>
 <p>说明：</p>
 <ol>
-<li>如果没有指定end，切分的数组包含从start到数组结束的所有元素。</li>
-<li>如slice()方法吃参数中有一个负数，则用数组长度加上该数来确定相应的位置。<br></li>
+<li><p>如果没有指定end，切分的数组包含从start到数组结束的所有元素。</p>
+</li>
+<li><p>如slice()方法吃参数中有一个负数，则用数组长度加上该数来确定相应的位置。</p>
+</li>
 </ol>
-<p>返回值：数组<br></p>
-<p>其他方法：<br><code>splice()</code><br></p>
-<p>删除元素语法：arrayObject.splice(index,count)<br><br>功能：删除从index处开始的零个或者多个元素。<br><br>返回值:含有被删除的元素的数组。<br><br>说明： count是要删除的项目数量，如果设置为0，则不会删除项目。如果不设置，则删除从index开始的所有值。<br></p>
-<p>插入元素语法：arrayObject.splice(index,0，item1,…,itemX)<br><br>功能：在指定位置插入值<br><br>参数：</p>
+<p>返回值：数组</p>
+<p>其他方法：<br><code>splice()</code></p>
+<p>删除元素语法：<code>arrayObject.splice(index,count)</code></p>
+<p>功能：删除从index处开始的零个或者多个元素。</p>
+<p>返回值:含有被删除的元素的数组。</p>
+<p>说明： count是要删除的项目数量，如果设置为0，则不会删除项目。如果不设置，则删除从index开始的所有值。</p>
+<p>插入元素语法：<code>arrayObject.splice(index,0，item1,...,itemX)</code></p>
+<p>功能：在指定位置插入值</p>
+<p>参数：</p>
 <ul>
-<li>index：起始位置</li>
-<li>0：要删除的项数</li>
-<li>item1,..,itemX:要插入的项<br><br>返回值：空数组。<br></li>
+<li><p>index：起始位置</p>
+</li>
+<li><p>0：要删除的项数</p>
+</li>
+<li><p>item1,..,itemX:要插入的项</p>
+</li>
 </ul>
-<p>替换元素语法：arrayObject.splice(index,count，item1,…,itemX)<br><br>功能：在指定位置插入值,且同时删除任意数量的项<br><br>参数：</p>
+<p>返回值：空数组。</p>
+<p>替换元素语法：<code>arrayObject.splice(index,count，item1,...,itemX)</code></p>
+<p>功能：在指定位置插入值,且同时删除任意数量的项</p>
+<p>参数：</p>
 <ul>
-<li>index：起始位置</li>
-<li>count：要删除的项数</li>
-<li>item1,..,itemX:要插入的项<br><br>返回值：从原始数组中删除的项（如果没有删除任何项，则返回空数组）。<br></li>
+<li><p>index：起始位置</p>
+</li>
+<li><p>count：要删除的项数</p>
+</li>
+<li><p>item1,..,itemX:要插入的项</p>
+</li>
 </ul>
-<p>关于位置的两个方法：<br><code>indexOf()</code><br><br>语法：arrayObject.indexOf(searchvalue,startIndex)<br><br>功能：从数组的开头（位置0）开始向后查找<br><br>参数：</p>
+<p>返回值：从原始数组中删除的项（如果没有删除任何项，则返回空数组）。</p>
+<p>关于位置的两个方法：</p>
+<p><code>indexOf()</code></p>
+<p>语法：<code>arrayObject.indexOf(searchvalue,startIndex)</code></p>
+<p>功能：从数组的开头（位置0）开始向后查找</p>
+<p>参数：</p>
 <ul>
-<li>searchvalue:必选，要查找的项</li>
-<li>startIndex：可选，起始位置的索引。默认为0。<br><br>返回值：number,查找项在数组中的索引值，没有找到的情况下返回-1。<br></li>
+<li><p>searchvalue:必选，要查找的项</p>
+</li>
+<li><p>startIndex：可选，起始位置的索引。默认为0。</p>
+</li>
 </ul>
-<p><code>lastIndexOf()</code><br><br>语法：arrayObject.lastIndexOf(searchvalue,startIndex)<br><br>功能：从数组的末尾开始向前查找<br><br>参数：</p>
+<p>返回值：number,查找项在数组中的索引值，没有找到的情况下返回-1。</p>
+<p><code>lastIndexOf()</code></p>
+<p>语法：<code>arrayObject.lastIndexOf(searchvalue,startIndex)</code></p>
+<p>功能：从数组的末尾开始向前查找</p>
+<p>参数：</p>
 <ul>
-<li>searchvalue:必选，要查找的项</li>
-<li>startIndex：可选，起始位置的索引。如没有该参数，则从数组末尾开始向前查找<br><br>返回值：number,查找项在数组中的索引值，没有找到的情况下返回-1。</li>
+<li><p>searchvalue:必选，要查找的项</p>
+</li>
+<li><p>startIndex：可选，起始位置的索引。如没有该参数，则从数组末尾开始向前查找</p>
+</li>
 </ul>
+<p>返回值：number,查找项在数组中的索引值，没有找到的情况下返回-1。</p>
 <p>注：查找的项跟数组中的项比较时，会使用全等操作，即值和数据类型都必须相等</p>
-<h6 id="String"><a href="#String" class="headerlink" title="String"></a>String</h6><p>字符串常用的方法：<br></p>
+<h6 id="String"><a href="#String" class="headerlink" title="String"></a>String</h6><p>字符串常用的方法：</p>
 <ul>
-<li><code>charAt()</code><br><br>语法：stringObect.charAt(index)<br><br>功能：返回stringObject中的index位置的字符。<br><br>说明：ES5中可使用”方括号加字符索引”来访问字符串中特定的字符，但IE7及更早的浏览器会返回undefined。<br></li>
-<li><code>charCodeAt</code><br><br>语法：stringObect.charCodeAt(index)<br><br>功能：返回stringObject中的index位置字符的字符编码。<br></li>
-<li><code>indexOf()</code><br><br>语法：stringObjec.indexOf(“o”)<br><br>功能：从一个字符串中由开头向后搜索给定的子字符串，返回子字符串的位置。<br><br>返回值：数值。<br><br>说明：如果没有找到该字符串，则返回-1。<br></li>
-<li><code>lastIndexOf</code><br><br>语法：stringObjec.lastIndexOf(“o”)<br><br>功能：从一个字符串中由末尾向前搜索给定的子字符串，返回子字符串的位置。<br><br>返回值：数值。<br><br>说明：如果没有找到该字符串，则返回-1。<br></li>
+<li><code>charAt()</code></li>
 </ul>
-<p>字符串对象的截取方法:<br><code>slice()</code><br><br>语法：stringObject.slice(start,end)<br>功能：截取字符串。<br>参数说明：</p>
-<ol>
-<li>start:必需，指定子字符串的开始位置。</li>
-<li>end:可选，表示子字符串到哪里结束，end本身不在截取的范围之内，省略时截取至字符串的末尾。</li>
-<li>如slice()方法吃参数中有一个负数，则用数组长度加上该数来确定相应的位置。<br></li>
-</ol>
-<p><code>substring()</code><br><br>说明：语法及功能同slice()完全一样。<br><br>区别在于：</p>
-<ol>
-<li>当参数为负数时，自动将参数转换为0。</li>
-<li>substring()会将较小的数作为开始位置，把较大的数作为结束位置。<br></li>
-</ol>
-<p><code>substr()</code><br><br>语法：stringObject.substr(start,len)<br>功能：截取字符串。<br>参数说明：</p>
-<ol>
-<li>start:必需，指定子字符串的开始位置。</li>
-<li>len:可选，表示截取的字符总数，省略时截取至字符串的末尾。</li>
-<li>当start为负数时，会将传入的负数与字符串的长度相加。</li>
-<li>当len为负数时，返回空字符串。<br></li>
-</ol>
-<p>字符串分割为数组：<br><br><code>split()</code><br><br>语法：stringObject.split(separator)<br><br>功能：把一个字符串分割成字符串数组。<br><br>返回值：Array。<br><br>说明：separator:必需，分隔符。<br></p>
-<p>替换字符串的一些字符:<br><br><code>replace()</code><br><br>语法：stringObject.replace(regexp/substr,replacement)<br><br>功能：在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br><br>返回值：String。<br><br>说明：regexp:必需，规定子字符串或要替换的模式的RegExp对象。<br><br>replacement:必需。 一个字符串值。<br></p>
-<p>字符串转换大小写：<br><code>toUpperCase()</code><br><br>语法：stringObject.toUpperCase()<br><br>功能：把字符串转换为大写。<br></p>
-<p><code>toLowerCase()</code><br><br>语法：stringObject.toLowerCase()<br><br>功能：把字符串转换为小写。<br></p>
-<h6 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h6><h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6><h4 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h4><h6 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h6><p>事件就是文档或浏览器窗口中发生的一些特定的交互瞬间。</p>
-<h6 id="HTML事件"><a href="#HTML事件" class="headerlink" title="HTML事件"></a>HTML事件</h6><p>概念：直接在HTML元素标签内添加事件，执行脚本。<br><br>语法：<code>&lt;tag&amp;nbsp;事件 = &quot;执行脚本&quot;&gt;&lt;/tag&gt;</code>。<br><br>功能：在HTML元素上绑定事件。<br><br>说明：执行脚本可以是一个函数的调用。<br></p>
-<p>关于this的指向：在时间触发的函数中，this是对该DOM对象的引用。</p>
-<h6 id="DOM0级事件"><a href="#DOM0级事件" class="headerlink" title="DOM0级事件"></a>DOM0级事件</h6><p>执行事件的步骤：<br></p>
-<ol>
-<li>通过DOM获取HTML元素</li>
-<li>（获取的HTML).事件=执行脚本。<br></li>
-</ol>
-<p>语法：ele.事件=执行脚本<br><br>功能：在DOM对象上绑定事件<br><br>说明：执行脚本可以是一个匿名函数，也可以是一个函数的调用。<br><br>在调用自定义函数时，函数后面不要加括号。如加了括号，函数可能会自动执行，而不是被触发执行<br><br>例如：<code>btn.onclick= clickBtn</code><br><br>      <code>function clickBtn(){
-          alert(&quot;我是按钮&quot;)
-          }</code>  </p>
-<p>注：不建议使用HTML事件，原因如下：<br></p>
-<ol>
-<li>多元素绑定相同事件时，效率低。</li>
-<li>不建议在HTML元素中写JavaScript代码。<br></li>
-</ol>
-<h6 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h6><p>鼠标事件：<br></p>
+<p>语法：<code>stringObect.charAt(index)</code></p>
+<p>功能：返回stringObject中的index位置的字符。</p>
+<p>说明：ES5中可使用”方括号加字符索引”来访问字符串中特定的字符，但IE7及更早的浏览器会返回undefined。</p>
 <ul>
-<li>onload:页面加载时触发(window.onload)</li>
-<li>onclick:鼠标点击时触发</li>
-<li>onmouseover:鼠标滑过时触发</li>
-<li>onmouseout:鼠标离开时触发</li>
-<li>onfoucs:获得焦点时触发</li>
-<li>onblur：失去焦点时触发</li>
-<li>onchange:域的内容改变时触发(一般作用于select或checkbox或radio)</li>
-<li>onsubmit: 表单中的确认按钮被点击时发生(onsubmit事件不是加在按钮上，而是表单上)</li>
-<li>onmousedown: 鼠标按钮在元素上按下时触发</li>
-<li>onmousemove: 在鼠标指针移动时触发</li>
-<li>onmouseup: 在元素上松开鼠标按钮时触发</li>
-<li>onresize: 当调整浏览器窗口的大小时触发</li>
-<li>onscroll：拖动滚动条滚动时触发<br></li>
+<li><code>charCodeAt</code></li>
+</ul>
+<p>语法：<code>stringObect.charCodeAt(index)</code></p>
+<p>功能：返回stringObject中的index位置字符的字符编码。</p>
+<ul>
+<li><code>indexOf()</code></li>
+</ul>
+<p>语法：<code>stringObjec.indexOf(&quot;o&quot;)</code></p>
+<p>功能：从一个字符串中由开头向后搜索给定的子字符串，返回子字符串的位置。</p>
+<p>返回值：数值。</p>
+<p>说明：如果没有找到该字符串，则返回-1。</p>
+<ul>
+<li><code>lastIndexOf</code></li>
+</ul>
+<p>语法：<code>stringObjec.lastIndexOf(&quot;o&quot;)</code></p>
+<p>功能：从一个字符串中由末尾向前搜索给定的子字符串，返回子字符串的位置。</p>
+<p>返回值：数值。</p>
+<p>说明：如果没有找到该字符串，则返回-1。</p>
+<p>字符串对象的截取方法:</p>
+<p><code>slice()</code></p>
+<p>语法：<code>stringObject.slice(start,end)</code></p>
+<p>功能：截取字符串。</p>
+<p>参数说明：</p>
+<ol>
+<li><p>start:必需，指定子字符串的开始位置。</p>
+</li>
+<li><p>end:可选，表示子字符串到哪里结束，end本身不在截取的范围之内，省略时截取至字符串的末尾。</p>
+</li>
+<li><p>如slice()方法吃参数中有一个负数，则用数组长度加上该数来确定相应的位置。</p>
+</li>
+</ol>
+<p><code>substring()</code></p>
+<p>说明：语法及功能同slice()完全一样。</p>
+<p>区别在于：</p>
+<ol>
+<li><p>当参数为负数时，自动将参数转换为0。</p>
+</li>
+<li><p>substring()会将较小的数作为开始位置，把较大的数作为结束位置。</p>
+</li>
+</ol>
+<p><code>substr()</code></p>
+<p>语法：stringObject.substr(start,len)</p>
+<p>功能：截取字符串。</p>
+<p>参数说明：</p>
+<ol>
+<li><p>start:必需，指定子字符串的开始位置。</p>
+</li>
+<li><p>len:可选，表示截取的字符总数，省略时截取至字符串的末尾。</p>
+</li>
+<li><p>当start为负数时，会将传入的负数与字符串的长度相加。</p>
+</li>
+<li><p>当len为负数时，返回空字符串。</p>
+</li>
+</ol>
+<p>字符串分割为数组：</p>
+<p><code>split()</code></p>
+<p>语法：<code>stringObject.split(separator)</code></p>
+<p>功能：把一个字符串分割成字符串数组。</p>
+<p>返回值：Array。</p>
+<p>说明：separator:必需，分隔符。</p>
+<p>替换字符串的一些字符:</p>
+<p><code>replace()</code></p>
+<p>语法：stringObject.replace(regexp/substr,replacement)</p>
+<p>功能：在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</p>
+<p>返回值：String。</p>
+<p>说明：regexp:必需，规定子字符串或要替换的模式的RegExp对象。</p>
+<p>replacement:必需。 一个字符串值。</p>
+<p>字符串转换大小写：</p>
+<p><code>toUpperCase()</code></p>
+<p>语法：stringObject.toUpperCase()</p>
+<p>功能：把字符串转换为大写。</p>
+<p><code>toLowerCase()</code></p>
+<p>语法：stringObject.toLowerCase()</p>
+<p>功能：把字符串转换为小写。</p>
+<h6 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h6><h6 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h6><h4 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h4><h6 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h6><p>事件就是文档或浏览器窗口中发生的一些特定的交互瞬间。</p>
+<h6 id="HTML事件"><a href="#HTML事件" class="headerlink" title="HTML事件"></a>HTML事件</h6><p>概念：直接在HTML元素标签内添加事件，执行脚本。</p>
+<p>语法：<code>&lt;tag 事件 = &quot;执行脚本&quot;&gt;&lt;/tag&gt;</code>。</p>
+<p>功能：在HTML元素上绑定事件。</p>
+<p>说明：执行脚本可以是一个函数的调用。</p>
+<p>关于this的指向：在时间触发的函数中，this是对该DOM对象的引用。</p>
+<h6 id="DOM0级事件"><a href="#DOM0级事件" class="headerlink" title="DOM0级事件"></a>DOM0级事件</h6><p>执行事件的步骤：</p>
+<ol>
+<li><p>通过DOM获取HTML元素</p>
+</li>
+<li><p>（获取的HTML).事件=执行脚本。</p>
+</li>
+</ol>
+<p>语法：ele.事件=执行脚本</p>
+<p>功能：在DOM对象上绑定事件</p>
+<p>说明：执行脚本可以是一个匿名函数，也可以是一个函数的调用。</p>
+<p>在调用自定义函数时，函数后面不要加括号。如加了括号，函数可能会自动执行，而不是被触发执行</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick= clickBtn</span><br><span class="line">      function clickBtn()&#123;</span><br><span class="line">          alert(&quot;我是按钮&quot;)</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>注：不建议使用HTML事件，原因如下：</p>
+<ol>
+<li><p>多元素绑定相同事件时，效率低。</p>
+</li>
+<li><p>不建议在HTML元素中写JavaScript代码。</p>
+</li>
+</ol>
+<h6 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h6><p>鼠标事件：</p>
+<ul>
+<li><p>onload:页面加载时触发(window.onload)</p>
+</li>
+<li><p>onclick:鼠标点击时触发</p>
+</li>
+<li><p>onmouseover:鼠标滑过时触发</p>
+</li>
+<li><p>onmouseout:鼠标离开时触发</p>
+</li>
+<li><p>onfoucs:获得焦点时触发</p>
+</li>
+<li><p>onblur：失去焦点时触发</p>
+</li>
+<li><p>onchange:域的内容改变时触发(一般作用于select或checkbox或radio)</p>
+</li>
+<li><p>onsubmit: 表单中的确认按钮被点击时发生(onsubmit事件不是加在按钮上，而是表单上)</p>
+</li>
+<li><p>onmousedown: 鼠标按钮在元素上按下时触发</p>
+</li>
+<li><p>onmousemove: 在鼠标指针移动时触发</p>
+</li>
+<li><p>onmouseup: 在元素上松开鼠标按钮时触发</p>
+</li>
+<li><p>onresize: 当调整浏览器窗口的大小时触发</p>
+</li>
+<li><p>onscroll：拖动滚动条滚动时触发</p>
+</li>
 </ul>
 <h4 id="BOM事件"><a href="#BOM事件" class="headerlink" title="BOM事件"></a>BOM事件</h4><h6 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h6><p>BOM（brower&nbsp;object&nbsp;model）浏览器对象模型</p>
 <h6 id="BOM对象"><a href="#BOM对象" class="headerlink" title="BOM对象"></a>BOM对象</h6><p>BOM对包括：</p>
 <ul>
-<li>window对象<br><br>window是浏览器的一个实例，在浏览器中，window对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的Global对象（全局对象）。<br><br>var&nbsp;age=15 等价于window.age=15<br><br>所有的全局变量和全局方法都被归在window对象上。<br></li>
+<li>window对象</li>
 </ul>
-<p>window对象的方法：<br><br>alert方法：<br><br>语法：<code>window.alert（&quot;content&quot;）</code><br><br>功能： 显示带有一段消息和一个确认按钮的警告框<br></p>
-<p>confirm方法：<br><br>语法：<code>window.confirm&quot;message&quot;）</code><br><br>功能： 显示带有指定消息和OK及取消按钮的对话框<br></p>
-<p>prompt方法：<br><br>语法：<code>window.prompt(&quot;text,defaultText&quot;)</code><br><br>参数说明：<br><br> text:要在对话框中显示的纯文本（而不是HTML格式的文本）<br><br> defaultText:默认的输入文本<br><br>返回值：如果用户单机提示框的取消按钮，则返回null;如果用户单击确认按钮，则返回输入字段当前显示的文本。<br></p>
+<p>window是浏览器的一个实例，在浏览器中，window对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的Global对象（全局对象）。</p>
+<p><code>var age=15</code> 等价于<code>window.age=15</code></p>
+<p>所有的全局变量和全局方法都被归在window对象上。</p>
+<p>window对象的方法：</p>
+<p>alert方法：</p>
+<p>语法：<code>window.alert（&quot;content&quot;）</code></p>
+<p>功能： 显示带有一段消息和一个确认按钮的警告框</p>
+<p>confirm方法：<br>语法：<code>window.confirm&quot;message&quot;）</code></p>
+<p>功能： 显示带有指定消息和OK及取消按钮的对话框</p>
+<p>prompt方法：</p>
+<p>语法：<code>window.prompt(&quot;text,defaultText&quot;)</code></p>
+<p>参数说明：</p>
+<p> text:要在对话框中显示的纯文本（而不是HTML格式的文本）</p>
+<p> defaultText:默认的输入文本</p>
+<p>返回值：如果用户单机提示框的取消按钮，则返回null;如果用户单击确认按钮，则返回输入字段当前显示的文本。</p>
 <p>说明：如果文本内容太长，需要换行，使用<code>/n</code>换行</p>
-<p>open方法<br><br>语法:<code>window.open(pageURL,name,parameters)</code><br><br>功能：打开一个新的浏览器窗口或查找一个已命名的窗口<br><br>参数说明：<br><br>pageURL:子窗口路径<br><br>name: 子窗口句柄（name声明了新窗口的名称，方便后期通过name对子窗口进行引用）<br><br>parameters:窗口参数（各参数用逗号分隔）<br></p>
-<p>close方法<br><br>语法:<code>window.close()</code><br><br>功能：关闭浏览器窗口<br></p>
-<p>定时器方法：<br><br>超时调用<br><br>语法：<code>setTimeout(code,millisec)</code><br><br>功能：在指定的毫秒数后调用函数或计算表达式<br><br>参数说明：</p>
+<p>open方法</p>
+<p>语法:<code>window.open(pageURL,name,parameters)</code></p>
+<p>功能：打开一个新的浏览器窗口或查找一个已命名的窗口</p>
+<p>参数说明：</p>
+<p>pageURL:子窗口路径</p>
+<p>name: 子窗口句柄（name声明了新窗口的名称，方便后期通过name对子窗口进行引用）</p>
+<p>parameters:窗口参数（各参数用逗号分隔）</p>
+<p>close方法</p>
+<p>语法:<code>window.close()</code></p>
+<p>功能：关闭浏览器窗口</p>
+<p>定时器方法：</p>
+<p>超时调用</p>
+<p>语法：<code>setTimeout(code,millisec)</code></p>
+<p>功能：在指定的毫秒数后调用函数或计算表达式</p>
+<p>参数说明：</p>
 <ol>
-<li>code:要调用的函数或要执行的JavaScript代码串</li>
-<li>millisec:在执行代码前需要等待的毫秒数<br><br>注：setTimeout方法返回一个ID值，通过它取消超时调用<br><br>说明：setTimeout()只执行code一次。如果要多次调用，可以让code自身在此调用setTimeout().<br></li>
+<li><p>code:要调用的函数或要执行的JavaScript代码串</p>
+</li>
+<li><p>millisec:在执行代码前需要等待的毫秒数</p>
+</li>
 </ol>
-<p>清除超时调用<br><br>语法：<code>clearTimeout(id_of_settimeout)</code><br><br>功能：取消由setTimeout（）方法设置的timeout<br><br>参数说明：id_of_settimeout：由setTimeout()返回的ID值，该值标识要取消的延迟执行代码块。<br></p>
-<p>间歇调用<br><br>语法：<code>setInterval(code,millisec)</code><br><br>功能：每隔知道的时间执行一次代码<br>参数说明：</p>
+<p>注：setTimeout方法返回一个ID值，通过它取消超时调用</p>
+<p>说明：setTimeout()只执行code一次。如果要多次调用，可以让code自身在此调用setTimeout().</p>
+<p>清除超时调用</p>
+<p>语法：<code>clearTimeout(id_of_settimeout)</code></p>
+<p>功能：取消由setTimeout（）方法设置的timeout</p>
+<p>参数说明：id_of_settimeout：由setTimeout()返回的ID值，该值标识要取消的延迟执行代码块。</p>
+<p>间歇调用</p>
+<p>语法：<code>setInterval(code,millisec)</code></p>
+<p>功能：每隔知道的时间执行一次代码</p>
+<p>参数说明：</p>
 <ol>
-<li>code:要调用的函数或要执行的JavaScript代码串</li>
-<li>millisec:周期性执行或调用code之间的时间间隔，以毫秒计<br><br>注：setInterval方法返回一个ID值，通过它取消间歇调用<br></li>
+<li><p>code:要调用的函数或要执行的JavaScript代码串</p>
+</li>
+<li><p>millisec:周期性执行或调用code之间的时间间隔，以毫秒计</p>
+<p>注：setInterval方法返回一个ID值，通过它取消间歇调用</p>
+</li>
 </ol>
-<p>间歇调用<br><br>语法：<code>clearInterval(id_of_setInterval)</code><br><br>功能：取消由setInterval()方法设置的interval<br>参数说明：<br>id_of_setInterval：由setInterval()返回的ID值，该值标识要取消的间歇执行代码块<br><br>  注：setInterval方法返回一个ID值，通过它取消间歇调用</p>
-<p><hr></p>
+<p>清除间歇调用</p>
+<p>语法：<code>clearInterval(id_of_setInterval)</code></p>
+<p>功能：取消由setInterval()方法设置的interval</p>
+<p>参数说明：</p>
+<p>id_of_setInterval：由setInterval()返回的ID值，该值标识要取消的间歇执行代码块</p>
+<p>  注：setInterval方法返回一个ID值，通过它取消间歇调用</p>
 <ul>
-<li>navigator对象<br><br>常用属性：<br><br>userAgent属性<br><br>语法：<code>navigator.userAgent</code><br><br>功能：用来失败浏览器名称、版本、引擎以及操作系统等信息的内容。<br><hr></li>
-<li>screen对象<br><br>screen对象包含有关客户端显示屏幕的信息<br><br>常用属性：<br><br>availWidth属性<br><br>语法：<code>screen.availWidth</code><br><br>功能：返回可用的屏幕宽度<br></li>
+<li>navigator对象</li>
 </ul>
-<p>availHeight属性<br><br>语法：<code>screen.availHeight</code><br><br>功能：返回可用的屏幕高度<hr></p>
+<p>常用属性：</p>
+<p>userAgent属性</p>
+<p>语法：<code>navigator.userAgent</code></p>
+<p>功能：用来失败浏览器名称、版本、引擎以及操作系统等信息的内容。</p>
 <ul>
-<li>history对象<br><br>history对象保存了用户在浏览器镇南关访问页面的历史记录。是window对象的属性。<br></li>
+<li>screen对象</li>
 </ul>
-<p>常用方法：<br><br>back()方法<br><br>语法：<code>history.back()</code><br><br>功能：回到历史记录的上一步。<br><br>说明：相当于使用了histoyr.go(-1)。<br></p>
-<p>forward()方法<br><br>语法：<code>history.forward()</code><br><br>功能：回到历史记录的下一步。<br><br>说明：相当于使用了histoyr.go(1)。<br></p>
-<p>go()方法<br><br>语法：<code>history.go(-n)</code><br><br>功能：回到历史记录的前n步。<br><br>语法：<code>history.go(n)</code><br><br>功能：回到历史记录的后n步。<hr></p>
+<p>screen对象包含有关客户端显示屏幕的信息</p>
+<p>常用属性：</p>
+<p>availWidth属性</p>
+<p>语法：<code>screen.availWidth</code></p>
+<p>功能：返回可用的屏幕宽度</p>
+<p>availHeight属性</p>
+<p>语法：<code>screen.availHeight</code></p>
+<p>功能：返回可用的屏幕高度</p>
 <ul>
-<li>location对象<br><br>location对象提供了与当前窗口加载的文档有关的信息，还提供了一些导航功能，它既是window对象的属性，也是document对象的属性。<br></li>
+<li>history对象</li>
 </ul>
-<p>常用属性：<br><br>href属性<br><br>语法：<code>location.href</code>或<code>location.href=&#39;URL&#39;</code><br><br>功能：返回当前加载页面的完整URL或者跳转到设定URL（会在历史记录中生存记录）<br><br>说明：location.href与window.location.href等价<br></p>
-<p>hash属性<br><br>语法：<code>location.hash</code><br>功能：返回URL中的hash（#号后跟零或多个字符），如果不包含则返回空字符串。<br></p>
-<p>host属性<br><br>语法：<code>location.host</code><br>功能：返回服务器名称和端口号（如果有）<br></p>
-<p>hostname属性<br><br>语法：<code>location.hostname</code><br>功能：返回不带端口号的服务器名称。<br></p>
-<p>pathname属性<br><br>语法：<code>location.pathname</code><br>功能：返回URL中的目录和（或）文件名。<br></p>
-<p>port属性<br><br>语法：<code>location.port</code><br>功能：返回URL中指定的端口号，如果没有，返回空字符串。<br></p>
-<p>protocol属性<br><br>语法：<code>location.protocol</code><br>功能：返回页面使用的协议。<br></p>
-<p>search属性<br><br>语法：<code>location.search</code><br>功能：返回URL的查询字符串，这个字符串以?开头。<br></p>
-<p>常用方法：<br><br>replace()方法<br><br>语法：<code>location.replace(url)</code><br><br>功能：重新定向URL。<br><br>说明：使用location.replace()不会再历史记录中生成新纪录。<br></p>
-<p>reload()方法：<br><br>语法：<code>location.reload()</code><br><br>功能：重新加载当前显示的页面。<br>说明：</p>
+<p>history对象保存了用户在浏览器镇南关访问页面的历史记录。是window对象的属性。</p>
+<p>常用方法：</p>
+<p>back()方法</p>
+<p>语法：<code>history.back()</code></p>
+<p>功能：回到历史记录的上一步。</p>
+<p>说明：相当于使用了histoyr.go(-1)。</p>
+<p>forward()方法</p>
+<p>语法：<code>history.forward()</code></p>
+<p>功能：回到历史记录的下一步。</p>
+<p>说明：相当于使用了histoyr.go(1)。</p>
+<p>go()方法</p>
+<p>语法：<code>history.go(-n)</code></p>
+<p>功能：回到历史记录的前n步。</p>
+<p>语法：<code>history.go(n)</code></p>
+<p>功能：回到历史记录的后n步。</p>
 <ul>
-<li>location.reload()有可能从缓存中加载</li>
-<li><p>location.reload(true)从服务器重新加载<hr></p>
+<li>location对象</li>
+</ul>
+<p>location对象提供了与当前窗口加载的文档有关的信息，还提供了一些导航功能，它既是window对象的属性，也是document对象的属性。</p>
+<p>常用属性：</p>
+<p>href属性</p>
+<p>语法：<code>location.href</code>或<code>location.href=&#39;URL&#39;</code></p>
+<p>功能：返回当前加载页面的完整URL或者跳转到设定URL（会在历史记录中生存记录）</p>
+<p>说明：location.href与window.location.href等价</p>
+<p>hash属性</p>
+<p>语法：<code>location.hash</code></p>
+<p>功能：返回URL中的hash（#号后跟零或多个字符），如果不包含则返回空字符串。</p>
+<p>host属性</p>
+<p>语法：<code>location.host</code></p>
+<p>功能：返回服务器名称和端口号（如果有）</p>
+<p>hostname属性</p>
+<p>语法：<code>location.hostname</code></p>
+<p>功能：返回不带端口号的服务器名称。</p>
+<p>pathname属性</p>
+<p>语法：<code>location.pathname</code></p>
+<p>功能：返回URL中的目录和（或）文件名。</p>
+<p>port属性</p>
+<p>语法：<code>location.port</code></p>
+<p>功能：返回URL中指定的端口号，如果没有，返回空字符串。</p>
+<p>protocol属性</p>
+<p>语法：<code>location.protocol</code></p>
+<p>功能：返回页面使用的协议。</p>
+<p>search属性</p>
+<p>语法：<code>location.search</code></p>
+<p>功能：返回URL的查询字符串，这个字符串以?开头。</p>
+<p>常用方法：</p>
+<p>replace()方法</p>
+<p>语法：<code>location.replace(url)</code></p>
+<p>功能：重新定向URL。</p>
+<p>说明：使用location.replace()不会再历史记录中生成新纪录。</p>
+<p>reload()方法：</p>
+<p>语法：<code>location.reload()</code></p>
+<p>功能：重新加载当前显示的页面。</p>
+<p>说明：</p>
+<ul>
+<li><p>location.reload()有可能从缓存中加载</p>
+</li>
+<li><p>location.reload(true)从服务器重新加载</p>
 </li>
 <li><p>document对象</p>
 </li>
-<li>event对象</li>
+<li><p>event对象</p>
+</li>
 </ul>
 
       
