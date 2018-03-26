@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[HTML5新特性]]></title>
     <url>%2F2018%2F03%2F26%2FHTML5%E6%96%B0%E7%89%B9%E6%80%A7%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[HTML5学习笔记HTML5标签变化HTML &lt;!DOCTYPE&gt; 标签&lt;!DOCTYPE&gt; 声明必须是HTML的第一行，位于标签之前。 &lt;!DOCTYPE&gt;不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。 常用的DOCTYPE声明： HTML 4.01 Strict:该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt; HTML 4.01 Transitional: 该 DTD 包含所有 HTML 元素和属性，包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt; HTML 4.01 Frameset:该 DTD 等同于 HTML 4.01 Transitional，但允许框架集内容。&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt; HTML5&lt;!DOCTYPE html&gt; 注：在 HTML 4.01 中，&lt;!DOCTYPE&gt; 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。HTML5 不基于 SGML，所以不需要引用 DTD。 提示：请始终向 HTML 文档添加 &lt;!DOCTYPE&gt; 声明，这样浏览器才能获知文档类型。 新增的标签结构标签结构标签（块状元素）：可以认为是个有意义的div. &lt;article&gt; : 标记定义一篇文章 &lt;header&gt;: 标记定义一个页面或一个区域的头部 &lt;nav&gt;: 标记定义导航链接 &lt;section&gt;: 标记定义一个区域 &lt;aside&gt;: 标记定义页面内容部分的侧边栏 &lt;hgroup&gt;: 标记定义文件中一个区块的相关信息 &lt;figure&gt;: 标记定义一组媒体内容以及它们的标题 &lt;figcaption&gt;: 标记定义figure元素的标题 &lt;footer&gt;: 标记定义一个页面或一个区域的底部 &lt;dialog&gt;： 标记定义一个对话框（会话框）类似微信 多媒体标签Web应用标签其他标签]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML 5</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[SpringBoot]]></title>
