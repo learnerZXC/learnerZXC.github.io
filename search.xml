@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[HTML5新特性]]></title>
     <url>%2F2018%2F03%2F26%2FHTML5%E6%96%B0%E7%89%B9%E6%80%A7%2F</url>
-    <content type="text"><![CDATA[HTML5学习笔记HTML5标签变化HTML &lt;!DOCTYPE&gt; 标签&lt;!DOCTYPE&gt; 声明必须是HTML的第一行，位于标签之前。 &lt;!DOCTYPE&gt;不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。 常用的DOCTYPE声明： HTML 4.01 Strict:该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt; HTML 4.01 Transitional: 该 DTD 包含所有 HTML 元素和属性，包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt; HTML 4.01 Frameset:该 DTD 等同于 HTML 4.01 Transitional，但允许框架集内容。&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt; HTML5&lt;!DOCTYPE html&gt; 注：在 HTML 4.01 中，&lt;!DOCTYPE&gt; 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。HTML5 不基于 SGML，所以不需要引用 DTD。 提示：请始终向 HTML 文档添加 &lt;!DOCTYPE&gt; 声明，这样浏览器才能获知文档类型。 新增的标签结构标签结构标签（块状元素）：可以认为是个有意义的div. &lt;article&gt; : 标记定义一篇文章 &lt;header&gt;: 标记定义一个页面或一个区域的头部 &lt;nav&gt;: 标记定义导航链接 &lt;section&gt;: 标记定义一个区域 &lt;aside&gt;: 标记定义页面内容部分的侧边栏 &lt;hgroup&gt;: 标记定义文件中一个区块的相关信息 &lt;figure&gt;: 标记定义一组媒体内容以及它们的标题 &lt;figcaption&gt;: 标记定义figure元素的标题 &lt;footer&gt;: 标记定义一个页面或一个区域的底部 &lt;dialog&gt;： 标记定义一个对话框（会话框）类似微信 多媒体标签Web应用标签其他标签]]></content>
+    <content type="text"><![CDATA[HTML5学习笔记HTML5标签变化HTML &lt;!DOCTYPE&gt; 标签&lt;!DOCTYPE&gt; 声明必须是HTML的第一行，位于标签之前。 &lt;!DOCTYPE&gt;不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。 常用的DOCTYPE声明： HTML 4.01 Strict:该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt; HTML 4.01 Transitional: 该 DTD 包含所有 HTML 元素和属性，包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt; HTML 4.01 Frameset:该 DTD 等同于 HTML 4.01 Transitional，但允许框架集内容。&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt; HTML5&lt;!DOCTYPE html&gt; 注：在 HTML 4.01 中，&lt;!DOCTYPE&gt; 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。HTML5 不基于 SGML，所以不需要引用 DTD。 提示：请始终向 HTML 文档添加 &lt;!DOCTYPE&gt; 声明，这样浏览器才能获知文档类型。 新增的标签结构标签结构标签（块状元素）：可以认为是个有意义的div. &lt;article&gt; : 标记定义一篇文章 &lt;header&gt;: 标记定义一个页面或一个区域的头部 &lt;nav&gt;: 标记定义导航链接 &lt;section&gt;: 标记定义一个区域 &lt;aside&gt;: 标记定义页面内容部分的侧边栏 &lt;hgroup&gt;: 标记定义文件中一个区块的相关信息 &lt;figure&gt;: 标记定义一组媒体内容以及它们的标题 &lt;figcaption&gt;: 标记定义figure元素的标题 &lt;footer&gt;: 标记定义一个页面或一个区域的底部 &lt;dialog&gt;： 标记定义一个对话框（会话框）类似微信 补充： 1. header/section/aside/article/footer 最好不要互相嵌套在相同的标签里面（举例：header标签里面最好不要再嵌套个header标签） 2. 级别：header/section/footer &gt;aside/article/figure/hgroup/nav&gt;div/figcapition 多媒体标签 &lt;video&gt;: 标记定义一个视频。 &lt;audio&gt;: 标记定义音频内容。 &lt;source&gt;: 标记定义媒体资源。 &lt;canvas&gt;: 标记定义图片 &lt;embed&gt;: 标记定义外部可交互的内容或插件，比如flash。 标签意义：多媒体标签的出现意味着富媒体的发展以及支持不使用插件的情况下即可操作媒体文件，极大地提升了用户体验。 Web应用标签状态标签： &lt;meter&gt;: 状态标签（实时状态显示：气压、气温） &lt;progress&gt;: 状态标签（任务过程：安装、加载） 其他标签]]></content>
       <categories>
         <category>HTML</category>
       </categories>
@@ -76,17 +76,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java集合之Collection接口]]></title>
-    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
-    <content type="text"><![CDATA[Java集合之Collection接口简介public interface Collection&lt;E&gt;extends Iterable&lt;E&gt; Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK不提供此接口的任何直接实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。 方法及其介绍 add(E e): 确保此 collection 包含指定的元素（可选操作）。如果此 collection 由于调用而发生更改，则返回 true。（如果此 collection 不允许有重复元素，并且已经包含了指定的元素，则返回 false。） 返回： boolean类型 remove(Object o): 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。更确切地讲，如果此 collection 包含一个或多个满足 (o==null ? e==null : o.equals(e)) 的元素 e，则移除这样的元素。如果此 collection 包含指定的元素（或者此 collection 由于调用而发生更改），则返回 true 。 返回：boolean类型 size(): 返回此 collection 中的元素数。如果此 collection 包含的元素大于 Integer.MAX_VALUE，则返回 Integer.MAX_VALUE。 返回：int类型 isEmpty(): 如果此 collection 不包含元素，则返回 true。 返回：boolean类型 contains(Object o): 如果此 collection 包含指定的元素，则返回 true。更确切地讲，当且仅当此 collection 至少包含一个满足 (o==null ? e==null : o.equals(e)) 的元素 e 时，返回 true。 返回： boolean类型 iterator(): 返回在此 collection 的元素上进行迭代的迭代器。关于元素返回的顺序没有任何保证（除非此 collection 是某个能提供保证顺序的类实例）。 返回： Iterator toArray(): 返回包含此 collection 中所有元素的数组。 返回： 包含此 collection 中所有元素的数组。 constainsAll(): 如果此 collection 包含指定 collection 中的所有元素，则返回 true。 返回：boolean类型 addAll(Collection&lt;? extends E&gt; c):将指定 collection 中的所有元素都添加到此 collection 中（可选操作）。如果在进行此操作的同时修改指定的 collection，那么此操作行为是不确定的。（这意味着如果指定的 collection 是此 collection，并且此 collection 为非空，那么此调用的行为是不确定的。） 返回： 如果此 collection 由于调用而发生更改，则返回 true removeAll(Collection&lt;?&gt; c): 移除此 collection 中那些也包含在指定 collection 中的所有元素（可选操作）。此调用返回后，collection 中将不包含任何与指定 collection 相同的元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true retainAll(Collection&lt;?&gt; c): 仅保留此 collection 中那些也包含在指定 collection 的元素（可选操作）。换句话说，移除此 collection 中未包含在指定 collection 中的所有元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true clear(): 移除此 collection 中的所有元素（可选操作）。此方法返回后，除非抛出一个异常。 返回： 无返回值。 equals(Object o): 比较此 collection 与指定对象是否相等。 返回：如果指定对象与此 collection 相等，则返回 true hashCode()：返回此 collection 的哈希码值。 返回：此 collection 的哈希码值（int类型）]]></content>
-      <categories>
-        <category>Java集合</category>
-      </categories>
-      <tags>
-        <tag>Collection</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java集合]]></title>
     <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%2F</url>
     <content type="text"><![CDATA[Java集合]]></content>
@@ -95,6 +84,17 @@
       </categories>
       <tags>
         <tag>Java集合综述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java集合之Collection接口]]></title>
+    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
+    <content type="text"><![CDATA[Java集合之Collection接口简介public interface Collection&lt;E&gt;extends Iterable&lt;E&gt; Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK不提供此接口的任何直接实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。 方法及其介绍 add(E e): 确保此 collection 包含指定的元素（可选操作）。如果此 collection 由于调用而发生更改，则返回 true。（如果此 collection 不允许有重复元素，并且已经包含了指定的元素，则返回 false。） 返回： boolean类型 remove(Object o): 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。更确切地讲，如果此 collection 包含一个或多个满足 (o==null ? e==null : o.equals(e)) 的元素 e，则移除这样的元素。如果此 collection 包含指定的元素（或者此 collection 由于调用而发生更改），则返回 true 。 返回：boolean类型 size(): 返回此 collection 中的元素数。如果此 collection 包含的元素大于 Integer.MAX_VALUE，则返回 Integer.MAX_VALUE。 返回：int类型 isEmpty(): 如果此 collection 不包含元素，则返回 true。 返回：boolean类型 contains(Object o): 如果此 collection 包含指定的元素，则返回 true。更确切地讲，当且仅当此 collection 至少包含一个满足 (o==null ? e==null : o.equals(e)) 的元素 e 时，返回 true。 返回： boolean类型 iterator(): 返回在此 collection 的元素上进行迭代的迭代器。关于元素返回的顺序没有任何保证（除非此 collection 是某个能提供保证顺序的类实例）。 返回： Iterator toArray(): 返回包含此 collection 中所有元素的数组。 返回： 包含此 collection 中所有元素的数组。 constainsAll(): 如果此 collection 包含指定 collection 中的所有元素，则返回 true。 返回：boolean类型 addAll(Collection&lt;? extends E&gt; c):将指定 collection 中的所有元素都添加到此 collection 中（可选操作）。如果在进行此操作的同时修改指定的 collection，那么此操作行为是不确定的。（这意味着如果指定的 collection 是此 collection，并且此 collection 为非空，那么此调用的行为是不确定的。） 返回： 如果此 collection 由于调用而发生更改，则返回 true removeAll(Collection&lt;?&gt; c): 移除此 collection 中那些也包含在指定 collection 中的所有元素（可选操作）。此调用返回后，collection 中将不包含任何与指定 collection 相同的元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true retainAll(Collection&lt;?&gt; c): 仅保留此 collection 中那些也包含在指定 collection 的元素（可选操作）。换句话说，移除此 collection 中未包含在指定 collection 中的所有元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true clear(): 移除此 collection 中的所有元素（可选操作）。此方法返回后，除非抛出一个异常。 返回： 无返回值。 equals(Object o): 比较此 collection 与指定对象是否相等。 返回：如果指定对象与此 collection 相等，则返回 true hashCode()：返回此 collection 的哈希码值。 返回：此 collection 的哈希码值（int类型）]]></content>
+      <categories>
+        <category>Java集合</category>
+      </categories>
+      <tags>
+        <tag>Collection</tag>
       </tags>
   </entry>
   <entry>
