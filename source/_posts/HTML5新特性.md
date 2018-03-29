@@ -86,6 +86,48 @@ categories: HTML
 状态标签：
 
   - `<meter>`: 状态标签（实时状态显示：气压、气温）
+
+  注： `<meter>`目前兼容的浏览器：Chrome、Opera
+
   - `<progress>`: 状态标签（任务过程：安装、加载）
 
+  注： `<progress>`目前兼容的浏览器：Chrome、Firefox、Opera
+
+列表标签：
+  - `<datalist>`: 为input标记定义一个下拉列表，配合option
+
+  注：`<datalist>`目前兼容的浏览器：Firefox、Opera
+
+  - `<details>`: 标记定义一个元素的详细内容，配合summary
+
+  注：`<details>`目前兼容的浏览器：Chrome
+
+Menu标签：
+  -  `<menu>`: 命令列表（目前所有主流浏览器都不支持）
+
+  - `<menuitem>`: menu命令列表标签（只有FireFox8.0+支持）
+
+  - `<command>`: menu标记定义一个命令按钮（只有IE9支持）
+
+
 #### 其他标签
+
+注释标签：
+  - `<ruby>`: 标记定义注释或音标
+
+  - `<rt>`: 标记定义对ruby的注释内容文本
+
+  - `<rp>`: 告诉那些不支持ruby的浏览器该如何去显示
+
+  注：`<rp>`不要放在`<rt>`标签内
+
+其他标签：
+  - `<mark>`: 标记定义有标记的文本（黄色选中状态）
+
+  注：IE9+ 、Chrome 等所有主流浏览器基本都可以实现
+
+  - `<output>`: 标记定义一些输出类型，计算表单结果配合oninput事件
+
+  - `<keygen>`: 标记定义表单里一个生成的键值（加密信息传递）
+
+  - `<time>`: 标记定义一个日期/时间，目前所有主流浏览器都不支持。
