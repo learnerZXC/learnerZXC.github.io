@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="HTML5学习笔记HTML5标签变化HTML &amp;lt;!DOCTYPE&amp;gt; 标签&amp;lt;!DOCTYPE&amp;gt; 声明必须是HTML的第一行，位于标签之前。 &amp;lt;!DOCTYPE&amp;gt;不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。 常用的DOCTYPE声明：  HTML 4.01 Strict:该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T15:28:54.031Z">
+<meta property="og:updated_time" content="2018-03-29T15:15:41.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5新特性">
 <meta name="twitter:description" content="HTML5学习笔记HTML5标签变化HTML &amp;lt;!DOCTYPE&amp;gt; 标签&amp;lt;!DOCTYPE&amp;gt; 声明必须是HTML的第一行，位于标签之前。 &amp;lt;!DOCTYPE&amp;gt;不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。 常用的DOCTYPE声明：  HTML 4.01 Strict:该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃">
@@ -427,10 +427,54 @@
 <p>标签意义：多媒体标签的出现意味着富媒体的发展以及支持不使用插件的情况下即可操作媒体文件，极大地提升了用户体验。</p>
 <h4 id="Web应用标签"><a href="#Web应用标签" class="headerlink" title="Web应用标签"></a>Web应用标签</h4><p>状态标签：</p>
 <ul>
-<li><code>&lt;meter&gt;</code>: 状态标签（实时状态显示：气压、气温）</li>
-<li><code>&lt;progress&gt;</code>: 状态标签（任务过程：安装、加载）</li>
+<li><p><code>&lt;meter&gt;</code>: 状态标签（实时状态显示：气压、气温）</p>
+<p>注： <code>&lt;meter&gt;</code>目前兼容的浏览器：Chrome、Opera</p>
+</li>
+<li><p><code>&lt;progress&gt;</code>: 状态标签（任务过程：安装、加载）</p>
+<p>注： <code>&lt;progress&gt;</code>目前兼容的浏览器：Chrome、Firefox、Opera</p>
+</li>
 </ul>
-<h4 id="其他标签"><a href="#其他标签" class="headerlink" title="其他标签"></a>其他标签</h4>
+<p>列表标签：</p>
+<ul>
+<li><p><code>&lt;datalist&gt;</code>: 为input标记定义一个下拉列表，配合option</p>
+<p>注：<code>&lt;datalist&gt;</code>目前兼容的浏览器：Firefox、Opera</p>
+</li>
+<li><p><code>&lt;details&gt;</code>: 标记定义一个元素的详细内容，配合summary</p>
+<p>注：<code>&lt;details&gt;</code>目前兼容的浏览器：Chrome</p>
+</li>
+</ul>
+<p>Menu标签：</p>
+<ul>
+<li><p><code>&lt;menu&gt;</code>: 命令列表（目前所有主流浏览器都不支持）</p>
+</li>
+<li><p><code>&lt;menuitem&gt;</code>: menu命令列表标签（只有FireFox8.0+支持）</p>
+</li>
+<li><p><code>&lt;command&gt;</code>: menu标记定义一个命令按钮（只有IE9支持）</p>
+</li>
+</ul>
+<h4 id="其他标签"><a href="#其他标签" class="headerlink" title="其他标签"></a>其他标签</h4><p>注释标签：</p>
+<ul>
+<li><p><code>&lt;ruby&gt;</code>: 标记定义注释或音标</p>
+</li>
+<li><p><code>&lt;rt&gt;</code>: 标记定义对ruby的注释内容文本</p>
+</li>
+<li><p><code>&lt;rp&gt;</code>: 告诉那些不支持ruby的浏览器该如何去显示</p>
+<p>注：<code>&lt;rp&gt;</code>不要放在<code>&lt;rt&gt;</code>标签内</p>
+</li>
+</ul>
+<p>其他标签：</p>
+<ul>
+<li><p><code>&lt;mark&gt;</code>: 标记定义有标记的文本（黄色选中状态）</p>
+<p>注：IE9+ 、Chrome 等所有主流浏览器基本都可以实现</p>
+</li>
+<li><p><code>&lt;output&gt;</code>: 标记定义一些输出类型，计算表单结果配合oninput事件</p>
+</li>
+<li><p><code>&lt;keygen&gt;</code>: 标记定义表单里一个生成的键值（加密信息传递）</p>
+</li>
+<li><p><code>&lt;time&gt;</code>: 标记定义一个日期/时间，目前所有主流浏览器都不支持。</p>
+</li>
+</ul>
+
       
     </div>
     
