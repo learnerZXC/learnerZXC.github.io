@@ -13,6 +13,7 @@ categories: HTML
 <!DOCTYPE> 声明必须是HTML的第一行，位于<html>标签之前。
 
 <!DOCTYPE>不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。
+<!--more-->
 
 常用的DOCTYPE声明：
   - HTML 4.01 Strict:该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。
