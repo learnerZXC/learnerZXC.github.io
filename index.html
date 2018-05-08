@@ -276,6 +276,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/05/07/let、var和const的区别及用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiao cai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaocai.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小菜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/07/let、var和const的区别及用法/" itemprop="url">let、var和const的区别及用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T22:56:45+08:00">
+                2018-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/03/26/HTML5新特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -368,141 +487,15 @@
 
       
         
-          
-            <h1 id="HTML5学习笔记"><a href="#HTML5学习笔记" class="headerlink" title="HTML5学习笔记"></a>HTML5学习笔记</h1><h2 id="HTML5标签变化"><a href="#HTML5标签变化" class="headerlink" title="HTML5标签变化"></a>HTML5标签变化</h2><h3 id="HTML-lt-DOCTYPE-gt-标签"><a href="#HTML-lt-DOCTYPE-gt-标签" class="headerlink" title="HTML &lt;!DOCTYPE&gt; 标签"></a>HTML &lt;!DOCTYPE&gt; 标签</h3><p>&lt;!DOCTYPE&gt; 声明必须是HTML的第一行，位于<html>标签之前。</html></p>
-<p>&lt;!DOCTYPE&gt;不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。</p>
-<p>常用的DOCTYPE声明：</p>
-<ul>
-<li><p>HTML 4.01 Strict:该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。</p>
-<p><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code></p>
-</li>
-<li><p>HTML  4.01 Transitional: 该 DTD 包含所有 HTML 元素和属性，包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。</p>
-<p><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
-&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code></p>
-</li>
-<li><p>HTML 4.01 Frameset:该 DTD 等同于 HTML 4.01 Transitional，但允许框架集内容。<br><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot;
-&quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</code></p>
-</li>
-<li><p>HTML5<br><code>&lt;!DOCTYPE html&gt;</code></p>
-</li>
-</ul>
-<p>注：在 HTML 4.01 中，&lt;!DOCTYPE&gt; 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。HTML5 不基于 SGML，所以不需要引用 DTD。</p>
-<p>提示：请始终向 HTML 文档添加 &lt;!DOCTYPE&gt; 声明，这样浏览器才能获知文档类型。</p>
-<h3 id="新增的标签"><a href="#新增的标签" class="headerlink" title="新增的标签"></a>新增的标签</h3><h4 id="结构标签"><a href="#结构标签" class="headerlink" title="结构标签"></a>结构标签</h4><p>结构标签（块状元素）：可以认为是个有意义的div.</p>
-<ul>
-<li><p><code>&lt;article&gt;</code> : 标记定义一篇文章</p>
-</li>
-<li><p><code>&lt;header&gt;</code>: 标记定义一个页面或一个区域的头部</p>
-</li>
-<li><p><code>&lt;nav&gt;</code>: 标记定义导航链接</p>
-</li>
-<li><p><code>&lt;section&gt;</code>: 标记定义一个区域</p>
-</li>
-<li><p><code>&lt;aside&gt;</code>: 标记定义页面内容部分的侧边栏</p>
-</li>
-<li><p><code>&lt;hgroup&gt;</code>: 标记定义文件中一个区块的相关信息</p>
-</li>
-<li><p><code>&lt;figure&gt;</code>: 标记定义一组媒体内容以及它们的标题</p>
-</li>
-<li><p><code>&lt;figcaption&gt;</code>: 标记定义figure元素的标题</p>
-</li>
-<li><p><code>&lt;footer&gt;</code>: 标记定义一个页面或一个区域的底部</p>
-</li>
-<li><p><code>&lt;dialog&gt;</code>： 标记定义一个对话框（会话框）类似微信</p>
-</li>
-</ul>
-<p>补充：</p>
-<pre><code>1. header/section/aside/article/footer 最好不要互相嵌套在相同的标签里面（举例：header标签里面最好不要再嵌套个header标签）
-
-2. 级别：header/section/footer &gt;aside/article/figure/hgroup/nav&gt;div/figcapition
-</code></pre><h4 id="多媒体标签"><a href="#多媒体标签" class="headerlink" title="多媒体标签"></a>多媒体标签</h4><ul>
-<li><p><code>&lt;video&gt;</code>: 标记定义一个视频。</p>
-</li>
-<li><p><code>&lt;audio&gt;</code>: 标记定义音频内容。</p>
-</li>
-<li><p><code>&lt;source&gt;</code>: 标记定义媒体资源。</p>
-</li>
-<li><p><code>&lt;canvas&gt;</code>: 标记定义图片</p>
-</li>
-<li><p><code>&lt;embed&gt;</code>: 标记定义外部可交互的内容或插件，比如flash。</p>
-</li>
-</ul>
-<p>标签意义：多媒体标签的出现意味着富媒体的发展以及支持不使用插件的情况下即可操作媒体文件，极大地提升了用户体验。</p>
-<h4 id="Web应用标签"><a href="#Web应用标签" class="headerlink" title="Web应用标签"></a>Web应用标签</h4><p>状态标签：</p>
-<ul>
-<li><p><code>&lt;meter&gt;</code>: 状态标签（实时状态显示：气压、气温）</p>
-<p>注： <code>&lt;meter&gt;</code>目前兼容的浏览器：Chrome、Opera</p>
-</li>
-<li><p><code>&lt;progress&gt;</code>: 状态标签（任务过程：安装、加载）</p>
-<p>注： <code>&lt;progress&gt;</code>目前兼容的浏览器：Chrome、Firefox、Opera</p>
-</li>
-</ul>
-<p>列表标签：</p>
-<ul>
-<li><p><code>&lt;datalist&gt;</code>: 为input标记定义一个下拉列表，配合option</p>
-<p>注：<code>&lt;datalist&gt;</code>目前兼容的浏览器：Firefox、Opera</p>
-</li>
-<li><p><code>&lt;details&gt;</code>: 标记定义一个元素的详细内容，配合summary</p>
-<p>注：<code>&lt;details&gt;</code>目前兼容的浏览器：Chrome</p>
-</li>
-</ul>
-<p>Menu标签：</p>
-<ul>
-<li><p><code>&lt;menu&gt;</code>: 命令列表（目前所有主流浏览器都不支持）</p>
-</li>
-<li><p><code>&lt;menuitem&gt;</code>: menu命令列表标签（只有FireFox8.0+支持）</p>
-</li>
-<li><p><code>&lt;command&gt;</code>: menu标记定义一个命令按钮（只有IE9支持）</p>
-</li>
-</ul>
-<h4 id="其他标签"><a href="#其他标签" class="headerlink" title="其他标签"></a>其他标签</h4><p>注释标签：</p>
-<ul>
-<li><p><code>&lt;ruby&gt;</code>: 标记定义注释或音标</p>
-</li>
-<li><p><code>&lt;rt&gt;</code>: 标记定义对ruby的注释内容文本</p>
-</li>
-<li><p><code>&lt;rp&gt;</code>: 告诉那些不支持ruby的浏览器该如何去显示</p>
-<p>注：<code>&lt;rp&gt;</code>不要放在<code>&lt;rt&gt;</code>标签内</p>
-</li>
-</ul>
-<p>其他标签：</p>
-<ul>
-<li><p><code>&lt;mark&gt;</code>: 标记定义有标记的文本（黄色选中状态）</p>
-<p>注：IE9+ 、Chrome 等所有主流浏览器基本都可以实现</p>
-</li>
-<li><p><code>&lt;output&gt;</code>: 标记定义一些输出类型，计算表单结果配合oninput事件</p>
-</li>
-<li><p><code>&lt;keygen&gt;</code>: 标记定义表单里一个生成的键值（加密信息传递）</p>
-</li>
-<li><p><code>&lt;time&gt;</code>: 标记定义一个日期/时间，目前所有主流浏览器都不支持</p>
-</li>
-</ul>
-<h4 id="删除的标签"><a href="#删除的标签" class="headerlink" title="删除的标签"></a>删除的标签</h4><p>纯表现的元素：</p>
-<p><code>basefont、big、center、font、s、strike、tt、u</code></p>
-<p>对可用性产生负面影响的元素</p>
-<p><code>frame、frameeset、noframes</code></p>
-<p>产生混淆的元素</p>
-<p><code>acronym、applet、isindex、dir</code></p>
-<h4 id="重定义标签"><a href="#重定义标签" class="headerlink" title="重定义标签"></a>重定义标签</h4><ul>
-<li><p><code>&lt;b&gt;</code>: 代表内联文本，通常是粗体，没有传递表示重要的意思</p>
-</li>
-<li><p><code>&lt;i&gt;</code>: 代表内联文本，通常是斜体，没有传递表示重要的意思</p>
-</li>
-<li><p><code>&lt;dd&gt;</code>（描述）: 可以同details与figure一同使用，定义包含文本，dialog也可用</p>
-</li>
-<li><p><code>&lt;dt&gt;</code>（标题）: 可以同details与figure一同使用，汇总细节，dialog也可用</p>
-</li>
-<li><p><code>&lt;hr&gt;</code>：表示主题结束，而不是水平线，虽然显示相同</p>
-</li>
-<li><p><code>&lt;menu&gt;</code>: 重新定义用户界面的菜单，配合commond或menuitem使用</p>
-</li>
-<li><p><code>&lt;small&gt;</code>: 表示小字体，例如打印注释或法律条款</p>
-</li>
-<li><p><code>&lt;strong&gt;</code>: 表示重要性而不是强调符号</p>
-</li>
-</ul>
-
-          
+          <h1 id="HTML5学习笔记"><a href="#HTML5学习笔记" class="headerlink" title="HTML5学习笔记"></a>HTML5学习笔记</h1><h2 id="HTML5标签变化"><a href="#HTML5标签变化" class="headerlink" title="HTML5标签变化"></a>HTML5标签变化</h2><h3 id="HTML-lt-DOCTYPE-gt-标签"><a href="#HTML-lt-DOCTYPE-gt-标签" class="headerlink" title="HTML &lt;!DOCTYPE&gt; 标签"></a>HTML &lt;!DOCTYPE&gt; 标签</h3><p>&lt;!DOCTYPE&gt; 声明必须是HTML的第一行，位于<html>标签之前。</html></p>
+<p>&lt;!DOCTYPE&gt;不是HTML标签，而是只是浏览器关于页面使用哪个HTML版本进行编写的指令。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/26/HTML5新特性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1648,205 +1641,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/02/03/Java集合之Collection接口/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiao cai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/xiaocai.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小菜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/Java集合之Collection接口/" itemprop="url">Java集合之Collection接口</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T21:38:24+08:00">
-                2018-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java集合/" itemprop="url" rel="index">
-                    <span itemprop="name">Java集合</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Java集合之Collection接口"><a href="#Java集合之Collection接口" class="headerlink" title="Java集合之Collection接口"></a>Java集合之Collection接口</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><code>public interface Collection&lt;E&gt;extends Iterable&lt;E&gt;</code></p>
-<p>Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK不提供此接口的任何直接实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。</p>
-<h3 id="方法及其介绍"><a href="#方法及其介绍" class="headerlink" title="方法及其介绍"></a>方法及其介绍</h3><ul>
-<li><code>add(E e)</code>: 确保此 collection 包含指定的元素（可选操作）。如果此 collection 由于调用而发生更改，则返回 true。（如果此 collection 不允许有重复元素，并且已经包含了指定的元素，则返回 false。）</li>
-</ul>
-<p>返回： boolean类型</p>
-<ul>
-<li><code>remove(Object o)</code>: 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。更确切地讲，如果此 collection 包含一个或多个满足 (o==null ? e==null : o.equals(e)) 的元素 e，则移除这样的元素。如果此 collection 包含指定的元素（或者此 collection 由于调用而发生更改），则返回 true 。</li>
-</ul>
-<p>返回：boolean类型</p>
-<ul>
-<li><code>size()</code>: 返回此 collection 中的元素数。如果此 collection 包含的元素大于 Integer.MAX_VALUE，则返回 Integer.MAX_VALUE。</li>
-</ul>
-<p>返回：int类型</p>
-<ul>
-<li><code>isEmpty()</code>: 如果此 collection 不包含元素，则返回 true。</li>
-</ul>
-<p>返回：boolean类型</p>
-<ul>
-<li><code>contains(Object o)</code>: 如果此 collection 包含指定的元素，则返回 true。更确切地讲，当且仅当此 collection 至少包含一个满足 (o==null ? e==null : o.equals(e)) 的元素 e 时，返回 true。</li>
-</ul>
-<p>返回： boolean类型</p>
-<ul>
-<li><code>iterator()</code>: 返回在此 collection 的元素上进行迭代的迭代器。关于元素返回的顺序没有任何保证（除非此 collection 是某个能提供保证顺序的类实例）。</li>
-</ul>
-<p>返回： Iterator<e></e></p>
-<ul>
-<li><code>toArray()</code>: 返回包含此 collection 中所有元素的数组。</li>
-</ul>
-<p>返回： 包含此 collection 中所有元素的数组。</p>
-<ul>
-<li><code>constainsAll()</code>: 如果此 collection 包含指定 collection 中的所有元素，则返回 true。</li>
-</ul>
-<p>返回：boolean类型</p>
-<ul>
-<li><code>addAll(Collection&lt;? extends E&gt; c)</code>:将指定 collection 中的所有元素都添加到此 collection 中（可选操作）。如果在进行此操作的同时修改指定的 collection，那么此操作行为是不确定的。（这意味着如果指定的 collection 是此 collection，并且此 collection 为非空，那么此调用的行为是不确定的。）</li>
-</ul>
-<p>返回： 如果此 collection 由于调用而发生更改，则返回 true</p>
-<ul>
-<li><code>removeAll(Collection&lt;?&gt; c)</code>: 移除此 collection 中那些也包含在指定 collection 中的所有元素（可选操作）。此调用返回后，collection 中将不包含任何与指定 collection 相同的元素。</li>
-</ul>
-<p>返回： 如果此 collection 由于调用而发生更改，则返回 true</p>
-<ul>
-<li><code>retainAll(Collection&lt;?&gt; c)</code>: 仅保留此 collection 中那些也包含在指定 collection 的元素（可选操作）。换句话说，移除此 collection 中未包含在指定 collection 中的所有元素。</li>
-</ul>
-<p>返回： 如果此 collection 由于调用而发生更改，则返回 true</p>
-<ul>
-<li><code>clear()</code>: 移除此 collection 中的所有元素（可选操作）。此方法返回后，除非抛出一个异常。</li>
-</ul>
-<p>返回： 无返回值。</p>
-<ul>
-<li><code>equals(Object o)</code>: 比较此 collection 与指定对象是否相等。</li>
-</ul>
-<p>返回：如果指定对象与此 collection 相等，则返回 true</p>
-<ul>
-<li><code>hashCode()</code>：返回此 collection 的哈希码值。</li>
-</ul>
-<p>返回：此 collection 的哈希码值（int类型）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1901,7 +1695,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

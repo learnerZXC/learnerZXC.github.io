@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="设计模式," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="设计原则 单一职责原则：一个类只负责一个功能领域中的相应职责，或者可以定义为：就一个类而言，应该只有一个引起它变化的原因。">
-<meta name="keywords" content="设计模式">
+<meta name="description" content="每天积累一点点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式">
-<meta property="og:url" content="learnerzxc.coding.me/2018/02/03/设计模式/index.html">
+<meta property="og:title" content="let、var和const的区别及用法">
+<meta property="og:url" content="learnerzxc.coding.me/2018/05/07/let、var和const的区别及用法/index.html">
 <meta property="og:site_name" content="小菜">
-<meta property="og:description" content="设计原则 单一职责原则：一个类只负责一个功能领域中的相应职责，或者可以定义为：就一个类而言，应该只有一个引起它变化的原因。">
+<meta property="og:description" content="每天积累一点点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-01T14:47:10.925Z">
+<meta property="og:updated_time" content="2018-05-07T14:56:45.121Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式">
-<meta name="twitter:description" content="设计原则 单一职责原则：一个类只负责一个功能领域中的相应职责，或者可以定义为：就一个类而言，应该只有一个引起它变化的原因。">
+<meta name="twitter:title" content="let、var和const的区别及用法">
+<meta name="twitter:description" content="每天积累一点点">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="learnerzxc.coding.me/2018/02/03/设计模式/"/>
+  <link rel="canonical" href="learnerzxc.coding.me/2018/05/07/let、var和const的区别及用法/"/>
 
 
 
 
 
-  <title>设计模式 | 小菜</title>
+  <title>let、var和const的区别及用法 | 小菜</title>
   
 
 
@@ -277,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/02/03/设计模式/">
+    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/05/07/let、var和const的区别及用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiao cai">
@@ -294,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式</h1>
+          <h1 class="post-title" itemprop="name headline">let、var和const的区别及用法</h1>
         
 
         <div class="post-meta">
@@ -306,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T01:48:04+08:00">
-                2018-02-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T22:56:45+08:00">
+                2018-05-07
               </time>
             
 
@@ -316,28 +315,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -366,50 +343,7 @@
       
 
       
-        <h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><ol>
-<li>单一职责原则：一个类只负责一个功能领域中的相应职责，或者可以定义为：就一个类而言，应该只有一个引起它变化的原因。<a id="more"></a></li>
-<li>里氏替换原则：所有引用基类（父类）的地方必须能透明地使用其子类的对象。</li>
-<li>依赖倒置原则：抽象不应该依赖于细节，细节应当依赖于抽象。换言之，要针对接口编程，而不是针对实现编程。</li>
-<li>接口隔离原则：使用多个专门的接口，而不使用单一的总接口，即客户端不应该依赖那些它不需要的接口。</li>
-<li>迪米特法则：一个软件实体应当尽可能少地与其他实体发生相互作用。</li>
-<li>开放-封闭原则：一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。</li>
-</ol>
-<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>单例模式是一种常用的软件设计模式，它的核心结构中值包含一个被称为单例的特殊类。它可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而控制实例个数并节约系统资源。</p>
-<p>实现思路：<br>单例模式要求类能够有返回对象一个引用（永远是同一个）和一个获得该实例的方法（必须是静态方法），主要通过以下两个步骤实现：</p>
-<ol>
-<li>将该类构造方法定义为私有方法，这样其他代码就无法通过调用该类的构造方法来实例化该类的对象，只有通过该类提供的静态方法来获得该类的唯一实例</li>
-<li>在该类内部提供一个静态方法，当我们调用这个方法时，如果类持有的引用不为空就返回这个引用，如果类保持的引用为空就创建该类的实例并将实例的引用赋予该类保持的引用。</li>
-</ol>
-<p>单例模式常见的写法：</p>
-<ul>
-<li>饿汉式（不推荐使用）：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  //static final单例对象，类加载的时候就初始化</span><br><span class="line">  private final static Singleton instance = new Singleton();</span><br><span class="line">  //私有构造方法，使得外界不能直接new</span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line">  //公有静态方法，对外提供获取单例接口</span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    return instance;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优点：线程安全。</p>
-<p>缺点：不支持懒加载。加载这个类时就实例化了instance，浪费内存，影响性能。</p>
-<ul>
-<li>懒汉式（不推荐使用）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private static Singleton instance;</span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line">  public static synchronized Singleton getInstance()&#123;</span><br><span class="line">    if(instance == null)&#123;</span><br><span class="line">      instance = new Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    return instance;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优点：单例对象在第一次调用时才被实例化，有效节省内存，并且保证了线程安全。</p>
-<p>缺点：同步是针对方法的，以后每次调用getInstance时（即使instance已经被实例化了），也会进行同步，造成不必要的同步开销。</p>
-<ul>
-<li>双重检查（推荐用）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private static volatile Singleton instance;</span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line">  public static synchronized Singleton getInstance()&#123;</span><br><span class="line">    if(instance == null)&#123;</span><br><span class="line">      synchronized(Singleton.class)&#123;</span><br><span class="line">        if(instance == null)&#123;</span><br><span class="line">          instance = new Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return instance;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优点：线程安全；延迟加载；效率较高</p>
-<ul>
-<li>静态内部类（推荐用）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton&#123;</span><br><span class="line">  private Singleton()&#123;&#125;</span><br><span class="line">  private static class SingletonInstance&#123;</span><br><span class="line">    private static final Singleton instance = new Singleton()</span><br><span class="line">  &#125;</span><br><span class="line">  public static Singleton getInstance()&#123;</span><br><span class="line">    return SingletonInstance.instance</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优点：避免了线程不安全，延迟加载，效率高。</p>
-<ul>
-<li>枚举（推荐用）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public enum EnumSingleton&#123;</span><br><span class="line">  instance;</span><br><span class="line">  public static void whateverMethod()&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>优点：系统内存中该类只存在一个对象，节省了系统资源，对于一些需要频繁创建销毁的对象，使用单例模式可以提高系统性能。</p>
-<p>缺点：当想实例化一个单例类的时候，必须要记住使用相应的获取对象的方法，而不是使用new，可能会给其他开发人员造成困扰，特别是看不到源码的时候。</p>
-
+        
       
     </div>
     
@@ -424,12 +358,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
-          
-        </div>
-      
 
       
       
@@ -439,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/03/构造器（constructor）是否能被Override/" rel="next" title="构造函数">
-                <i class="fa fa-chevron-left"></i> 构造函数
+              <a href="/2018/03/26/HTML5新特性/" rel="next" title="HTML5新特性">
+                <i class="fa fa-chevron-left"></i> HTML5新特性
               </a>
             
           </div>
@@ -448,10 +376,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/03/重写和重载的区别/" rel="prev" title="重写（override）和重载(overload)的区别">
-                重写（override）和重载(overload)的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -503,17 +427,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -579,22 +494,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计原则"><span class="nav-number">1.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-number">2.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单例模式"><span class="nav-number">2.1.</span> <span class="nav-text">单例模式</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
