@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git push 报错问题]]></title>
+    <url>%2F2018%2F05%2F28%2Fgit-push-%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[git push 报错问题使用hexo搭建的个人博客，托管在GitHub上，突然又一段时间push的时候一直报错。错误如下：1ssh: Could not resolve hostname github.com: Name or service not known.fatal: Could not read from remote repository. 因为之前是好的，突然报这个错误，一脸懵逼，通过各种查，终于解决了这个问题（目前是解决的。） 问题排查： 通过百度查到1ping github.com 得到一个IP地址，将他放入git的hosts中，但由于每次ping的到的IP有可能不同，当时第一次是可以得，到后面这个方法好像也不起作用。所以又继续查，终于找到了下面的方法。 执行1ssh -T git@github.com 显示连接失败。好像是DNS哪里有问题（目前还不是特别清楚）。通过以下命令解决了。 进入命令行 输入1ipconfig /flushdns 释放DNS缓存。 输入1netsh winsock reset 重置Winsock目录。 重启计算机，就Ok了。]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[let、var和const的区别及用法]]></title>
     <url>%2F2018%2F05%2F07%2Flet%E3%80%81var%E5%92%8Cconst%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"></content>
@@ -81,17 +89,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java集合之Collection接口]]></title>
-    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
-    <content type="text"><![CDATA[Java集合之Collection接口简介public interface Collection&lt;E&gt;extends Iterable&lt;E&gt; Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK不提供此接口的任何直接实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。 方法及其介绍 add(E e): 确保此 collection 包含指定的元素（可选操作）。如果此 collection 由于调用而发生更改，则返回 true。（如果此 collection 不允许有重复元素，并且已经包含了指定的元素，则返回 false。） 返回： boolean类型 remove(Object o): 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。更确切地讲，如果此 collection 包含一个或多个满足 (o==null ? e==null : o.equals(e)) 的元素 e，则移除这样的元素。如果此 collection 包含指定的元素（或者此 collection 由于调用而发生更改），则返回 true 。 返回：boolean类型 size(): 返回此 collection 中的元素数。如果此 collection 包含的元素大于 Integer.MAX_VALUE，则返回 Integer.MAX_VALUE。 返回：int类型 isEmpty(): 如果此 collection 不包含元素，则返回 true。 返回：boolean类型 contains(Object o): 如果此 collection 包含指定的元素，则返回 true。更确切地讲，当且仅当此 collection 至少包含一个满足 (o==null ? e==null : o.equals(e)) 的元素 e 时，返回 true。 返回： boolean类型 iterator(): 返回在此 collection 的元素上进行迭代的迭代器。关于元素返回的顺序没有任何保证（除非此 collection 是某个能提供保证顺序的类实例）。 返回： Iterator toArray(): 返回包含此 collection 中所有元素的数组。 返回： 包含此 collection 中所有元素的数组。 constainsAll(): 如果此 collection 包含指定 collection 中的所有元素，则返回 true。 返回：boolean类型 addAll(Collection&lt;? extends E&gt; c):将指定 collection 中的所有元素都添加到此 collection 中（可选操作）。如果在进行此操作的同时修改指定的 collection，那么此操作行为是不确定的。（这意味着如果指定的 collection 是此 collection，并且此 collection 为非空，那么此调用的行为是不确定的。） 返回： 如果此 collection 由于调用而发生更改，则返回 true removeAll(Collection&lt;?&gt; c): 移除此 collection 中那些也包含在指定 collection 中的所有元素（可选操作）。此调用返回后，collection 中将不包含任何与指定 collection 相同的元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true retainAll(Collection&lt;?&gt; c): 仅保留此 collection 中那些也包含在指定 collection 的元素（可选操作）。换句话说，移除此 collection 中未包含在指定 collection 中的所有元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true clear(): 移除此 collection 中的所有元素（可选操作）。此方法返回后，除非抛出一个异常。 返回： 无返回值。 equals(Object o): 比较此 collection 与指定对象是否相等。 返回：如果指定对象与此 collection 相等，则返回 true hashCode()：返回此 collection 的哈希码值。 返回：此 collection 的哈希码值（int类型）]]></content>
-      <categories>
-        <category>Java集合</category>
-      </categories>
-      <tags>
-        <tag>Collection</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java集合]]></title>
     <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%2F</url>
     <content type="text"><![CDATA[Java集合]]></content>
@@ -100,6 +97,17 @@
       </categories>
       <tags>
         <tag>Java集合综述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java集合之Collection接口]]></title>
+    <url>%2F2018%2F02%2F03%2FJava%E9%9B%86%E5%90%88%E4%B9%8BCollection%E6%8E%A5%E5%8F%A3%2F</url>
+    <content type="text"><![CDATA[Java集合之Collection接口简介public interface Collection&lt;E&gt;extends Iterable&lt;E&gt; Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK不提供此接口的任何直接实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。 方法及其介绍 add(E e): 确保此 collection 包含指定的元素（可选操作）。如果此 collection 由于调用而发生更改，则返回 true。（如果此 collection 不允许有重复元素，并且已经包含了指定的元素，则返回 false。） 返回： boolean类型 remove(Object o): 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。更确切地讲，如果此 collection 包含一个或多个满足 (o==null ? e==null : o.equals(e)) 的元素 e，则移除这样的元素。如果此 collection 包含指定的元素（或者此 collection 由于调用而发生更改），则返回 true 。 返回：boolean类型 size(): 返回此 collection 中的元素数。如果此 collection 包含的元素大于 Integer.MAX_VALUE，则返回 Integer.MAX_VALUE。 返回：int类型 isEmpty(): 如果此 collection 不包含元素，则返回 true。 返回：boolean类型 contains(Object o): 如果此 collection 包含指定的元素，则返回 true。更确切地讲，当且仅当此 collection 至少包含一个满足 (o==null ? e==null : o.equals(e)) 的元素 e 时，返回 true。 返回： boolean类型 iterator(): 返回在此 collection 的元素上进行迭代的迭代器。关于元素返回的顺序没有任何保证（除非此 collection 是某个能提供保证顺序的类实例）。 返回： Iterator toArray(): 返回包含此 collection 中所有元素的数组。 返回： 包含此 collection 中所有元素的数组。 constainsAll(): 如果此 collection 包含指定 collection 中的所有元素，则返回 true。 返回：boolean类型 addAll(Collection&lt;? extends E&gt; c):将指定 collection 中的所有元素都添加到此 collection 中（可选操作）。如果在进行此操作的同时修改指定的 collection，那么此操作行为是不确定的。（这意味着如果指定的 collection 是此 collection，并且此 collection 为非空，那么此调用的行为是不确定的。） 返回： 如果此 collection 由于调用而发生更改，则返回 true removeAll(Collection&lt;?&gt; c): 移除此 collection 中那些也包含在指定 collection 中的所有元素（可选操作）。此调用返回后，collection 中将不包含任何与指定 collection 相同的元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true retainAll(Collection&lt;?&gt; c): 仅保留此 collection 中那些也包含在指定 collection 的元素（可选操作）。换句话说，移除此 collection 中未包含在指定 collection 中的所有元素。 返回： 如果此 collection 由于调用而发生更改，则返回 true clear(): 移除此 collection 中的所有元素（可选操作）。此方法返回后，除非抛出一个异常。 返回： 无返回值。 equals(Object o): 比较此 collection 与指定对象是否相等。 返回：如果指定对象与此 collection 相等，则返回 true hashCode()：返回此 collection 的哈希码值。 返回：此 collection 的哈希码值（int类型）]]></content>
+      <categories>
+        <category>Java集合</category>
+      </categories>
+      <tags>
+        <tag>Collection</tag>
       </tags>
   </entry>
   <entry>

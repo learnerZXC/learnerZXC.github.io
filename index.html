@@ -276,6 +276,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/05/28/git-push-报错问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiao cai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/xiaocai.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小菜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/28/git-push-报错问题/" itemprop="url">git push 报错问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T00:02:35+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="git-push-报错问题"><a href="#git-push-报错问题" class="headerlink" title="git push 报错问题"></a>git push 报错问题</h1><p>使用hexo搭建的个人博客，托管在GitHub上，突然又一段时间push的时候一直报错。错误如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh: Could not resolve hostname github.com: Name or service not known.fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure></p>
+<p>因为之前是好的，突然报这个错误，一脸懵逼，通过各种查，终于解决了这个问题（目前是解决的。）</p>
+<p>问题排查：</p>
+<ol>
+<li>通过百度查到<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping github.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>得到一个IP地址，将他放入git的hosts中，但由于每次ping的到的IP有可能不同，当时第一次是可以得，到后面这个方法好像也不起作用。所以又继续查，终于找到了下面的方法。</p>
+<ol>
+<li>执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>显示连接失败。好像是DNS哪里有问题（目前还不是特别清楚）。通过以下命令解决了。</p>
+<ul>
+<li>进入命令行</li>
+<li>输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /flushdns</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>释放DNS缓存。</p>
+<ul>
+<li>输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh winsock reset</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>重置Winsock目录。</p>
+<ul>
+<li>重启计算机，就Ok了。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/05/07/let、var和const的区别及用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1494,153 +1640,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="learnerzxc.coding.me/2018/02/03/Java集合之Map接口/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiao cai">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/xiaocai.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小菜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/Java集合之Map接口/" itemprop="url">Java集合之Map接口</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T21:38:24+08:00">
-                2018-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java集合/" itemprop="url" rel="index">
-                    <span itemprop="name">Java集合</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Java集合之Map接口"><a href="#Java集合之Map接口" class="headerlink" title="Java集合之Map接口"></a>Java集合之Map接口</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介<br></h3><p><code>public interface Map&lt;K,V&gt;</code></p>
-<p>Map是将键映射到值的对象。一个映射不能包含重复的键；每个键最多只能映射到一个值。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/Java集合之Map接口/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1695,7 +1694,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1717,7 +1716,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
