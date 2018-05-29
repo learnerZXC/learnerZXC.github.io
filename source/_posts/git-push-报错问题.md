@@ -34,4 +34,4 @@ ipconfig /flushdns
 netsh winsock reset
 ```
 重置Winsock目录。
-- 重启计算机，就Ok了。
+- 重启计算机，就Ok了。（2018-05-29又出现了同样的错误，这个方法卒，目前还没找到彻底解决办法）
