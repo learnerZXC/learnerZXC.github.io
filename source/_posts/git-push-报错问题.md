@@ -10,6 +10,7 @@ categories:
 ```
 ssh: Could not resolve hostname github.com: Name or service not known.fatal: Could not read from remote repository.
 ```
+<!-- more -->
 因为之前是好的，突然报这个错误，一脸懵逼，通过各种查，终于解决了这个问题（目前是解决的。）
 
 问题排查：
