@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[浏览器的同源策略以及如何解决跨域问题]]></title>
+    <url>%2F2018%2F09%2F17%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[浏览器的同源策略以及如何解决跨域问题什么是同源策略？有什么作用？同源策略限制了从同一个源加载的文档或者脚本如何与另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制 什么是源？简单的来说，如果两个页面的协议，端口和域名都相同，则这两个页面具有相同的源 下表给出了相对http://www.example.com/dir/page.html同源检测的示例: URL 结果 原因 http://www.example.com/dir2/other.html 成功 http://www.example.com/dir/inner/another.html 成功 https://www.example.com/secure.html 失败 不同协议 ( https和http ) http://www.example.com:81/dir/etc.html 失败 不同端口 ( 81和80) http://example.com/dir/other.html 失败 不同域名 ( www.example.com和example.com ) IE例外涉及到同源策略时，Internet Explorer有两个主要不同点 授信范围（Trust Zones）：两个相互之间高度互信的域名，如公司域名（corporate domains），不遵守同源策略的限制。 端口：IE 未将端口号加入到同源策略的组成部分之中，因此 http://company.com:81/index.html 和http://company.com/index.html 属于同源并且不受任何限制。 &lt;– 关于如何解决跨域问题正研究中–&gt;]]></content>
+      <categories>
+        <category>Web前端</category>
+      </categories>
+      <tags>
+        <tag>同源策略 跨域</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript数组排序]]></title>
+    <url>%2F2018%2F09%2F13%2FJavaScript%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[JavaScript数组排序数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。 由于取决于具体实现，所以无法保证排序的时间和空间复杂性 例如： 1234567var months = ['march', 'Jan', 'Feb', 'Dec'];months.sort();console.log(months) //["Dec", "Feb", "Jan", "march"]var array1 = [1, 30, 4, 21]array1.sort();console.log(array1) // [1, 21, 30, 4] 可以看出来，array1的排序效果并不是按照数字的从大到小排列的，没有达到想要的效果，要想达到想要的效果，可以使用以下语法： 语法1arr.sort([compareFunction]) 参数compareFunction | 可选 用来指定按某种顺序进行排列的函数。如果省略，元素按照转换为的字符串的各个字符的Unicode位点进行排序 返回值排序后的数组。！！！注意，数组已原地进行排序，并且不进行复制，想要回去，不可以了。 描述如果没有指明 compareFunction ，那么元素会按照转换为的字符串的诸个字符的Unicode位点进行排序。例如 “Banana” 会被排列到 “cherry” 之前。当数字按由小到大排序时，9 出现在 80 之前，但因为（没有指明 compareFunction），比较的数字会先被转换为字符串，所以在Unicode顺序上 “80” 要比 “9” 要靠前。 如果指明了 compareFunction ，那么数组会按照调用该函数的返回值排序。即 a 和 b 是两个将要被比较的元素 如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前； 如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变。备注： ECMAScript 标准并不保证这一行为，而且也不是所有浏览器都会遵守（例如 Mozilla 在 2003 年之前的版本）； 如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前。 compareFunction(a, b) 必须总是对相同的输入返回相同的比较结果，否则排序的结果将是不确定的。 所以对数字进行排序时，比较函数可以简单的以a减b,如下的函数将数字升序排列 123function compareNumbers(a, b) &#123; return a - b&#125; sort方法可以使用函数表达式方便的书写： 12345678910var numbers = [4, 2, 5, 1, 3];numbers.sort(function(a, b) &#123; return a - b;&#125;);console.log(numbers); // [1, 2, 3, 4, 5]也可以写成：var numbers = [4, 2, 5, 1, 3]; numbers.sort((a, b) =&gt; a - b); console.log(numbers); // [1, 2, 3, 4, 5] 这样就可以达到升序效果，同理降序及比较函数写为b减a 对不能转换为数字的字符串数组进行排序时，升序可以直接调用sort()方法，降序可以先调用sort()再调用reverse()方法即可答到效果 （——未完待续——）]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript中call,apply,bind异同]]></title>
+    <url>%2F2018%2F09%2F13%2FJavaScript%E4%B8%ADcall-apply-bind%E5%BC%82%E5%90%8C%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[promise函数]]></title>
+    <url>%2F2018%2F09%2F13%2Fpromise%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript闭包]]></title>
+    <url>%2F2018%2F09%2F13%2FJavaScript%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript中数组去重]]></title>
+    <url>%2F2018%2F09%2F13%2FJavascript%E4%B8%AD%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%2F</url>
+    <content type="text"><![CDATA[JavaScript数组去重]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript中this指向]]></title>
+    <url>%2F2018%2F09%2F13%2FJavaScript%E4%B8%ADthis%E6%8C%87%E5%90%91%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[for 循环异步编程顺序问题]]></title>
     <url>%2F2018%2F07%2F03%2Ffor-%E5%BE%AA%E7%8E%AF%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E9%A1%BA%E5%BA%8F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"></content>
