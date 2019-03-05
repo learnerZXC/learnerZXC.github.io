@@ -9,6 +9,8 @@ categories: JavaScript
 
 由于取决于具体实现，所以无法保证排序的时间和空间复杂性
 
+<!--more-->
+
 例如：
 
 ```javascript

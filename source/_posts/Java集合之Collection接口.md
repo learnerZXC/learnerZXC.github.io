@@ -19,6 +19,8 @@ Collection 表示一组对象，这些对象也称为 collection 的元素。一
 
 返回： boolean类型
 
+<!--more-->
+
 - `remove(Object o)`: 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。更确切地讲，如果此 collection 包含一个或多个满足 (o==null ? e==null : o.equals(e)) 的元素 e，则移除这样的元素。如果此 collection 包含指定的元素（或者此 collection 由于调用而发生更改），则返回 true 。
 
 返回：boolean类型

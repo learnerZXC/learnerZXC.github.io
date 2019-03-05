@@ -14,6 +14,8 @@ Java中任何一个对象都具有equals()和Hashcode()方法，因为他们是�
 
 hashcode()方法的作用：HashCode的存在主要是用于查找的快捷性，HashCode是用来在散列存储结构中确定对象的存储地址的；
 
+<!--more-->
+
 equals()方法的作用：equals()方法是来判断两个方法是否相同的。
 
 关于这两个方法的重要规范：
