@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="JavaScript数组排序数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。 由于取决于具体实现，所以无法保证排序的时间和空间复杂性 例如： 1234567var months = [&apos;march&apos;, &apos;Jan&apos;, &apos;Feb&apos;, &apos;Dec&apos;];months.so">
+<meta name="description" content="JavaScript数组排序数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。 由于取决于具体实现，所以无法保证排序的时间和空间复杂性">
 <meta name="keywords" content="Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript数组排序">
 <meta property="og:url" content="learnerzxc.coding.me/2018/09/13/JavaScript数组排序/index.html">
 <meta property="og:site_name" content="小菜">
-<meta property="og:description" content="JavaScript数组排序数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。 由于取决于具体实现，所以无法保证排序的时间和空间复杂性 例如： 1234567var months = [&apos;march&apos;, &apos;Jan&apos;, &apos;Feb&apos;, &apos;Dec&apos;];months.so">
+<meta property="og:description" content="JavaScript数组排序数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。 由于取决于具体实现，所以无法保证排序的时间和空间复杂性">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T17:53:11.251Z">
+<meta property="og:updated_time" content="2019-03-05T14:13:46.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript数组排序">
-<meta name="twitter:description" content="JavaScript数组排序数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。 由于取决于具体实现，所以无法保证排序的时间和空间复杂性 例如： 1234567var months = [&apos;march&apos;, &apos;Jan&apos;, &apos;Feb&apos;, &apos;Dec&apos;];months.so">
+<meta name="twitter:description" content="JavaScript数组排序数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。 由于取决于具体实现，所以无法保证排序的时间和空间复杂性">
 
 
 
@@ -368,6 +368,7 @@
       
         <h1 id="JavaScript数组排序"><a href="#JavaScript数组排序" class="headerlink" title="JavaScript数组排序"></a>JavaScript数组排序</h1><p>数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。</p>
 <p>由于取决于具体实现，所以无法保证排序的时间和空间复杂性</p>
+<a id="more"></a>
 <p>例如：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> months = [<span class="string">'march'</span>, <span class="string">'Jan'</span>, <span class="string">'Feb'</span>, <span class="string">'Dec'</span>];</span><br><span class="line">months.sort();</span><br><span class="line"><span class="built_in">console</span>.log(months)	<span class="comment">//["Dec", "Feb", "Jan", "march"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">30</span>, <span class="number">4</span>, <span class="number">21</span>]</span><br><span class="line">array1.sort();</span><br><span class="line"><span class="built_in">console</span>.log(array1) <span class="comment">// [1, 21, 30, 4]</span></span><br></pre></td></tr></table></figure>
 <p>可以看出来，array1的排序效果并不是按照数字的从大到小排列的，没有达到想要的效果，要想达到想要的效果，可以使用以下语法：</p>
@@ -593,7 +594,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

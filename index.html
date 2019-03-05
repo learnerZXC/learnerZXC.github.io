@@ -368,56 +368,15 @@
 
       
         
-          
-            <h1 id="浏览器的同源策略以及如何解决跨域问题"><a href="#浏览器的同源策略以及如何解决跨域问题" class="headerlink" title="浏览器的同源策略以及如何解决跨域问题"></a>浏览器的同源策略以及如何解决跨域问题</h1><h3 id="什么是同源策略？有什么作用？"><a href="#什么是同源策略？有什么作用？" class="headerlink" title="什么是同源策略？有什么作用？"></a>什么是同源策略？有什么作用？</h3><p>同源策略限制了从同一个源加载的文档或者脚本如何与另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制</p>
+          <h1 id="浏览器的同源策略以及如何解决跨域问题"><a href="#浏览器的同源策略以及如何解决跨域问题" class="headerlink" title="浏览器的同源策略以及如何解决跨域问题"></a>浏览器的同源策略以及如何解决跨域问题</h1><h3 id="什么是同源策略？有什么作用？"><a href="#什么是同源策略？有什么作用？" class="headerlink" title="什么是同源策略？有什么作用？"></a>什么是同源策略？有什么作用？</h3><p>同源策略限制了从同一个源加载的文档或者脚本如何与另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制</p>
 <h3 id="什么是源？"><a href="#什么是源？" class="headerlink" title="什么是源？"></a>什么是源？</h3><p>简单的来说，如果两个页面的协议，端口和域名都相同，则这两个页面具有相同的源</p>
-<p>下表给出了相对<code>http://www.example.com/dir/page.html</code>同源检测的示例:</p>
-<table>
-<thead>
-<tr>
-<th>URL</th>
-<th>结果</th>
-<th>原因</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>http://www.example.com/dir2/other.html</code></td>
-<td>成功</td>
-<td></td>
-</tr>
-<tr>
-<td><code>http://www.example.com/dir/inner/another.html</code></td>
-<td>成功</td>
-<td></td>
-</tr>
-<tr>
-<td><code>https://www.example.com/secure.html</code></td>
-<td>失败</td>
-<td>不同协议 ( https和http )</td>
-</tr>
-<tr>
-<td><code>http://www.example.com:81/dir/etc.html</code></td>
-<td>失败</td>
-<td>不同端口 ( 81和80)</td>
-</tr>
-<tr>
-<td><code>http://example.com/dir/other.html</code></td>
-<td>失败</td>
-<td>不同域名 ( www.example.com和example.com )</td>
-</tr>
-</tbody>
-</table>
-<h3 id="IE例外"><a href="#IE例外" class="headerlink" title="IE例外"></a>IE例外</h3><p>涉及到同源策略时，Internet  Explorer有两个主要不同点</p>
-<ul>
-<li><p><code>授信范围（Trust Zones）：两个相互之间高度互信的域名，如公司域名（corporate domains），不遵守同源策略的限制。</code></p>
-</li>
-<li><p><code>端口：IE 未将端口号加入到同源策略的组成部分之中，因此</code> <a href="http://company.com:81/index.html" target="_blank" rel="noopener">http://company.com:81/index.html</a> 和<a href="http://company.com/index.html" target="_blank" rel="noopener">http://company.com/index.html</a>  属于同源并且不受任何限制。</p>
-</li>
-</ul>
-<p>&lt;– 关于如何解决跨域问题正研究中–&gt;</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/17/浏览器的同源策略以及如何解决跨域问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -556,36 +515,15 @@
 
       
         
-          
-            <h1 id="JavaScript数组排序"><a href="#JavaScript数组排序" class="headerlink" title="JavaScript数组排序"></a>JavaScript数组排序</h1><p>数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。</p>
+          <h1 id="JavaScript数组排序"><a href="#JavaScript数组排序" class="headerlink" title="JavaScript数组排序"></a>JavaScript数组排序</h1><p>数组中我们经常碰到对数组进行排序处理，数组排序通常使用sort()方法进行排序，并返回数组。即会改变原来的数组。但排序不一定是稳定的，默认排序是根据字符串的Unicode编码进行排序的。</p>
 <p>由于取决于具体实现，所以无法保证排序的时间和空间复杂性</p>
-<p>例如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> months = [<span class="string">'march'</span>, <span class="string">'Jan'</span>, <span class="string">'Feb'</span>, <span class="string">'Dec'</span>];</span><br><span class="line">months.sort();</span><br><span class="line"><span class="built_in">console</span>.log(months)	<span class="comment">//["Dec", "Feb", "Jan", "march"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="number">1</span>, <span class="number">30</span>, <span class="number">4</span>, <span class="number">21</span>]</span><br><span class="line">array1.sort();</span><br><span class="line"><span class="built_in">console</span>.log(array1) <span class="comment">// [1, 21, 30, 4]</span></span><br></pre></td></tr></table></figure>
-<p>可以看出来，array1的排序效果并不是按照数字的从大到小排列的，没有达到想要的效果，要想达到想要的效果，可以使用以下语法：</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction])</span><br></pre></td></tr></table></figure>
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p><code>compareFunction</code> | 可选</p>
-<p>用来指定按某种顺序进行排列的函数。如果省略，元素按照转换为的字符串的各个字符的Unicode位点进行排序</p>
-<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p>排序后的数组。！！！注意，数组已原地进行排序，并且不进行复制，想要回去，不可以了。</p>
-<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>如果没有指明 <code>compareFunction</code> ，那么元素会按照转换为的字符串的诸个字符的Unicode位点进行排序。例如 “Banana” 会被排列到 “cherry” 之前。当数字按由小到大排序时，9 出现在 80 之前，但因为（没有指明 <code>compareFunction</code>），比较的数字会先被转换为字符串，所以在Unicode顺序上 “80” 要比 “9” 要靠前。</p>
-<p>如果指明了 <code>compareFunction</code> ，那么数组会按照调用该函数的返回值排序。即 a 和 b 是两个将要被比较的元素</p>
-<ul>
-<li><p>如果 <code>compareFunction(a, b)</code> 小于 0 ，那么 a 会被排列到 b 之前；</p>
-</li>
-<li><p>如果 <code>compareFunction(a, b)</code> 等于 0 ， a 和 b 的相对位置不变。备注： ECMAScript 标准并不保证这一行为，而且也不是所有浏览器都会遵守（例如 Mozilla 在 2003 年之前的版本）；</p>
-</li>
-<li><p>如果 <code>compareFunction(a, b)</code> 大于 0 ， b 会被排列到 a 之前。</p>
-</li>
-<li><code>compareFunction(a, b)</code> 必须总是对相同的输入返回相同的比较结果，否则排序的结果将是不确定的。</li>
-</ul>
-<p>所以对数字进行排序时，比较函数可以简单的以a减b,如下的函数将数字升序排列</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function compareNumbers(a, b) &#123;</span><br><span class="line">    return a - b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>sort</code>方法可以使用函数表达式方便的书写：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>];</span><br><span class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(numbers); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line">也可以写成：</span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>]; </span><br><span class="line">numbers.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b); </span><br><span class="line"><span class="built_in">console</span>.log(numbers); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
-<p>这样就可以达到升序效果，同理降序及比较函数写为b减a</p>
-<p>对不能转换为数字的字符串数组进行排序时，升序可以直接调用sort()方法，降序可以先调用sort()再调用reverse()方法即可答到效果</p>
-<p>（——未完待续——）</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/13/JavaScript数组排序/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1736,7 +1674,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
