@@ -71,6 +71,11 @@
       {% include 'search.swig' %}
     </div>
   {% endif %}
+  <% if ( !index ){ %>
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+<% } %>
 </nav>
 
 {% include '../_custom/header.swig' %}
