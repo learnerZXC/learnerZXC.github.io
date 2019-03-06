@@ -82,7 +82,7 @@
 <meta name="description" content="每天积累一点点">
 <meta property="og:type" content="website">
 <meta property="og:title" content="小菜">
-<meta property="og:url" content="learnerzxc.coding.me/categories/Javascript/index.html">
+<meta property="og:url" content="learnerzxc.coding.me/categories/JavaScript/index.html">
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="每天积累一点点">
 <meta property="og:locale" content="zh-Hans">
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="learnerzxc.coding.me/categories/Javascript/"/>
+  <link rel="canonical" href="learnerzxc.coding.me/categories/JavaScript/"/>
 
 
 
 
 
-  <title>分类: Javascript | 小菜</title>
+  <title>分类: JavaScript | 小菜</title>
   
 
 
@@ -248,6 +248,11 @@
 
     </div>
   
+  <% if ( !index ){ %>
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+<% } %>
 </nav>
 
 
@@ -268,7 +273,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Javascript<small>分类</small>
+        <h1>JavaScript<small>分类</small>
         </h1>
       </div>
 
@@ -280,9 +285,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/09/13/Javascript中数组去重/" itemprop="url">
+            <a class="post-title-link" href="/2018/09/13/JavaScript数组排序/" itemprop="url">
               
-                <span itemprop="name">JavaScript中数组去重</span>
+                <span itemprop="name">JavaScript数组排序</span>
               
             </a>
         
@@ -290,9 +295,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-13T22:34:23+08:00"
+              datetime="2018-09-13T22:43:27+08:00"
               content="2018-09-13" >
           09-13
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/02/03/JavaScript正则表达式/" itemprop="url">
+              
+                <span itemprop="name">JavaScript正则表达式</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-03T21:38:24+08:00"
+              content="2018-02-03" >
+          02-03
         </time>
       </div>
 
@@ -441,6 +474,21 @@
 
 
 
+
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+<div calss="count-span">
+    <span id="busuanzi_container_site_pv">
+    总访问量: <span id="busuanzi_value_site_pv"></span>|
+    </span>
+    <span id="busuanzi_container_site_uv">
+    总访客: <span id="busuanzi_value_site_uv"></span>
+    </span>
+</div>
+<!-- 根据个人喜好在相应位置添加以上代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1276400176'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1276400176%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
         
 
 
@@ -875,48 +923,6 @@
     }
 
     // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-nd trigger popup window;
     $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched === false) {

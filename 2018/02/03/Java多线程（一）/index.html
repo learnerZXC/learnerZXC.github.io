@@ -250,6 +250,11 @@
 
     </div>
   
+  <% if ( !index ){ %>
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+<% } %>
 </nav>
 
 
@@ -618,6 +623,21 @@
 
 
 
+
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+<div calss="count-span">
+    <span id="busuanzi_container_site_pv">
+    总访问量: <span id="busuanzi_value_site_pv"></span>|
+    </span>
+    <span id="busuanzi_container_site_uv">
+    总访客: <span id="busuanzi_value_site_uv"></span>
+    </span>
+</div>
+<!-- 根据个人喜好在相应位置添加以上代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1276400176'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1276400176%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
         
 
 
