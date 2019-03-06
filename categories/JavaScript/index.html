@@ -82,7 +82,7 @@
 <meta name="description" content="每天积累一点点">
 <meta property="og:type" content="website">
 <meta property="og:title" content="小菜">
-<meta property="og:url" content="learnerzxc.coding.me/categories/JavaScript/index.html">
+<meta property="og:url" content="learnerzxc.coding.me/categories/Javascript/index.html">
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="每天积累一点点">
 <meta property="og:locale" content="zh-Hans">
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="learnerzxc.coding.me/categories/JavaScript/"/>
+  <link rel="canonical" href="learnerzxc.coding.me/categories/Javascript/"/>
 
 
 
 
 
-  <title>分类: JavaScript | 小菜</title>
+  <title>分类: Javascript | 小菜</title>
   
 
 
@@ -273,7 +273,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>JavaScript<small>分类</small>
+        <h1>Javascript<small>分类</small>
         </h1>
       </div>
 
@@ -285,9 +285,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/09/13/JavaScript数组排序/" itemprop="url">
+            <a class="post-title-link" href="/2018/09/13/Javascript中数组去重/" itemprop="url">
               
-                <span itemprop="name">JavaScript数组排序</span>
+                <span itemprop="name">JavaScript中数组去重</span>
               
             </a>
         
@@ -295,37 +295,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-13T22:43:27+08:00"
+              datetime="2018-09-13T22:34:23+08:00"
               content="2018-09-13" >
           09-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/03/JavaScript正则表达式/" itemprop="url">
-              
-                <span itemprop="name">JavaScript正则表达式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-03T21:38:24+08:00"
-              content="2018-02-03" >
-          02-03
         </time>
       </div>
 
@@ -923,6 +895,48 @@
     }
 
     // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+nd trigger popup window;
     $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched === false) {
