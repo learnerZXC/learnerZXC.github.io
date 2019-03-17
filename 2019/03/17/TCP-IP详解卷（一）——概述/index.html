@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="TCP/IP详解卷卷一 ——概述TCP/IP协议的由来在世界各地，各种不同电脑运行着各种不同的操作系统为大家服务，这些电脑在表达同一种信息的时候所使用的方法千差万别，无法合作。所以人们就想方设法将它们联合起来，发挥出它们最大的潜力。但简单连接起来是不够的，它们还需要定义一些共同的东西来进行交流沟通，TCP/IP协议由此而生。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T14:27:50.457Z">
+<meta property="og:updated_time" content="2019-03-17T15:04:12.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP详解卷（一）——概述">
 <meta name="twitter:description" content="TCP/IP详解卷卷一 ——概述TCP/IP协议的由来在世界各地，各种不同电脑运行着各种不同的操作系统为大家服务，这些电脑在表达同一种信息的时候所使用的方法千差万别，无法合作。所以人们就想方设法将它们联合起来，发挥出它们最大的潜力。但简单连接起来是不够的，它们还需要定义一些共同的东西来进行交流沟通，TCP/IP协议由此而生。">
@@ -369,7 +369,7 @@
       
         <h2 id="TCP-IP详解卷卷一-——概述"><a href="#TCP-IP详解卷卷一-——概述" class="headerlink" title="TCP/IP详解卷卷一 ——概述"></a>TCP/IP详解卷卷一 ——概述</h2><h4 id="TCP-IP协议的由来"><a href="#TCP-IP协议的由来" class="headerlink" title="TCP/IP协议的由来"></a>TCP/IP协议的由来</h4><pre><code>在世界各地，各种不同电脑运行着各种不同的操作系统为大家服务，这些电脑在表达同一种信息的时候所使用的方法千差万别，无法合作。所以人们就想方设法将它们联合起来，发挥出它们最大的潜力。但简单连接起来是不够的，它们还需要定义一些共同的东西来进行交流沟通，TCP/IP协议由此而生。
 </code></pre><a id="more"></a>
-<h4 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h4><p>网络通讯协议通常分不同层次进行开发，每一层分别负责不同的通信功能。一个协议族，比如TCP/IP，是一组不同层次上多个协议的组合。TCP/IP通常被认为是一个四层协议系统，如图所示：</p>
+<h4 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h4><p>网络通讯协议通常分不同层次进行开发，每一层分别负责不同的通信功能。一个协议族，比如TCP/IP，是一组不同层次上多个协议的组合。TCP/IP通常被认为是一个四层协议系统，如图所示：（此处应该有图）</p>
 <p>​    每一层负责不同的功能：</p>
 <ul>
 <li><p>链路层</p>
@@ -391,10 +391,15 @@
 <li>FTP文件传输协议</li>
 <li>SMTP简单邮件传送协议</li>
 <li>SNMP简单网络管理协议</li>
+<li>DNS(Domain Name System域名系统)</li>
+<li>HTTP（Hyper Text Transfer Protocol超文本传输协议）</li>
 </ul>
 </li>
 </ul>
-
+<h4 id="互联网的地址"><a href="#互联网的地址" class="headerlink" title="互联网的地址"></a>互联网的地址</h4><p>互联网上每个接口必须有一个唯一的Internet地址（也称作IP地址）。IP地址差八分32bit,Internet地址并不采用平面式的地址空间，如1、2、3等。IP地址具有一定的结构，五类不同的互联网地址格式如下图所示：（此处应该有图）</p>
+<p>这些32为的地址通常写成四个十进制的数，其中每个整数对应一个字节。这种表示方法称作“点分十进制表示法”。区分各类地址最简单的方法是看它的第一个十进制整数。下图列出了各类地址的起止范围（此处应该有图）</p>
+<p>多接口主机具有多个IP地址，其中每个接口都对应一个IP地址。</p>
+<h4 id="域名系统"><a href="#域名系统" class="headerlink" title="域名系统"></a>域名系统</h4><h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><h4 id="分用"><a href="#分用" class="headerlink" title="分用"></a>分用</h4><h4 id="客户-服务器模型"><a href="#客户-服务器模型" class="headerlink" title="客户-服务器模型"></a>客户-服务器模型</h4><h4 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h4><h4 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h4><h4 id="标准化过程"><a href="#标准化过程" class="headerlink" title="标准化过程"></a>标准化过程</h4>
       
     </div>
     
@@ -570,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP详解卷卷一-——概述"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP详解卷卷一 ——概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP协议的由来"><span class="nav-number">1.0.1.</span> <span class="nav-text">TCP/IP协议的由来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分层"><span class="nav-number">1.0.2.</span> <span class="nav-text">分层</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP详解卷卷一-——概述"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP详解卷卷一 ——概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP协议的由来"><span class="nav-number">1.0.1.</span> <span class="nav-text">TCP/IP协议的由来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分层"><span class="nav-number">1.0.2.</span> <span class="nav-text">分层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互联网的地址"><span class="nav-number">1.0.3.</span> <span class="nav-text">互联网的地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名系统"><span class="nav-number">1.0.4.</span> <span class="nav-text">域名系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">1.0.5.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分用"><span class="nav-number">1.0.6.</span> <span class="nav-text">分用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#客户-服务器模型"><span class="nav-number">1.0.7.</span> <span class="nav-text">客户-服务器模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口号"><span class="nav-number">1.0.8.</span> <span class="nav-text">端口号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RFC"><span class="nav-number">1.0.9.</span> <span class="nav-text">RFC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准化过程"><span class="nav-number">1.0.10.</span> <span class="nav-text">标准化过程</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
