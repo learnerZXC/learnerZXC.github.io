@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小菜">
 <meta property="og:description" content="TCP/IP详解卷卷一 ——概述TCP/IP协议的由来在世界各地，各种不同电脑运行着各种不同的操作系统为大家服务，这些电脑在表达同一种信息的时候所使用的方法千差万别，无法合作。所以人们就想方设法将它们联合起来，发挥出它们最大的潜力。但简单连接起来是不够的，它们还需要定义一些共同的东西来进行交流沟通，TCP/IP协议由此而生。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T15:04:12.013Z">
+<meta property="og:updated_time" content="2019-03-18T15:27:40.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP详解卷（一）——概述">
 <meta name="twitter:description" content="TCP/IP详解卷卷一 ——概述TCP/IP协议的由来在世界各地，各种不同电脑运行着各种不同的操作系统为大家服务，这些电脑在表达同一种信息的时候所使用的方法千差万别，无法合作。所以人们就想方设法将它们联合起来，发挥出它们最大的潜力。但简单连接起来是不够的，它们还需要定义一些共同的东西来进行交流沟通，TCP/IP协议由此而生。">
@@ -399,7 +399,27 @@
 <h4 id="互联网的地址"><a href="#互联网的地址" class="headerlink" title="互联网的地址"></a>互联网的地址</h4><p>互联网上每个接口必须有一个唯一的Internet地址（也称作IP地址）。IP地址差八分32bit,Internet地址并不采用平面式的地址空间，如1、2、3等。IP地址具有一定的结构，五类不同的互联网地址格式如下图所示：（此处应该有图）</p>
 <p>这些32为的地址通常写成四个十进制的数，其中每个整数对应一个字节。这种表示方法称作“点分十进制表示法”。区分各类地址最简单的方法是看它的第一个十进制整数。下图列出了各类地址的起止范围（此处应该有图）</p>
 <p>多接口主机具有多个IP地址，其中每个接口都对应一个IP地址。</p>
-<h4 id="域名系统"><a href="#域名系统" class="headerlink" title="域名系统"></a>域名系统</h4><h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><h4 id="分用"><a href="#分用" class="headerlink" title="分用"></a>分用</h4><h4 id="客户-服务器模型"><a href="#客户-服务器模型" class="headerlink" title="客户-服务器模型"></a>客户-服务器模型</h4><h4 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h4><h4 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h4><h4 id="标准化过程"><a href="#标准化过程" class="headerlink" title="标准化过程"></a>标准化过程</h4>
+<p>​    由于互联网上的每个接口必须有一个唯一的IP地址，因此必须要有一个管理机构为接入互联网的网络分配IP地址。这个机构就是互联网络信息中心(Internet Network Information Centre)，称作InterNIC。InterNIC只分配网络号。主机号的分配由系统管理员来负责。</p>
+<p>​    事实上InterNIC由三部分组成： 注册服务(rs.internic.net)，目录和数据库服务(ds.internic.net)，以及信息服务(is.internic.net)</p>
+<p>​    有三类IP地址： 单播地址(目的为单个主机)、广播地址(目的端为给定网络上的所有主机)以及多播地址(目的端为同一组内的所有主机)</p>
+<h4 id="域名系统"><a href="#域名系统" class="headerlink" title="域名系统"></a>域名系统</h4><p>​    尽管通过IP地址可以识别主机上的网络接口，进而访问主机，但是人们最喜欢使用的还是主机名。在TCP/IP领域中国，域名系统(DNS)是一个分布式的数据库，由他来提供IP地址和主机名之间的映射信息。</p>
+<p>​    任何应用程序都可以调用一个标准的库函数来查看给定名字的主机的IP地址。类似地，系统还提供一个逆函数——给定主机的IP地址，查看它所对应的主机名。<br>​    大多数使用主机名作为参数的应用程序也可以把IP地址作为参数。</p>
+<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><h4 id="分用"><a href="#分用" class="headerlink" title="分用"></a>分用</h4><h4 id="客户-服务器模型"><a href="#客户-服务器模型" class="headerlink" title="客户-服务器模型"></a>客户-服务器模型</h4><p>大部分网络应用程序在编写时都假设一端是客户，另一端是服务器，其目的是为了让服务器为客户提供一些特定的服务。</p>
+<p>可以将这种服务分为两种类型：重复型和并发型。</p>
+<pre><code>###### 重复型服务器通过以下步骤进行交互：
+</code></pre><p>​    I1. 等待一个客户请求的到来</p>
+<p>​    I2. 处理客户请求</p>
+<p>​    I3. 发送响应给发送请求的客户</p>
+<p>​    I4. 返回I1步</p>
+<p>重复型服务器主要的问题发生在I2状态。这个时候，它不能为其他客户提供服务。</p>
+<pre><code>###### 并发型服务器采用以下步骤 
+</code></pre><p>​    C1. 等待一个客户请求的道理</p>
+<p>​    C2. 启动一个新的服务器来处理这个客户的请求。在这期间可能生成一个新的进程、任务或线程，并依赖底层操作系统的支持。这个步骤如何进行取决于操作系统。生成的新服务器对客户的全部请求进行处理。处理结束后，终止这个新服务器。</p>
+<p>​    C3. 返回C1步。</p>
+<p>并发服务器的优点在于它是利用生成服务器的方法来处理客户的请求。也就是说，每个客户都有它自己对应的服务器。如果操作系统允许多任务，那么就可以同时为多个客户服务。</p>
+<p>​    对服务器，而不是对客户进行分类的原因是因为对于一个客户来说，它通常不能辨别自己是与一个重复型或并发型服务器进行对话</p>
+<p>​    一般来说，TCP服务器是并发的，而UDP服务器是重复的，但也会有一些意外存在。</p>
+<h4 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h4><h4 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h4><h4 id="标准化过程"><a href="#标准化过程" class="headerlink" title="标准化过程"></a>标准化过程</h4>
       
     </div>
     
