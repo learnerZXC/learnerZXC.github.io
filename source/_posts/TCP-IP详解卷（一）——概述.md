@@ -129,5 +129,11 @@ categories: TCP/IP协议
 
 #### 标准化过程
 
+有四个小组在负责Internet技术，控制着TCP/IP协议族，定义新的标准及其他类似的事情
 
+  		1. Internet协会(ISOC， Internet Society)是一个推动、支持和促进Internet不断增长和发展的专业组织，它把Internet作为全球研究通信的基础设施
+  		2. Internet体系结构委员会(IBA, Internet Architecture Board)是一个技术监督和协调的机构。它由国际上来自不同专业的15个志愿者组成，其职能是负责Internet标准的最后编辑和技术审核。 IBA隶属于ISOC。
+  		3. Internet工程专门小组(IETF, Internet Engineering Task Force)是一个面向近期标准的组织，它分为i9ge领域(应用、寻径和寻址、安全等等)。IETF开发成为Internet标准的规范。为帮助IETF主席，又成立了Internet工程指导小组(IESG, Internet Engineering Steering Group).。
+  		4. Internet专门研究小组(IRTF, Internet Research Task Force)主要针对长远的项目进行研究。
 
+IRTF和IETF都隶属于IAB。
