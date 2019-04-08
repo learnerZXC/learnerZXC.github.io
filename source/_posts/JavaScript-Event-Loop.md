@@ -78,3 +78,10 @@ categories: javaScript
  * Object.observe
  * MutationObserver
 
+参考： 
+
+​	https://juejin.im/post/5aab2d896fb9a028b86dc2fd
+
+​	https://zhuanlan.zhihu.com/p/33058983
+
+​	https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop
